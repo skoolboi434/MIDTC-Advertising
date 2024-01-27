@@ -1,0 +1,14 @@
+// Variables, fonts, mixins, helpers... common styles used across project
+@import 'base/__base';
+
+// Pages
+@import 'pages/__pages';
+
+body {
+  background-color: $offwhite;
+}
+
+.page-heading-container {
+  text-align: center;
+  padding: 60px 0;
+}
