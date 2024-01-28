@@ -27,8 +27,8 @@
 
 .btn-secondary-light {
   background: rgba($secondary, 0.5);
-  border: 1px solid $secondary;
   color: $white;
+  box-shadow: $shadow;
 }
 
 .btn-danger {

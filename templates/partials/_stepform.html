@@ -1,0 +1,106 @@
+{% block content %}
+
+<div class="step-form-container">
+  <!--PEN CONTENT -->
+  <div class="content">
+    <!--content inner-->
+    <div class="content__inner">
+      <div class="container overflow-hidden">
+        <!--multisteps-form-->
+        <div class="multisteps-form">
+          <!--progress bar-->
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-8 ml-auto mr-auto mb-4">
+              <div class="multisteps-form__progress">
+                <button class="multisteps-form__progress-btn js-active" type="button">Campaign Overview</button>
+                <button class="multisteps-form__progress-btn" type="button">Insertions</button>
+                <button class="multisteps-form__progress-btn" type="button">History/Logs</button>
+                <button class="multisteps-form__progress-btn" type="button">Notes</button>
+              </div>
+            </div>
+          </div>
+          <!--form panels-->
+          <div class="row">
+            <div class="col-12 m-auto">
+              <div class="multisteps-form__form">
+                <!--single form panel-->
+                <div class="multisteps-form__panel p-4 rounded js-active" data-animation="scaleIn">
+                  <h3 class="multisteps-form__title text-center">Campaign Overview</h3>
+                  <div class="multisteps-form__content">
+                    <div class="content-container container">
+                      <div class="row ad-info">
+                        <!-- Left column -->
+                        <div class="col-md-6">
+                          <div class="btn-container top mb-5">
+                            <div>
+                              <button class="btn btn-secondary-light"><i class="fa fa-solid fa-pencil"></i> Edit Campaign Details</button>
+                            </div>
+                            <div>
+                              <button class="btn btn-danger"><i class="fa fa-solid fa-ban"></i> Cancel</button>
+                              <button class="btn btn-secondary"><i class="fa fa-solid fa-ban"></i><i class="fa fa-solid fa-rotate-right"></i> Duplicate</button>
+                            </div>
+                          </div>
+                          <!-- End Btn Container -->
+
+                          <!-- Name Start & End Date -->
+                          <div class="name-date-container container">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="campaign-name">
+                                  <span>Campaign Name</span>
+                                  <h3 class="name">Campaign Name Goes Here</h3>
+                                </div>
+                              </div>
+                              <div class="col-md-6"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End left column -->
+                        <div class="col-md-6"></div>
+                      </div>
+                    </div>
+                    <!-- <div class="w-100 d-flex justify-content-end mt-4">
+                      <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                    </div> -->
+                  </div>
+                </div>
+                <!--single form panel-->
+                <div class="multisteps-form__panel p-4 rounded" data-animation="scaleIn">
+                  <h3 class="multisteps-form__title text-center">Insertions</h3>
+                  <div class="multisteps-form__content">
+                    <div class="content-container"></div>
+                  </div>
+                </div>
+                <!--single form panel-->
+                <div class="multisteps-form__panel p-4 rounded" data-animation="scaleIn">
+                  <h3 class="multisteps-form__title text-center">History/Logs</h3>
+                  <div class="multisteps-form__content">
+                    <div class="content-container"></div>
+                    <div class="row">
+                      <!-- <div class="button-row d-flex mt-4 col-12">
+                        <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                        <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                <!--single form panel-->
+                <div class="multisteps-form__panel p-4 rounded" data-animation="scaleIn">
+                  <h3 class="multisteps-form__title text-center">Notes</h3>
+                  <div class="multisteps-form__content">
+                    <div class="content-container"></div>
+                    <div class="button-row d-flex mt-4">
+                      <!-- <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
