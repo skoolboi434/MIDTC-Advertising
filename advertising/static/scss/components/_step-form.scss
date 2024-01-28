@@ -99,6 +99,13 @@ $btn-circle-decor-dimensions: 13px;
   .content-container {
     min-height: 220px;
     .ad-info {
+      .left-side {
+        padding-right: 40px;
+      }
+
+      .right-side {
+        padding-left: 40px;
+      }
       .btn-container {
         &.top {
           display: flex;
@@ -109,6 +116,54 @@ $btn-circle-decor-dimensions: 13px;
         .btn {
           .fa {
             margin-right: 5px;
+          }
+        }
+      }
+
+      .name-date-container,
+      .total-price-container,
+      .brief-desc-container {
+        span {
+          font-size: 12px;
+          color: #333;
+        }
+      }
+
+      .name-date-container {
+        .heading {
+          font-size: 18px;
+
+          &.name {
+            font-size: 22px;
+          }
+        }
+      }
+
+      .brief-desc-container,
+      .advertiser-info-container {
+        margin-bottom: 60px;
+      }
+
+      .rates-container {
+        margin-bottom: 60px;
+        table {
+          border-spacing: 0;
+          border-collapse: collapse;
+          th {
+            background-color: $gray;
+            padding: 10px;
+            &:first-of-type {
+              border-top-left-radius: 10px;
+            }
+            &:last-of-type {
+              border-top-right-radius: 10px;
+            }
+          }
+
+          tr {
+            td {
+              padding: 10px;
+            }
           }
         }
       }
@@ -124,7 +179,7 @@ $btn-circle-decor-dimensions: 13px;
 //multisteps panels styles
 .multisteps-form__panel {
   hr {
-    width: 75%;
+    border: 1px solid $black;
     margin-top: 0px;
   }
   @include position-absolute($top: 0, $left: 0);
