@@ -61,6 +61,16 @@
   }
 }
 
+.btn-cancel-alt {
+  background-color: #666666;
+  border-color: #666666;
+  color: $white;
+  box-shadow: $shadow;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .btn-ready {
   background-color: $green !important;
   border-color: $green !important;
