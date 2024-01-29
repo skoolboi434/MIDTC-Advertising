@@ -1,5 +1,6 @@
 <div class="multisteps-form__panel p-4 rounded js-active" data-animation="scaleIn">
   <h3 class="multisteps-form__title text-center">Campaign Overview</h3>
+ 
   <div class="multisteps-form__content">
     <div class="content-container container">
       <div class="row ad-info">
@@ -7,7 +8,9 @@
         <div class="col-md-6 left-side">
           <div class="btn-container top mb-5">
             <div>
-              <button class="btn btn-secondary-light"><i class="fa fa-solid fa-pencil"></i> Edit Campaign Details</button>
+              <button id="modalBtn"
+              onclick="document.getElementById('myModal').style.display='block'" class="btn btn-secondary-light"><i class="fa fa-solid fa-pencil"></i> Edit Campaign Details</button>
+              
             </div>
             <div>
               <button class="btn btn-danger"><i class="fa fa-solid fa-ban"></i> Cancel</button>
