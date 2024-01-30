@@ -1,10 +1,11 @@
 .step-form-container {
   background-color: rgba(255, 255, 255, 0.7);
-  padding: 40px 20px;
+  padding: 40px 20px 0 20px;
   border-radius: 8px;
   box-shadow: $shadow;
   position: relative;
   min-height: 800px;
+  overflow-y: scroll;
   &:after {
     position: absolute;
     content: '';
