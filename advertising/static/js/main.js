@@ -125,8 +125,8 @@ DOMstrings.stepsBar.addEventListener('click', e => {
 DOMstrings.stepsForm.addEventListener('click', e => {
   const eventTarget = e.target;
 
-  //check if we clicked on `PREV` or NEXT` buttons
-  if (!(eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`) || eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`))) {
+  //check if we clicked on `PREV` or NEXT` buttons or arrow buttons
+  if (!(eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`) || eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`) || eventTarget.classList.contains('fa-chevron-left') || eventTarget.classList.contains('fa-chevron-right'))) {
     return;
   }
 
@@ -136,11 +136,14 @@ DOMstrings.stepsForm.addEventListener('click', e => {
   let activePanelNum = Array.from(DOMstrings.stepFormPanels).indexOf(activePanel);
 
   //set active step and active panel onclick
-  if (eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`)) {
+  if (eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`) || eventTarget.classList.contains('fa-chevron-left')) {
     activePanelNum--;
   } else {
     activePanelNum++;
   }
+
+  // Ensure activePanelNum stays within bounds
+  activePanelNum = Math.max(0, Math.min(activePanelNum, DOMstrings.stepFormPanels.length - 1));
 
   setActiveStep(activePanelNum);
   setActivePanel(activePanelNum);
@@ -151,3 +154,27 @@ window.addEventListener('load', setFormHeight, false);
 
 //SETTING PROPER FORM HEIGHT ONRESIZE
 window.addEventListener('resize', setFormHeight, false);
+
+document.addEventListener('DOMContentLoaded', function () {
+  const panels = document.querySelectorAll('.multisteps-form__panel');
+  const arrowLeft = document.querySelector('.multistep-form__arrow .fa-chevron-left');
+  const arrowRight = document.querySelector('.multistep-form__arrow .fa-chevron-right');
+
+  // Event listener for left arrow button
+  arrowLeft.addEventListener('click', function () {
+    const currentPanel = document.querySelector('.multisteps-form__panel.js-active');
+    const currentIndex = Array.from(panels).indexOf(currentPanel);
+    const nextIndex = Math.max(currentIndex - 1, 0);
+    panels[currentIndex].classList.remove('js-active');
+    panels[nextIndex].classList.add('js-active');
+  });
+
+  // Event listener for right arrow button
+  arrowRight.addEventListener('click', function () {
+    const currentPanel = document.querySelector('.multisteps-form__panel.js-active');
+    const currentIndex = Array.from(panels).indexOf(currentPanel);
+    const nextIndex = Math.min(currentIndex + 1, panels.length - 1);
+    panels[currentIndex].classList.remove('js-active');
+    panels[nextIndex].classList.add('js-active');
+  });
+});

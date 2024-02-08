@@ -615,6 +615,7 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   position: relative;
   min-height: 800px;
+  margin: 30px auto;
   overflow-y: scroll;
 }
 .step-form-container:after {
@@ -632,28 +633,24 @@
   border-bottom-right-radius: 8px;
   transform: rotate(180deg);
 }
-
-.content {
+.step-form-container .content {
   position: relative;
   z-index: 999;
 }
-
-.content__title {
-  margin-bottom: 40px;
-  font-size: 20px;
-  text-align: center;
+.step-form-container .content .content__inner .multisteps-form .progress-btns-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 7%;
+  margin: auto;
+  width: 100%;
+  z-index: 2;
 }
-
-.content__title--m-sm {
-  margin-bottom: 10px;
-}
-
-.multisteps-form__progress {
+.step-form-container .content .content__inner .multisteps-form .progress-btns-container .multisteps-form__progress {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 }
-
-.multisteps-form__progress-btn {
+.step-form-container .content .content__inner .multisteps-form .progress-btns-container .multisteps-form__progress .multisteps-form__progress-btn {
   transition-property: all;
   transition-duration: 0.15s;
   transition-timing-function: linear;
@@ -671,85 +668,27 @@
   cursor: pointer;
 }
 @media (min-width: 500px) {
-  .multisteps-form__progress-btn {
+  .step-form-container .content .content__inner .multisteps-form .progress-btns-container .multisteps-form__progress .multisteps-form__progress-btn {
     text-indent: 0;
   }
 }
-.multisteps-form__progress-btn:first-child:after {
+.step-form-container .content .content__inner .multisteps-form .progress-btns-container .multisteps-form__progress .multisteps-form__progress-btn:first-child:after {
   display: none;
 }
-.multisteps-form__progress-btn.js-active {
+.step-form-container .content .content__inner .multisteps-form .progress-btns-container .multisteps-form__progress .multisteps-form__progress-btn.js-active {
   background-color: #f26722;
   color: #fff;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-.multisteps-form__progress-btn.js-active:before {
+.step-form-container .content .content__inner .multisteps-form .progress-btns-container .multisteps-form__progress .multisteps-form__progress-btn.js-active:before {
   transform: translateX(-50%) scale(1.2);
   background-color: currentColor;
 }
-
-.multisteps-form__content {
-  padding-top: 150px;
-}
-.multisteps-form__content .content-container {
-  min-height: 220px;
-}
-.multisteps-form__content .content-container .ad-info .left-side {
-  padding-right: 40px;
-}
-.multisteps-form__content .content-container .ad-info .right-side {
-  padding-left: 40px;
-}
-.multisteps-form__content .content-container .ad-info .btn-container.top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.multisteps-form__content .content-container .ad-info .btn-container .btn .fa {
-  margin-right: 5px;
-}
-.multisteps-form__content .content-container .ad-info .name-date-container span,
-.multisteps-form__content .content-container .ad-info .total-price-container span,
-.multisteps-form__content .content-container .ad-info .brief-desc-container span {
-  font-size: 12px;
-  color: #333;
-}
-.multisteps-form__content .content-container .ad-info .name-date-container .heading {
-  font-size: 18px;
-}
-.multisteps-form__content .content-container .ad-info .name-date-container .heading.name {
-  font-size: 22px;
-}
-.multisteps-form__content .content-container .ad-info .brief-desc-container,
-.multisteps-form__content .content-container .ad-info .advertiser-info-container {
-  margin-bottom: 60px;
-}
-.multisteps-form__content .content-container .ad-info .rates-container {
-  margin-bottom: 60px;
-}
-.multisteps-form__content .content-container .ad-info .rates-container table {
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-.multisteps-form__content .content-container .ad-info .rates-container table th {
-  background-color: #c3c4c7;
-  padding: 10px;
-}
-.multisteps-form__content .content-container .ad-info .rates-container table th:first-of-type {
-  border-top-left-radius: 10px;
-}
-.multisteps-form__content .content-container .ad-info .rates-container table th:last-of-type {
-  border-top-right-radius: 10px;
-}
-.multisteps-form__content .content-container .ad-info .rates-container table tr td {
-  padding: 10px;
-}
-
-.multisteps-form__form {
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form {
   position: relative;
 }
-
-.multisteps-form__panel {
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel {
+  margin: 0 auto;
   position: absolute;
   top: 0;
   left: 0;
@@ -758,60 +697,77 @@
   opacity: 0;
   visibility: hidden;
 }
-.multisteps-form__panel hr {
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel .heading-arrows-container {
+  margin-bottom: 100px;
+}
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel .heading-arrows-container .multistep-form__arrow {
+  background: none;
+  border: none;
+}
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel hr {
   border: 1px solid #000;
   margin-top: 0px;
 }
-.multisteps-form__panel.js-active {
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel.js-active {
   height: auto;
   opacity: 1;
   visibility: visible;
 }
-.multisteps-form__panel[data-animation=scaleOut] {
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel[data-animation=scaleOut] {
   transform: scale(1.1);
 }
-.multisteps-form__panel[data-animation=scaleOut].js-active {
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel[data-animation=scaleOut].js-active {
   transition-property: all;
   transition-duration: 0.2s;
   transition-timing-function: linear;
   transition-delay: 0s;
   transform: scale(1);
 }
-.multisteps-form__panel[data-animation=slideHorz] {
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel[data-animation=slideHorz] {
   left: 50px;
 }
-.multisteps-form__panel[data-animation=slideHorz].js-active {
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel[data-animation=slideHorz].js-active {
   transition-property: all;
   transition-duration: 0.25s;
   transition-timing-function: cubic-bezier(0.2, 1.13, 0.38, 1.43);
   transition-delay: 0s;
   left: 0;
 }
-.multisteps-form__panel[data-animation=slideVert] {
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel[data-animation=slideVert] {
   top: 30px;
 }
-.multisteps-form__panel[data-animation=slideVert].js-active {
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel[data-animation=slideVert].js-active {
   transition-property: all;
   transition-duration: 0.2s;
   transition-timing-function: linear;
   transition-delay: 0s;
   top: 0;
 }
-.multisteps-form__panel[data-animation=fadeIn].js-active {
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel[data-animation=fadeIn].js-active {
   transition-property: all;
   transition-duration: 0.3s;
   transition-timing-function: linear;
   transition-delay: 0s;
 }
-.multisteps-form__panel[data-animation=scaleIn] {
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel[data-animation=scaleIn] {
   transform: scale(0.9);
 }
-.multisteps-form__panel[data-animation=scaleIn].js-active {
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel[data-animation=scaleIn].js-active {
   transition-property: all;
   transition-duration: 0.2s;
   transition-timing-function: linear;
   transition-delay: 0s;
   transform: scale(1);
+}
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel .multisteps-form__content {
+  padding-top: 150px;
+}
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel .multisteps-form__content .campaign-name .heading.name {
+  font-size: 20px;
+}
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel .multisteps-form__content .start-date .heading,
+.step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel .multisteps-form__content .end-date .heading {
+  font-size: 18px;
 }
 
 .table-container {

@@ -4,7 +4,9 @@
   border-radius: 8px;
   box-shadow: $shadow;
   position: relative;
+  //max-width: 900px;
   min-height: 800px;
+  margin: 30px auto;
   overflow-y: scroll;
   &:after {
     position: absolute;
@@ -21,232 +23,179 @@
     border-bottom-right-radius: 8px;
     transform: rotate(180deg);
   }
-}
 
-//content styles
-.content {
-  position: relative;
-  z-index: 999;
-}
+  //content styles
+  .content {
+    position: relative;
+    z-index: 999;
 
-.content__title {
-  margin-bottom: 40px;
+    .content__inner {
+      .multisteps-form {
+        .progress-btns-container {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 7%;
+          margin: auto;
+          width: 100%;
+          z-index: 2;
+          //multisteps progress styles
+          .multisteps-form__progress {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 
-  font: {
-    size: 20px;
-  }
-  text-align: center;
-}
+            .multisteps-form__progress-btn {
+              @include transition-mix($duration: 0.15s);
+              position: relative;
+              font-size: 13px;
+              color: $black;
+              text-indent: -9999px;
+              border: none;
+              background-color: transparent;
+              outline: none !important;
+              margin: 0 2px;
+              border: none;
+              border-radius: 10px;
 
-.content__title--m-sm {
-  margin-bottom: 10px;
-}
+              cursor: pointer;
 
-//multisteps variables
-$color-secondary: #6c757d;
-$color-primary: #007bff;
+              @media (min-width: 500px) {
+                text-indent: 0;
+              }
 
-$btn-offset-vert: 20px;
-$btn-circle-decor-dimensions: 13px;
+              //last child - without line decoration
+              &:first-child {
+                &:after {
+                  display: none;
+                }
+              }
 
-//multisteps progress styles
-.multisteps-form__progress {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-}
+              //active styles
+              &.js-active {
+                background-color: $primary;
+                color: $white;
+                box-shadow: $shadow;
+                &:before {
+                  transform: translateX(-50%) scale(1.2);
 
-.multisteps-form__progress-btn {
-  @include transition-mix($duration: 0.15s);
-  position: relative;
-  font-size: 13px;
-  color: $black;
-  text-indent: -9999px;
-  border: none;
-  background-color: transparent;
-  outline: none !important;
-  margin: 0 2px;
-  border: none;
-  border-radius: 10px;
-
-  cursor: pointer;
-
-  @media (min-width: 500px) {
-    text-indent: 0;
-  }
-
-  //last child - without line decoration
-  &:first-child {
-    &:after {
-      display: none;
-    }
-  }
-
-  //active styles
-  &.js-active {
-    background-color: $primary;
-    color: $white;
-    box-shadow: $shadow;
-    &:before {
-      transform: translateX(-50%) scale(1.2);
-
-      background-color: currentColor;
-    }
-  }
-}
-
-.multisteps-form__content {
-  padding-top: 150px;
-
-  .content-container {
-    min-height: 220px;
-    .ad-info {
-      .left-side {
-        padding-right: 40px;
-      }
-
-      .right-side {
-        padding-left: 40px;
-      }
-      .btn-container {
-        &.top {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-
-        .btn {
-          .fa {
-            margin-right: 5px;
-          }
-        }
-      }
-
-      .name-date-container,
-      .total-price-container,
-      .brief-desc-container {
-        span {
-          font-size: 12px;
-          color: #333;
-        }
-      }
-
-      .name-date-container {
-        .heading {
-          font-size: 18px;
-
-          &.name {
-            font-size: 22px;
-          }
-        }
-      }
-
-      .brief-desc-container,
-      .advertiser-info-container {
-        margin-bottom: 60px;
-      }
-
-      .rates-container {
-        margin-bottom: 60px;
-        table {
-          border-spacing: 0;
-          border-collapse: collapse;
-          th {
-            background-color: $gray;
-            padding: 10px;
-            &:first-of-type {
-              border-top-left-radius: 10px;
-            }
-            &:last-of-type {
-              border-top-right-radius: 10px;
-            }
-          }
-
-          tr {
-            td {
-              padding: 10px;
+                  background-color: currentColor;
+                }
+              }
             }
           }
         }
+
+        //multisteps form styles
+        .multisteps-form__form {
+          position: relative;
+
+          //multisteps panels styles
+          .multisteps-form__panel {
+            margin: 0 auto;
+
+            .heading-arrows-container {
+              margin-bottom: 100px;
+              .multistep-form__arrow {
+                background: none;
+                border: none;
+              }
+            }
+
+            hr {
+              border: 1px solid $black;
+              margin-top: 0px;
+            }
+            @include position-absolute($top: 0, $left: 0);
+
+            width: 100%;
+            height: 0;
+
+            opacity: 0;
+            visibility: hidden;
+
+            //active panels
+            &.js-active {
+              height: auto;
+
+              opacity: 1;
+              visibility: visible;
+            }
+
+            //scaleOut animation
+            &[data-animation='scaleOut'] {
+              transform: scale(1.1);
+
+              &.js-active {
+                @include transition-mix;
+
+                transform: scale(1);
+              }
+            }
+
+            //slideHorz animation
+            &[data-animation='slideHorz'] {
+              left: 50px;
+
+              &.js-active {
+                @include transition-mix($duration: 0.25s, $timing: cubic-bezier(0.2, 1.13, 0.38, 1.43));
+
+                left: 0;
+              }
+            }
+
+            //slideVert animation
+            &[data-animation='slideVert'] {
+              top: 30px;
+
+              &.js-active {
+                @include transition-mix();
+
+                top: 0;
+              }
+            }
+
+            //fadeIn animation
+            &[data-animation='fadeIn'] {
+              &.js-active {
+                @include transition-mix($duration: 0.3s);
+              }
+            }
+
+            //scaleOut
+            &[data-animation='scaleIn'] {
+              transform: scale(0.9);
+
+              &.js-active {
+                @include transition-mix;
+
+                transform: scale(1);
+              }
+            }
+
+            .multisteps-form__content {
+              padding-top: 150px;
+
+              .campaign-name {
+                .heading {
+                  &.name {
+                    font-size: 20px;
+                  }
+                }
+              }
+
+              .start-date,
+              .end-date {
+                .heading {
+                  font-size: 18px;
+                }
+              }
+              // .content-container {
+              //   min-height: 220px;
+              // }
+            }
+          }
+        }
       }
-    }
-  }
-}
-
-//multisteps form styles
-.multisteps-form__form {
-  position: relative;
-}
-
-//multisteps panels styles
-.multisteps-form__panel {
-  hr {
-    border: 1px solid $black;
-    margin-top: 0px;
-  }
-  @include position-absolute($top: 0, $left: 0);
-
-  width: 100%;
-  height: 0;
-
-  opacity: 0;
-  visibility: hidden;
-
-  //active panels
-  &.js-active {
-    height: auto;
-
-    opacity: 1;
-    visibility: visible;
-  }
-
-  //scaleOut animation
-  &[data-animation='scaleOut'] {
-    transform: scale(1.1);
-
-    &.js-active {
-      @include transition-mix;
-
-      transform: scale(1);
-    }
-  }
-
-  //slideHorz animation
-  &[data-animation='slideHorz'] {
-    left: 50px;
-
-    &.js-active {
-      @include transition-mix($duration: 0.25s, $timing: cubic-bezier(0.2, 1.13, 0.38, 1.43));
-
-      left: 0;
-    }
-  }
-
-  //slideVert animation
-  &[data-animation='slideVert'] {
-    top: 30px;
-
-    &.js-active {
-      @include transition-mix();
-
-      top: 0;
-    }
-  }
-
-  //fadeIn animation
-  &[data-animation='fadeIn'] {
-    &.js-active {
-      @include transition-mix($duration: 0.3s);
-    }
-  }
-
-  //scaleOut
-  &[data-animation='scaleIn'] {
-    transform: scale(0.9);
-
-    &.js-active {
-      @include transition-mix;
-
-      transform: scale(1);
     }
   }
 }

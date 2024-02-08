@@ -1,20 +1,28 @@
 <div class="multisteps-form__panel p-4 rounded js-active" data-animation="scaleIn">
-  <h3 class="multisteps-form__title text-center">Campaign Overview</h3>
- 
+  <div class="heading-arrows-container d-flex justify-content-between">
+    <button class="multistep-form__arrow"><i class="fa fa-solid fa-chevron-left"></i></button>
+    <h3 class="multisteps-form__title text-center">Campaign Overview</h3>
+    <button class="multistep-form__arrow"><i class="fa fa-solid fa-chevron-right"></i></button>
+  </div>
+
   <div class="multisteps-form__content">
     <div class="content-container container">
       <div class="row ad-info">
         <!-- Left column -->
-        <div class="col-md-6 left-side">
-          <div class="btn-container top mb-5">
-            <div>
-              <button id="modalBtn"
-              onclick="document.getElementById('myModal').style.display='block'" class="btn btn-secondary-light"><i class="fa fa-solid fa-pencil"></i> Edit Campaign Details</button>
-              
-            </div>
-            <div>
-              <button class="btn btn-danger"><i class="fa fa-solid fa-ban"></i> Cancel</button>
-              <button class="btn btn-secondary"></i><i class="fa fa-solid fa-rotate-right"></i> Duplicate</button>
+        <div class="col-md-7 left-side">
+          <div class="btn-container container top mb-5">
+            <div class="row">
+              <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="modal-btn-container">
+                  <button id="modalBtn" onclick="document.getElementById('myModal').style.display='block'" class="btn btn-secondary-light"><i class="fa fa-solid fa-pencil"></i> Edit Campaign Details</button>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="cancel-dup-container">
+                  <button class="btn btn-danger"><i class="fa fa-solid fa-ban"></i> Cancel</button>
+                  <button class="btn btn-secondary"><i class="fa fa-solid fa-rotate-right"></i> Duplicate</button>
+                </div>
+              </div>
             </div>
           </div>
           <!-- End Btn Container -->
@@ -30,13 +38,13 @@
               </div>
               <div class="col-md-6">
                 <div class="row">
-                  <div class="col-6 d-flex justify-content-end">
+                  <div class="col-lg-6">
                     <div class="start-date">
                       <span>Start Date:</span>
                       <h3 class="heading">5/22/2023</h3>
                     </div>
                   </div>
-                  <div class="col-6 d-flex justify-content-end">
+                  <div class="col-lg-6">
                     <div class="end-date">
                       <span>End Date:</span>
                       <h4 class="heading">5/27/2023</h4>
@@ -95,12 +103,12 @@
           <!-- End Sales Contact -->
         </div>
         <!-- End left column -->
-        
-        <div class="col-md-6 right-side">
+
+        <div class="col-md-5 right-side mt-3 mt-md-0">
           <div class="rates-container">
             <div class="heading-container">
               <h3 class="heading">Rates</h3>
-              <hr>
+              <hr />
             </div>
             <table class="table">
               <thead>
@@ -124,7 +132,7 @@
           <div class="colors-container">
             <div class="heading-container">
               <h3 class="heading">Color</h3>
-              <hr>
+              <hr />
             </div>
             <div class="no-colors py-5 text-center">
               <p>No Colors Selected</p>
@@ -136,42 +144,40 @@
       </div>
 
       <!-- Booked Ads Section -->
-        <div class="ads-booked-container">
-          <div class="heading-container">
-            <div class="d-flex justify-content-between mb-3 align-items-center">
-              <h3 class="heading">Ads Booked</h3>
-              <button class="btn btn-secondary-light">Start A New Ad</button>
-            </div>
-            <hr>
+      <div class="ads-booked-container">
+        <div class="heading-container">
+          <div class="d-lg-flex justify-content-between mb-3 align-items-center">
+            <h3 class="heading">Ads Booked</h3>
+            <button class="btn btn-secondary-light">Start A New Ad</button>
           </div>
-
-          <!-- Print Accordion -->
-          <div class="custom-accordion mb-3">
-            <input type="checkbox" class="main-checkbox" checked />
-            <i class="custom-chev"></i>
-            <h2 class="heading">Print</h2>
-            <div class="content">
-              <div class="content-container p-3">
-                
-              </div>
-            </div>
-          </div>
-          <!-- End Print Accordion -->
-
-          <!-- ROP Accordion -->
-          <div class="custom-accordion mb-3">
-            <input type="checkbox" class="main-checkbox" checked />
-            <i class="custom-chev"></i>
-            <h2 class="heading">ROP</h2>
-            <div class="content">
-              <div class="content-container p-3">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </div>
-          </div>
-          <!-- End ROP Accordion -->
+          <hr />
         </div>
+
+        <!-- Print Accordion -->
+        <div class="custom-accordion mb-3">
+          <input type="checkbox" class="main-checkbox" checked />
+          <i class="custom-chev"></i>
+          <h2 class="heading">Print</h2>
+          <div class="content">
+            <div class="content-container p-3"></div>
+          </div>
+        </div>
+        <!-- End Print Accordion -->
+
+        <!-- ROP Accordion -->
+        <div class="custom-accordion mb-3">
+          <input type="checkbox" class="main-checkbox" checked />
+          <i class="custom-chev"></i>
+          <h2 class="heading">ROP</h2>
+          <div class="content">
+            <div class="content-container p-3">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+        </div>
+        <!-- End ROP Accordion -->
+      </div>
       <!-- End Booked Ads Section -->
     </div>
   </div>
