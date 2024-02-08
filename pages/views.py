@@ -6,3 +6,15 @@ def index(request):
 
 def adDashboard(request):
   return render(request, 'pages/campaign-dashboard.html')
+
+def adRateIndex(request):
+  return render(request, 'pages/ad-rates/ad-rates-home.html')
+
+def newAdRate(request):
+  return render(request, 'pages/ad-rates/new-ad-rate.html')
+
+def completedRate(request):
+  return render(request, 'pages/ad-rates/completed-rate.html')
+
+def editRate(request):
+  return render(request, 'pages/ad-rates/edit-rate.html')
