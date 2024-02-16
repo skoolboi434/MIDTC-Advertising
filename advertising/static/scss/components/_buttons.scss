@@ -26,9 +26,13 @@
 }
 
 .btn-secondary-light {
-  background: rgba($secondary, 0.5);
-  color: $white;
+  background: rgba($secondary, 0.5) !important;
+  color: $white !important;
   box-shadow: $shadow;
+
+  &:hover {
+    color: $white !important;
+  }
 }
 
 .btn-danger {

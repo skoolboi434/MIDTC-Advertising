@@ -18,3 +18,6 @@ def completedRate(request):
 
 def editRate(request):
   return render(request, 'pages/ad-rates/edit-rate.html')
+
+def pubDashboard(request):
+  return render(request, 'pages/publications/publication-dashboard.html')

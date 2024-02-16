@@ -9,4 +9,5 @@ urlpatterns = [
   path('new-ad-rate', views.newAdRate, name='newAdRate'),
   path('completed-rate', views.completedRate, name='completedRate'),
   path('edit-rate', views.editRate, name='editRate'),
+  path('publication-dashboard', views.pubDashboard, name='pubDashboard'),
 ]
