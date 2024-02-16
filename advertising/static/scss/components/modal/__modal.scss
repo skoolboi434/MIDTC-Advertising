@@ -58,6 +58,7 @@
     }
 
     &.edit-ad,
+    &.edit-ad,
     &.edit-campaign-info {
       width: 50%;
       min-height: 900px;
@@ -90,8 +91,10 @@
       }
     }
 
-    &.edit-campaign-info {
-      min-height: 600px;
+    &.edit-campaign-info,
+    &.edit-ad-type {
+      width: 50%;
+      min-height: 650px;
     }
 
     &:after {

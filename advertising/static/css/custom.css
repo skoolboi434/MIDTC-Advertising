@@ -1,3 +1,11 @@
+.color-primary {
+  color: #f26722;
+}
+
+.color-secondary {
+  color: #21215f;
+}
+
 .campaigns-list-container {
   max-width: 1150px;
   margin: 0 auto;
@@ -879,30 +887,31 @@
   text-decoration: none;
   cursor: pointer;
 }
-.my-modal .modal-content.edit-ad, .my-modal .modal-content.edit-campaign-info {
+.my-modal .modal-content.edit-ad, .my-modal .modal-content.edit-ad, .my-modal .modal-content.edit-campaign-info {
   width: 50%;
   min-height: 900px;
 }
-.my-modal .modal-content.edit-ad .heading-container, .my-modal .modal-content.edit-campaign-info .heading-container {
+.my-modal .modal-content.edit-ad .heading-container, .my-modal .modal-content.edit-ad .heading-container, .my-modal .modal-content.edit-campaign-info .heading-container {
   text-align: center;
 }
-.my-modal .modal-content.edit-ad .heading-container hr, .my-modal .modal-content.edit-campaign-info .heading-container hr {
+.my-modal .modal-content.edit-ad .heading-container hr, .my-modal .modal-content.edit-ad .heading-container hr, .my-modal .modal-content.edit-campaign-info .heading-container hr {
   border: 1px solid #000;
 }
-.my-modal .modal-content.edit-ad .edit-fields label, .my-modal .modal-content.edit-campaign-info .edit-fields label {
+.my-modal .modal-content.edit-ad .edit-fields label, .my-modal .modal-content.edit-ad .edit-fields label, .my-modal .modal-content.edit-campaign-info .edit-fields label {
   font-size: 12px;
 }
-.my-modal .modal-content.edit-ad .adjustments-container span, .my-modal .modal-content.edit-campaign-info .adjustments-container span {
+.my-modal .modal-content.edit-ad .adjustments-container span, .my-modal .modal-content.edit-ad .adjustments-container span, .my-modal .modal-content.edit-campaign-info .adjustments-container span {
   font-size: 12px;
 }
-.my-modal .modal-content.edit-ad .adjustments-container span a, .my-modal .modal-content.edit-campaign-info .adjustments-container span a {
+.my-modal .modal-content.edit-ad .adjustments-container span a, .my-modal .modal-content.edit-ad .adjustments-container span a, .my-modal .modal-content.edit-campaign-info .adjustments-container span a {
   margin-left: 10px;
 }
-.my-modal .modal-content.edit-ad .btn-container .btn, .my-modal .modal-content.edit-campaign-info .btn-container .btn {
+.my-modal .modal-content.edit-ad .btn-container .btn, .my-modal .modal-content.edit-ad .btn-container .btn, .my-modal .modal-content.edit-campaign-info .btn-container .btn {
   width: 250px;
 }
-.my-modal .modal-content.edit-campaign-info {
-  min-height: 600px;
+.my-modal .modal-content.edit-campaign-info, .my-modal .modal-content.edit-ad-type {
+  width: 50%;
+  min-height: 650px;
 }
 .my-modal .modal-content:after {
   position: absolute;
