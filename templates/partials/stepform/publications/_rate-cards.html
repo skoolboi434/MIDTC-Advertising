@@ -1,3 +1,4 @@
+{% include 'partials/modal/_new-rate-card.html'%}
 <div class="multisteps-form__panel p-4 rounded" data-animation="scaleIn">
   <div class="heading-arrows-container d-flex justify-content-between">
     <button class="multistep-form__arrow"><i class="fa fa-solid fa-chevron-left"></i></button>
@@ -11,10 +12,8 @@
         <div class="col-md-6">
           <div class="row">
             <div class="col">
-              <!-- Add New Campaign Button -->
-
               <div class="add-rate-card">
-                <button class="btn btn-secondary">Add Rate Card</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('createRateCardModal').style.display='block'"><i class="fa fa-solid fa-plus"></i>&nbsp;New Rate Card</button>
               </div>
             </div>
           </div>

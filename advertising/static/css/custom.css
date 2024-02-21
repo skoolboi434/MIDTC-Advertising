@@ -873,6 +873,9 @@
   position: relative;
   /* The Close Button */
 }
+.my-modal .modal-content .heading-container hr {
+  border: 1px solid #f26722;
+}
 .my-modal .modal-content .close {
   color: #000;
   right: 10px;
@@ -887,26 +890,26 @@
   text-decoration: none;
   cursor: pointer;
 }
-.my-modal .modal-content.edit-ad, .my-modal .modal-content.edit-ad, .my-modal .modal-content.edit-campaign-info {
-  width: 50%;
-  min-height: 900px;
+.my-modal .modal-content.edit-ad, .my-modal .modal-content.edit-ad, .my-modal .modal-content.edit-campaign-info, .my-modal .modal-content.create-rate-card {
+  width: 70%;
+  min-height: 800px;
 }
-.my-modal .modal-content.edit-ad .heading-container, .my-modal .modal-content.edit-ad .heading-container, .my-modal .modal-content.edit-campaign-info .heading-container {
+.my-modal .modal-content.edit-ad .heading-container, .my-modal .modal-content.edit-ad .heading-container, .my-modal .modal-content.edit-campaign-info .heading-container, .my-modal .modal-content.create-rate-card .heading-container {
   text-align: center;
 }
-.my-modal .modal-content.edit-ad .heading-container hr, .my-modal .modal-content.edit-ad .heading-container hr, .my-modal .modal-content.edit-campaign-info .heading-container hr {
-  border: 1px solid #000;
-}
-.my-modal .modal-content.edit-ad .edit-fields label, .my-modal .modal-content.edit-ad .edit-fields label, .my-modal .modal-content.edit-campaign-info .edit-fields label {
+.my-modal .modal-content.edit-ad .edit-fields label, .my-modal .modal-content.edit-ad .edit-fields label, .my-modal .modal-content.edit-campaign-info .edit-fields label, .my-modal .modal-content.create-rate-card .edit-fields label {
   font-size: 12px;
 }
-.my-modal .modal-content.edit-ad .adjustments-container span, .my-modal .modal-content.edit-ad .adjustments-container span, .my-modal .modal-content.edit-campaign-info .adjustments-container span {
+.my-modal .modal-content.edit-ad .adjustments-container span, .my-modal .modal-content.edit-ad .adjustments-container span, .my-modal .modal-content.edit-campaign-info .adjustments-container span, .my-modal .modal-content.create-rate-card .adjustments-container span {
   font-size: 12px;
 }
-.my-modal .modal-content.edit-ad .adjustments-container span a, .my-modal .modal-content.edit-ad .adjustments-container span a, .my-modal .modal-content.edit-campaign-info .adjustments-container span a {
+.my-modal .modal-content.edit-ad .adjustments-container span a, .my-modal .modal-content.edit-ad .adjustments-container span a, .my-modal .modal-content.edit-campaign-info .adjustments-container span a, .my-modal .modal-content.create-rate-card .adjustments-container span a {
   margin-left: 10px;
 }
-.my-modal .modal-content.edit-ad .btn-container .btn, .my-modal .modal-content.edit-ad .btn-container .btn, .my-modal .modal-content.edit-campaign-info .btn-container .btn {
+.my-modal .modal-content.edit-ad .btn-container, .my-modal .modal-content.edit-ad .btn-container, .my-modal .modal-content.edit-campaign-info .btn-container, .my-modal .modal-content.create-rate-card .btn-container {
+  text-align: center;
+}
+.my-modal .modal-content.edit-ad .btn-container .btn, .my-modal .modal-content.edit-ad .btn-container .btn, .my-modal .modal-content.edit-campaign-info .btn-container .btn, .my-modal .modal-content.create-rate-card .btn-container .btn {
   width: 250px;
 }
 .my-modal .modal-content.edit-campaign-info, .my-modal .modal-content.edit-ad-type {

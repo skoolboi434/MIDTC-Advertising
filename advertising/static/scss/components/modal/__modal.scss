@@ -40,6 +40,12 @@
     width: 90%;
     position: relative;
 
+    .heading-container {
+      hr {
+        border: 1px solid $primary;
+      }
+    }
+
     /* The Close Button */
     .close {
       color: $black;
@@ -59,13 +65,14 @@
 
     &.edit-ad,
     &.edit-ad,
-    &.edit-campaign-info {
-      width: 50%;
-      min-height: 900px;
+    &.edit-campaign-info,
+    &.create-rate-card {
+      width: 70%;
+      min-height: 800px;
       .heading-container {
         text-align: center;
         hr {
-          border: 1px solid $black;
+          //border: 1px solid $black;
         }
       }
 
@@ -85,6 +92,7 @@
       }
 
       .btn-container {
+        text-align: center;
         .btn {
           width: 250px;
         }
