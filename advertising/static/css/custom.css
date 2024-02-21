@@ -869,7 +869,8 @@
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 90%;
+  width: 80%;
+  min-height: 800px;
   position: relative;
   /* The Close Button */
 }
@@ -890,31 +891,27 @@
   text-decoration: none;
   cursor: pointer;
 }
-.my-modal .modal-content.edit-ad, .my-modal .modal-content.edit-ad, .my-modal .modal-content.edit-campaign-info, .my-modal .modal-content.create-rate-card {
-  width: 70%;
+.my-modal .modal-content.edit-ad, .my-modal .modal-content.edit-campaign-info, .my-modal .modal-content.create-rate-card {
+  width: 80%;
   min-height: 800px;
 }
-.my-modal .modal-content.edit-ad .heading-container, .my-modal .modal-content.edit-ad .heading-container, .my-modal .modal-content.edit-campaign-info .heading-container, .my-modal .modal-content.create-rate-card .heading-container {
+.my-modal .modal-content.edit-ad .heading-container, .my-modal .modal-content.edit-campaign-info .heading-container, .my-modal .modal-content.create-rate-card .heading-container {
   text-align: center;
 }
-.my-modal .modal-content.edit-ad .edit-fields label, .my-modal .modal-content.edit-ad .edit-fields label, .my-modal .modal-content.edit-campaign-info .edit-fields label, .my-modal .modal-content.create-rate-card .edit-fields label {
+.my-modal .modal-content.edit-ad .edit-fields label, .my-modal .modal-content.edit-campaign-info .edit-fields label, .my-modal .modal-content.create-rate-card .edit-fields label {
   font-size: 12px;
 }
-.my-modal .modal-content.edit-ad .adjustments-container span, .my-modal .modal-content.edit-ad .adjustments-container span, .my-modal .modal-content.edit-campaign-info .adjustments-container span, .my-modal .modal-content.create-rate-card .adjustments-container span {
+.my-modal .modal-content.edit-ad .adjustments-container span, .my-modal .modal-content.edit-campaign-info .adjustments-container span, .my-modal .modal-content.create-rate-card .adjustments-container span {
   font-size: 12px;
 }
-.my-modal .modal-content.edit-ad .adjustments-container span a, .my-modal .modal-content.edit-ad .adjustments-container span a, .my-modal .modal-content.edit-campaign-info .adjustments-container span a, .my-modal .modal-content.create-rate-card .adjustments-container span a {
+.my-modal .modal-content.edit-ad .adjustments-container span a, .my-modal .modal-content.edit-campaign-info .adjustments-container span a, .my-modal .modal-content.create-rate-card .adjustments-container span a {
   margin-left: 10px;
 }
-.my-modal .modal-content.edit-ad .btn-container, .my-modal .modal-content.edit-ad .btn-container, .my-modal .modal-content.edit-campaign-info .btn-container, .my-modal .modal-content.create-rate-card .btn-container {
+.my-modal .modal-content.edit-ad .btn-container, .my-modal .modal-content.edit-campaign-info .btn-container, .my-modal .modal-content.create-rate-card .btn-container {
   text-align: center;
 }
-.my-modal .modal-content.edit-ad .btn-container .btn, .my-modal .modal-content.edit-ad .btn-container .btn, .my-modal .modal-content.edit-campaign-info .btn-container .btn, .my-modal .modal-content.create-rate-card .btn-container .btn {
+.my-modal .modal-content.edit-ad .btn-container .btn, .my-modal .modal-content.edit-campaign-info .btn-container .btn, .my-modal .modal-content.create-rate-card .btn-container .btn {
   width: 250px;
-}
-.my-modal .modal-content.edit-campaign-info, .my-modal .modal-content.edit-ad-type {
-  width: 50%;
-  min-height: 650px;
 }
 .my-modal .modal-content:after {
   position: absolute;
@@ -934,6 +931,43 @@
 .modal-button {
   border: none !important;
   background: none;
+}
+
+.adjustment-card {
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid #000;
+  background-color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  min-height: 165px;
+  padding: 10px 0 10px 10px;
+}
+.adjustment-card .left-side {
+  padding-right: 10px;
+}
+.adjustment-card .right-side {
+  position: absolute;
+  height: 100%;
+  background-color: #c8c8ec;
+  top: 0;
+  right: 0;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.adjustment-card .title-price-container {
+  padding-right: 10px;
+}
+.adjustment-card .title-price-container .title,
+.adjustment-card .title-price-container .price {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.2px;
+}
+.adjustment-card .desc,
+.adjustment-card .level,
+.adjustment-card .section {
+  font-size: 12px;
+  line-height: 14.4px;
 }
 
 body {

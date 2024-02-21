@@ -37,7 +37,8 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 90%;
+    width: 80%;
+    min-height: 800px;
     position: relative;
 
     .heading-container {
@@ -64,10 +65,9 @@
     }
 
     &.edit-ad,
-    &.edit-ad,
     &.edit-campaign-info,
     &.create-rate-card {
-      width: 70%;
+      width: 80%;
       min-height: 800px;
       .heading-container {
         text-align: center;
@@ -99,11 +99,11 @@
       }
     }
 
-    &.edit-campaign-info,
-    &.edit-ad-type {
-      width: 50%;
-      min-height: 650px;
-    }
+    // &.edit-campaign-info,
+    // &.edit-ad-type {
+    //   width: 50%;
+    //   min-height: 650px;
+    // }
 
     &:after {
       position: absolute;
