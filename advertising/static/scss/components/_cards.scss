@@ -8,17 +8,22 @@
   padding: 10px 0 10px 10px;
 
   .left-side {
-    padding-right: 10px;
+    width: 85%;
   }
 
   .right-side {
     position: absolute;
+    width: 15%;
     height: 100%;
     background-color: $secondary-light;
     top: 0;
     right: 0;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+
+    .btn {
+      color: $white;
+    }
   }
 
   .title-price-container {
