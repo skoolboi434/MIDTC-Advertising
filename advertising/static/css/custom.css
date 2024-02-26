@@ -6,6 +6,14 @@
   color: #21215f;
 }
 
+.bg-primary-alpha {
+  background-color: rgba(242, 103, 34, 0.2) !important;
+}
+
+.bg-secondary-alpha {
+  background-color: rgba(33, 33, 95, 0.1);
+}
+
 .campaigns-list-container {
   max-width: 1150px;
   margin: 0 auto;
@@ -957,6 +965,60 @@
 .adjustment-card .section {
   font-size: 12px;
   line-height: 14.4px;
+}
+
+.gl-codes-container {
+  max-width: 1240px;
+  max-height: 600px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border: 1px solid #666666;
+}
+.gl-codes-container .codes-heading {
+  background-color: rgba(33, 33, 95, 0.1);
+  padding: 10px;
+}
+.gl-codes-container .search-container {
+  display: none;
+}
+.gl-codes-container .left-side {
+  min-height: 600px;
+}
+.gl-codes-container .left-side .code-list {
+  height: 90%;
+  overflow-y: scroll;
+}
+.gl-codes-container .right-side {
+  position: relative;
+}
+.gl-codes-container .right-side .new-code-panel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 2;
+  display: none;
+}
+.gl-codes-container .right-side .new-code-panel .heading-container {
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+}
+.gl-codes-container .right-side .new-code-panel .heading-container hr {
+  border: 1px solid #f26722;
+}
+.gl-codes-container .right-side:after {
+  position: absolute;
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23F26722' fill-opacity='0.5' d='M0,32L80,37.3C160,43,320,53,480,69.3C640,85,800,107,960,101.3C1120,96,1280,64,1360,48L1440,32L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 120px;
+  bottom: 0;
+  left: 0;
+  background-position: center;
+  background-size: cover;
 }
 
 body {

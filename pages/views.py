@@ -21,3 +21,9 @@ def editRate(request):
 
 def pubDashboard(request):
   return render(request, 'pages/publications/publication-dashboard.html')
+
+def glDashboard(request):
+  return render(request, 'pages/gl-codes/gl-dashboard.html')
+
+def newGlCode(request):
+  return render(request, 'pages/gl-codes/create-gl-code.html')

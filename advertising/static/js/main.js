@@ -1,3 +1,30 @@
+function toggleSearchContainer() {
+  var searchContainer = document.getElementById('search-container');
+  if (searchContainer.style.display === 'none' || searchContainer.style.display === '') {
+    searchContainer.style.display = 'block';
+  } else {
+    searchContainer.style.display = 'none';
+  }
+}
+
+function toggleNewCodePanel() {
+  var newCodePanel = document.getElementById('new-code-panel');
+  if (newCodePanel.style.display === 'none' || newCodePanel.style.display === '') {
+    newCodePanel.style.display = 'block';
+  } else {
+    newCodePanel.style.display = 'none';
+  }
+}
+
+function closeCodePanel() {
+  var newCodePanel = document.getElementById('new-code-panel');
+  if (newCodePanel.style.display === 'block') {
+    newCodePanel.style.display = 'none';
+  } else {
+    newCodePanel.style.display = 'none';
+  }
+}
+
 // Slide Out Tab
 
 this.$slideOut = $('#slideOut');

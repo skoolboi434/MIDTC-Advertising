@@ -13,7 +13,9 @@ $dark-blue: #003865;
 $danger: #b32d2e;
 
 $primary-light: #f69a6c;
+$primary-light-alpha: rgba($primary, 0.2);
 $secondary-light: #c8c8ec;
+$secondary-light-alpha: rgba($secondary, 0.1);
 
 $shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
@@ -23,4 +25,12 @@ $shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7p
 
 .color-secondary {
   color: $secondary;
+}
+
+.bg-primary-alpha {
+  background-color: $primary-light-alpha !important;
+}
+
+.bg-secondary-alpha {
+  background-color: $secondary-light-alpha;
 }
