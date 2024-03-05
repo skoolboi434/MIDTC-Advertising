@@ -27,3 +27,9 @@ def glDashboard(request):
 
 def newGlCode(request):
   return render(request, 'pages/gl-codes/create-gl-code.html')
+
+def admin(request):
+  return render(request, 'pages/admin/admin.html')
+
+def adminGeneral(request):
+  return render(request, 'pages/admin/admin-general.html')

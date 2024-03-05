@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %} {% include 'partials/modal/gl-codes/_edit-gl-code.html'%}
+{% extends 'base.html' %} {% block content %}
 <div class="page-heading-container">
   <h1>GL Codes</h1>
   <hr />
@@ -32,28 +32,27 @@
           <th scope="col">Code</th>
           <th scope="col">Description</th>
           <th scope="col">Publication</th>
+          <th scope="col">Type</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
+        {% if glcodes %} {% for glcode in glcodes%}
         <tr>
-          <td>1</td>
-          <td>5067</td>
-          <td>Finance</td>
-          <td>Times Leader</td>
+          <td>{{ glcode.id}}</td>
+          <td>{{ glcode.code}}</td>
+          <td>{{ glcode.description}}</td>
+          <td>{{ glcode.publisher.name}}</td>
+          <td>{{ glcode.type}}</td>
           <td>
-            <span onclick="document.getElementById('editGlCodeModal').style.display='block'"><i class="fa fa-solid fa-pencil"></i></span>
+            <span onclick="openEditModal('{{ glcode.id }}')"><i class="fa fa-solid fa-pencil"></i></span>
           </td>
         </tr>
-        <tr>
-          <td>2</td>
-          <td>42</td>
-          <td>Nate Test</td>
-          <td>Times Leader</td>
-          <td>
-            <span class="border-none" onclick="document.getElementById('editGlCodeModal').style.display='block'"><i class="fa fa-solid fa-pencil"></i></span>
-          </td>
-        </tr>
+        {% endfor %} {% else %}
+        <div class="col-md-12">
+          <p>No Codes available</p>
+        </div>
+        {% endif %}
       </tbody>
     </table>
     <div class="end-of-list-heading-container text-center py-5">
