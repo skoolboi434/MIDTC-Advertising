@@ -13,6 +13,9 @@
   }
 
   .admin-blocks {
+    .admin-block-link {
+      text-decoration: none;
+    }
     .admin-block {
       position: relative;
       background-color: $white;
@@ -28,6 +31,7 @@
         z-index: 2;
         font-size: 22px;
         font-weight: 700;
+        color: $black;
         line-height: 26.4px;
       }
 

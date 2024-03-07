@@ -35,6 +35,12 @@
   }
 }
 
+.btn-gray {
+  background: $gray-3 !important;
+  color: $white !important;
+  box-shadow: $shadow;
+}
+
 .btn-danger {
   background-color: $danger !important;
   border: 1px solid $danger !important;
