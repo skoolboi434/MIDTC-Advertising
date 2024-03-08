@@ -35,7 +35,7 @@
           position: absolute;
           left: 0;
           right: 0;
-          top: 10%;
+          //top: 10%;
           margin: auto;
           width: 100%;
           z-index: 2;
@@ -95,6 +95,7 @@
 
             .heading-arrows-container {
               margin-bottom: 100px;
+              margin-top: 25px;
               .multistep-form__arrow {
                 background: none;
                 border: none;

@@ -1,3 +1,7 @@
+.btn {
+  min-width: 200px;
+}
+
 .btn-primary {
   background-color: $primary !important;
   border-color: $primary !important;
@@ -46,8 +50,6 @@
   border: 1px solid $danger !important;
   box-shadow: $shadow;
   color: $white !important;
-  display: inline-flex !important;
-  align-items: center !important;
   svg {
     margin-right: 10px;
   }

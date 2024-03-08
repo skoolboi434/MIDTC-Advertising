@@ -16,4 +16,5 @@ urlpatterns = [
 
   path('admin', views.admin, name='admin'),
   path('admin/general', views.adminGeneral, name='adminGeneral'),
+  path('admin/ads', views.adminAds, name='adminAds'),
 ]
