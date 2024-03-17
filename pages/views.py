@@ -36,3 +36,6 @@ def adminGeneral(request):
 
 def adminAds(request):
   return render(request, 'pages/admin/ads/ads.html')
+
+def adminFinancial(request):
+  return render(request, 'pages/admin/financial/admin-financial.html')

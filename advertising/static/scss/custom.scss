@@ -35,3 +35,16 @@ body {
     }
   }
 }
+
+.heading-container {
+  .heading {
+    color: $gray-3;
+    line-height: 48px;
+  }
+
+  p {
+    color: $gray-3;
+    font-size: 18px;
+    line-height: 21.6px;
+  }
+}

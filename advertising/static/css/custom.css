@@ -58,15 +58,6 @@
   border: 1px solid #f26722;
 }
 
-.admin-landing-container .heading-container .heading {
-  color: #666666;
-  line-height: 48px;
-}
-.admin-landing-container .heading-container p {
-  color: #666666;
-  font-size: 18px;
-  line-height: 21.6px;
-}
 .admin-landing-container .admin-blocks .admin-block-link {
   text-decoration: none;
 }
@@ -146,6 +137,15 @@
   border-radius: 4px;
   border: 1px solid #000;
   padding: 20px;
+}
+
+.download-templates-container .dl-btn-container {
+  background-color: rgba(33, 33, 95, 0.1);
+  border: 1px solid #21215f;
+  border-radius: 4px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  padding: 10px;
+  max-width: 450px;
 }
 
 #slideOut {
@@ -480,6 +480,13 @@
 }
 .btn-secondary-light:hover {
   color: #fff !important;
+}
+
+.btn-dl-template {
+  background: rgba(33, 33, 95, 0.2) !important;
+  border: 1px solid #21215f;
+  color: #21215f !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .btn-gray {
@@ -1254,4 +1261,14 @@ body {
 }
 .filter-container .filters a.active {
   font-weight: 700;
+}
+
+.heading-container .heading {
+  color: #666666;
+  line-height: 48px;
+}
+.heading-container p {
+  color: #666666;
+  font-size: 18px;
+  line-height: 21.6px;
 }/*# sourceMappingURL=custom.css.map */
