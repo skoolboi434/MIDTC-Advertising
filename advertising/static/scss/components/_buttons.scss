@@ -1,5 +1,5 @@
 .btn {
-  min-width: 200px;
+  min-width: 175px;
 }
 
 .btn-primary {
@@ -30,8 +30,7 @@
 }
 
 .btn-secondary-light {
-  background: rgba($secondary, 0.5) !important;
-
+  background: rgba($secondary, 0.2) !important;
   color: $white !important;
   box-shadow: $shadow;
 

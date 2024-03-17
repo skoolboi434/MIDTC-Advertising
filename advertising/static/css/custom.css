@@ -148,6 +148,20 @@
   max-width: 450px;
 }
 
+.tab-menu-container .tab .btn {
+  width: 150px !important;
+}
+.tab-menu-container .tab .btn:not(:last-of-type) {
+  margin-right: 10px;
+}
+.tab-menu-container .tab .btn.active {
+  background-color: #21215f !important;
+  border: 1px solid #21215f !important;
+}
+.tab-menu-container .tabcontent {
+  display: none;
+}
+
 #slideOut {
   background-color: #fff;
   position: fixed;
@@ -443,7 +457,7 @@
 }
 
 .btn {
-  min-width: 200px;
+  min-width: 175px;
 }
 
 .btn-primary {
@@ -474,7 +488,7 @@
 }
 
 .btn-secondary-light {
-  background: rgba(33, 33, 95, 0.5) !important;
+  background: rgba(33, 33, 95, 0.2) !important;
   color: #fff !important;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }

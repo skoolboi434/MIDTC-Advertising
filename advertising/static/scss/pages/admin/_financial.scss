@@ -8,3 +8,24 @@
     max-width: 450px;
   }
 }
+
+.tab-menu-container {
+  .tab {
+    .btn {
+      width: 150px !important;
+
+      &:not(:last-of-type) {
+        margin-right: 10px;
+      }
+
+      &.active {
+        background-color: $secondary !important;
+        border: 1px solid $secondary !important;
+      }
+    }
+  }
+
+  .tabcontent {
+    display: none;
+  }
+}
