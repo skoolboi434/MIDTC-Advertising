@@ -2,6 +2,22 @@
   min-width: 175px;
 }
 
+.btn-custom {
+  border-radius: 4px;
+  border: 1px solid transparent;
+  min-width: 150px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: $shadow;
+  color: $white;
+  font-size: 12px;
+  line-height: 14.4px;
+
+  i {
+    margin-right: 10px;
+  }
+}
+
 .btn-primary {
   background-color: $primary !important;
   border-color: $primary !important;

@@ -1,4 +1,4 @@
-{% include 'partials/modal/admin/financial/_template-download.html'%} {% include 'partials/modal/admin/financial/_upload-csv.html'%} {% include 'partials/modal/admin/financial/_edit-company-code.html'%} {% include 'partials/modal/admin/financial/_new-company-code.html'%} {% include 'partials/modal/admin/financial/_template-download.html'%} {% include 'partials/modal/admin/financial/_upload-csv.html'%} {% include 'partials/modal/admin/financial/_edit-company-code.html'%} {% include 'partials/modal/admin/financial/_edit-location-code.html'%} {% include 'partials/modal/admin/financial/_new-location-code.html'%} {% include 'partials/modal/admin/financial/_edit-department-code.html'%} {% include 'partials/modal/admin/financial/_new-department-code.html'%} {% include 'partials/modal/admin/financial/_edit-profit-code.html'%} {% include 'partials/modal/admin/financial/_new-profit-code.html'%} {% include 'partials/modal/admin/financial/_edit-gl-code.html'%} {% include 'partials/modal/admin/financial/_new-gl-code.html'%}
+{% include 'partials/modal/admin/financial/_template-download.html'%} {% include 'partials/modal/admin/financial/_upload-csv.html'%} {% include 'partials/modal/admin/financial/_edit-company-code.html'%} {% include 'partials/modal/admin/financial/_new-company-code.html'%} {% include 'partials/modal/admin/financial/_template-download.html'%} {% include 'partials/modal/admin/financial/_upload-csv.html'%} {% include 'partials/modal/admin/financial/_edit-company-code.html'%} {% include 'partials/modal/admin/financial/_edit-location-code.html'%} {% include 'partials/modal/admin/financial/_new-location-code.html'%} {% include 'partials/modal/admin/financial/_edit-department-code.html'%} {% include 'partials/modal/admin/financial/_new-department-code.html'%} {% include 'partials/modal/admin/financial/_edit-profit-code.html'%} {% include 'partials/modal/admin/financial/_new-profit-code.html'%} {% include 'partials/modal/admin/financial/_edit-gl-code.html'%} {% include 'partials/modal/admin/financial/_new-gl-code.html'%} {% include 'partials/modal/admin/financial/_edit-code-layout.html'%}
 <div class="multisteps-form__panel p-4 rounded js-active" data-animation="scaleIn">
   <div class="heading-arrows-container d-flex justify-content-between">
     <button class="multistep-form__arrow"><i class="fa fa-solid fa-chevron-left"></i></button>
@@ -18,7 +18,7 @@
       </div>
 
       <div class="tab-menu-container container">
-        <div class="tab mb-5 row">
+        <div class="tab row">
           <div class="col">
             <button class="btn btn-secondary-light tablinks" onclick="openSection(event, 'Company')">Company</button>
             <input type="text" name="" id="" class="form-control" value="xx" />
@@ -39,6 +39,10 @@
             <button class="btn btn-secondary-light tablinks" onclick="openSection(event, 'GL')">GL</button>
             <input type="text" name="" id="" class="form-control" value="xxxx-xxx" />
           </div>
+        </div>
+
+        <div class="btn-container d-flex justify-content-end mb-5">
+          <button class="btn btn-link" onclick="document.getElementById('editCodeLayout').style.display='block'">Edit Layout</button>
         </div>
 
         <div id="Company" class="tabcontent">
