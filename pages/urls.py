@@ -18,6 +18,7 @@ urlpatterns = [
   path('admin/general', views.adminGeneral, name='adminGeneral'),
   path('admin/ads', views.adminAds, name='adminAds'),
   path('admin/financial', views.adminFinancial, name='adminFinancial'),
+  path('admin/financial/fiscal', views.adminFinancialFiscal, name='adminFinancialFiscal'),
 
   
 ]

@@ -39,3 +39,6 @@ def adminAds(request):
 
 def adminFinancial(request):
   return render(request, 'pages/admin/financial/admin-financial.html')
+
+def adminFinancialFiscal(request):
+  return render(request, 'pages/admin/financial/fiscal-year.html')
