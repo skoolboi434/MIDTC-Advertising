@@ -182,6 +182,7 @@
   min-height: 800px;
   margin: 10px auto;
   border: 1px solid #000;
+  padding-top: 160px;
 }
 .content-container .fiscal-details-container {
   max-width: 480px;
@@ -817,7 +818,7 @@
 .step-form-container:after {
   position: absolute;
   content: "";
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23F26722' fill-opacity='0.5' d='M0,32L80,37.3C160,43,320,53,480,69.3C640,85,800,107,960,101.3C1120,96,1280,64,1360,48L1440,32L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-image: url("../images/step-form-border.png");
   background-repeat: no-repeat;
   width: 100%;
   height: 247px;
@@ -825,9 +826,8 @@
   left: 0;
   background-position: center;
   background-size: cover;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  transform: rotate(180deg);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .step-form-container .content {
   position: relative;
@@ -1085,6 +1085,21 @@
 .my-modal .modal-content.edit-ad .btn-container .btn, .my-modal .modal-content.edit-campaign-info .btn-container .btn, .my-modal .modal-content.create-rate-card .btn-container .btn {
   width: 250px;
 }
+.my-modal .modal-content:after {
+  position: absolute;
+  content: "";
+  background-image: url("../images/bottom-org-border.png");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 96px;
+  bottom: 0;
+  left: 0;
+  background-position: center;
+  background-size: cover;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
 .modal-button {
   border: none !important;
   background: none;

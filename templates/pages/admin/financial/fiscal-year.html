@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %} {% include 'partials/modal/admin/financial/_edit-fiscal-year.html'%} {% include 'partials/modal/admin/financial/_edit-accounting-year.html'%}
+{% extends 'base.html' %} {% block content %} {% include 'partials/modal/admin/financial/_edit-fiscal-year.html'%} {% include 'partials/modal/admin/financial/_edit-accounting-year.html'%}{% include 'partials/modal/admin/financial/_new-accounting-year.html'%}
 <div class="landing-container container mt-5">
   <div class="heading-container text-center">
     <h3 class="heading">Fiscal Year Name Goes Here</h3>
@@ -37,7 +37,7 @@
         <div class="col-md-6">
           <div class="filter-container d-flex">
             <h3 class="heading me-3">Account Periods</h3>
-            <button class="btn btn-secondary mb-1" onclick="document.getElementById('newBillingTerm').style.display='block'"><i class="fa fa-solid fa-plus"></i> New Accounting Period</button>
+            <button class="btn btn-secondary mb-1" onclick="document.getElementById('newAccountingYear').style.display='block'"><i class="fa fa-solid fa-plus"></i> New Accounting Period</button>
           </div>
         </div>
         <div class="col-md-6 d-flex justify-content-end">
