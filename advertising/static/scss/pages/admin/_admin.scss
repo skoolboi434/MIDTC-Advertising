@@ -1,5 +1,13 @@
 .admin-landing-container {
   .admin-blocks {
+    .top {
+      margin-bottom: 20px;
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-around;
+    }
     .admin-block-link {
       text-decoration: none;
     }

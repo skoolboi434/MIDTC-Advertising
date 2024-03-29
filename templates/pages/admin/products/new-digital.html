@@ -8,31 +8,37 @@
   <div class="breadcrumb"><a href="{% url 'admin' %}">Admin Home</a></div>
 
   <div class="content-container custom-border custom-container">
-    <div class="row">
+    <div class="row multistep-content">
       <div class="col-lg-6 col-md-12">
         <div class="form-group mb-5">
           <label for="product-mag">Digital Product Name:</label>
           <input type="text" name="" id="product-mag" class="form-control" />
         </div>
 
-        <div class="form-group mb-5">
-          <div class="row mb-5">
-            <div class="col-6">
-              <label for="format">Select Format:</label>
-              <select name="" id="format" class="form-select"></select>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="format">Select Format:</label>
+                <select name="" id="format" class="form-control"></select>
+              </div>
             </div>
-            <div class="col-6">
-              <label for="ad-type">Size:</label>
-              <select name="" id="ad-type" class="form-select"></select>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="ad-type">Ad Type:</label>
+                <select name="" id="ad-type" class="form-control"></select>
+              </div>
             </div>
           </div>
+        </div>
 
+        <div class="form-group mb-5">
           <div class="row mb-5">
-            <div class="col-6">
+            <div class="col-md-6">
               <label for="height">Height:</label>
               <input type="text" name="" id="height" class="form-control" />
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
               <label for="width">Width</label>
               <input type="text" name="" id="width" class="form-control" />
             </div>
@@ -53,7 +59,7 @@
 
   <!-- Size Setup -->
   <div class="content-container custom-border custom-container">
-    <div class="row mb-5">
+    <div class="row multistep-content mb-5">
       <div class="col-lg-4 col-md-12">
         <div class="standard-size-container">
           <div class="heading-container">
@@ -68,11 +74,11 @@
 
           <div class="form-group px-3 mb-3">
             <div class="row">
-              <div class="col-6">
+              <div class="col-md-6">
                 <label for="width">Width</label>
                 <input type="text" name="" id="width" class="form-control" />
               </div>
-              <div class="col-6">
+              <div class="col-md-6">
                 <label for="height">Height</label>
                 <input type="text" name="" id="height" class="form-control" />
               </div>
@@ -143,7 +149,7 @@
 
   <!-- Review -->
   <div class="content-container custom-border custom-container">
-    <div class="row mb-5">
+    <div class="row multistep-content mb-5">
       <div class="col-lg-4 col-md-12">
         <div class="product-info">
           <div class="heading-container text-center">
@@ -151,47 +157,49 @@
             <hr />
           </div>
 
-          <div class="product-type mb-5">
+          <div class="info-container">
             <span>Magazine Product:</span>
             <span class="d-block font-weight-bold">Mini Mag</span>
           </div>
 
-          <div class="orientation mb-5">
+          <div class="info-container">
             <span>Fold Orientation: <span class="color-primary">*</span></span>
           </div>
 
-          <div class="sizes mb-5">
+          <div class="info-container">
             <span>Size: <span class="color-primary">*</span></span>
           </div>
 
-          <div class="row mb-5">
-            <div class="col-6">
-              <div class="page-columns">
-                <span>Columns Per Page: (optional)</span>
-                <div class="value-container d-flex justify-content-between">
-                  <span class="value"></span>
-                  <span class="inch">In</span>
+          <div class="info-container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="page-columns">
+                  <span>Columns Per Page: (optional)</span>
+                  <div class="value-container d-flex justify-content-between">
+                    <span class="value"></span>
+                    <span class="inch">In</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-6">
-              <div class="page-height">
-                <span>Page Height: (optional)</span>
-                <div class="value-container d-flex justify-content-between">
-                  <span class="value"></span>
-                  <span class="inch">In</span>
+              <div class="col-md-6">
+                <div class="page-height">
+                  <span>Page Height: (optional)</span>
+                  <div class="value-container d-flex justify-content-between">
+                    <span class="value"></span>
+                    <span class="inch">In</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-6">
+            <div class="col-md-6">
               <div class="page-border">
                 <span>Page Border: (optional)</span>
               </div>
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
               <div class="gutter-size">
                 <span>Gutter Size: (optional)</span>
                 <div class="value-container d-flex justify-content-between">
@@ -245,14 +253,16 @@
 
   <!-- Product Complete -->
   <div class="content-container custom-border custom-container">
-    <div class="complete-product-container text-center">
-      <h3 class="heading">Product has been created!</h3>
-      <div class="big-check mx-auto my-5">
-        <i class="fa fa-solid fa-check"></i>
-      </div>
-      <div class="btn-container d-flex justify-content-around">
-        <button class="btn btn-gray">Create Another Product</button>
-        <button class="btn btn-secondary">Return to Products</button>
+    <div class="multistep-content">
+      <div class="complete-product-container text-center">
+        <h3 class="heading">Product has been created!</h3>
+        <div class="big-check mx-auto my-5">
+          <i class="fa fa-solid fa-check"></i>
+        </div>
+        <div class="btn-container d-flex justify-content-around">
+          <button class="btn btn-gray">Create Another Product</button>
+          <button class="btn btn-secondary">Return to Products</button>
+        </div>
       </div>
     </div>
   </div>
