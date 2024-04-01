@@ -20,9 +20,12 @@
     right: 0;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-
-    .btn {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    span {
       color: $white;
+      text-align: center;
     }
   }
 

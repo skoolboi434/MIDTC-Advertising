@@ -1,4 +1,10 @@
 .download-templates-container {
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  .btn-dl-template {
+    margin: 0 auto;
+  }
   .dl-btn-container {
     background-color: $secondary-light-alpha;
     border: 1px solid $secondary;

@@ -62,6 +62,10 @@
   border: 1px solid $secondary;
   color: $secondary !important;
   box-shadow: $shadow;
+
+  &:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
 }
 
 .btn-gray {
