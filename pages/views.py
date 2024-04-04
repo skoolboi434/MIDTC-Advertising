@@ -51,3 +51,6 @@ def adminNewNewspaper(request):
 
 def adminNewDigital(request):
   return render(request, 'pages/admin/products/new-digital.html')
+
+def adminPricing(request):
+  return render(request, 'pages/admin/pricing/admin-pricing.html')
