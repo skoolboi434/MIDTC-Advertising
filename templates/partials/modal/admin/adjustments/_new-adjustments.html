@@ -1,5 +1,5 @@
 <div id="newAdjustment" class="modal my-modal">
-  <div class="modal-content w-75 m-auto">
+  <div class="modal-content pb-100 m-auto">
     <span class="close" onclick="document.getElementById('newAdjustment').style.display='none'">&times;</span>
 
     <div class="heading-container text-center mb-5">
@@ -74,6 +74,24 @@
           <label for="adjustment-gl-code">Assign GL Code (optional):</label>
           <select class="form-control" name="" id="adjustment-gl-code"></select>
         </div>
+      </div>
+    </div>
+
+    <div class="item-select-container mgb-3">
+      <div class="available-pubs">
+        <b>Available Publications:</b><br />
+        <select multiple="multiple" id="lstBox1" class="form-control">
+          <option value="times-leader-print-edition">Times Leader - Print Edition</option>
+          <option value="times-leader-e-edition">Times Leader - E Edition</option>
+        </select>
+      </div>
+      <div class="transferBtns">
+        <input type="button" id="btnRight" value="  >  " />
+        <br /><input type="button" id="btnLeft" value="  <  " />
+      </div>
+      <div class="selected-pubs">
+        <b>Selected Publications: </b><br />
+        <select multiple="multiple" id="lstBox2" class="form-control"></select>
       </div>
     </div>
 
