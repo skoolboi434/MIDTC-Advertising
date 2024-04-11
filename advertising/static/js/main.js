@@ -365,3 +365,93 @@ var div1Observer = new MutationObserver(function (mutations) {
 
 // Start observing changes in div1
 div1Observer.observe(document.getElementById('div1'), { childList: true });
+
+// Multistep
+function next_step() {
+  // Get the current active section
+  var currentSection = document.querySelector('.multistep-content:not(.hide)');
+
+  // Find the next section
+  var nextSection = currentSection.nextElementSibling;
+
+  // If there is no next section, exit the function
+  if (!nextSection) return;
+
+  // Remove the 'hide' class from the next section
+  nextSection.classList.remove('hide');
+
+  // Get all progress icons
+  var progressIcons = document.querySelectorAll('.progress-icons > div');
+
+  // Find the index of the current active progress icon
+  var currentIndex;
+  progressIcons.forEach(function (icon, index) {
+    if (icon.classList.contains('progress-active')) {
+      currentIndex = index;
+    }
+  });
+
+  // If the current index is valid and there is a next progress icon, add 'progress-active' class to it
+  if (currentIndex !== undefined && progressIcons[currentIndex + 1]) {
+    progressIcons[currentIndex + 1].classList.add('progress-active');
+  }
+
+  // Hide the current section
+  currentSection.classList.add('hide');
+}
+
+function previous_step() {
+  // Get the current active section
+  var currentSection = document.querySelector('.multistep-content:not(.hide)');
+
+  // Find the previous section
+  var previousSection = currentSection.previousElementSibling;
+
+  // If there is no previous section, exit the function
+  if (!previousSection) return;
+
+  // Remove the 'hide' class from the previous section
+  previousSection.classList.remove('hide');
+
+  // Get all progress icons
+  var progressIcons = document.querySelectorAll('.progress-icons > div');
+
+  // Find the index of the current active progress icon
+  var currentIndex;
+  progressIcons.forEach(function (icon, index) {
+    if (icon.classList.contains('progress-active')) {
+      currentIndex = index;
+    }
+  });
+
+  // If the current index is valid and there is a previous progress icon, remove 'progress-active' class from it
+  if (currentIndex !== undefined && progressIcons[currentIndex - 1]) {
+    progressIcons[currentIndex].classList.remove('progress-active');
+  }
+
+  // Hide the current section
+  currentSection.classList.add('hide');
+}
+
+function create_product() {
+  // Get the current active section
+  var currentSection = document.querySelector('.multistep-content:not(.hide)');
+
+  // Find the last section
+  var lastSection = document.querySelector('.multistep-content:last-of-type');
+
+  // If the current section is the last section, exit the function
+  if (currentSection === lastSection) return;
+
+  // Remove the 'hide' class from the last section
+  lastSection.classList.remove('hide');
+
+  // Get all progress icons
+  var progressIcons = document.querySelectorAll('.progress-icons > div');
+
+  // Add the 'progress-active' class to the last progress icon
+  progressIcons[progressIcons.length - 1].classList.add('progress-active');
+
+  // Hide the current section
+  currentSection.classList.add('hide');
+}
