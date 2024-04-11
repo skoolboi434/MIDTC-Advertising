@@ -1710,16 +1710,16 @@
 .c-card:after {
   position: absolute;
   content: "";
-  background-image: url("../images/bottom-org-border.png");
+  background-image: url("../images/step-form-border.png");
   background-repeat: no-repeat;
   width: 100%;
-  height: 96px;
-  bottom: 0;
+  height: 247px;
+  top: 0;
   left: 0;
   background-position: center;
   background-size: cover;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .c-card .progress-icons {
   width: 100%;
@@ -1729,6 +1729,8 @@
   justify-content: center;
   padding: 20px 0;
   margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
 }
 .c-card .progress-icons .progress-dot {
   width: 30px;
@@ -1764,11 +1766,15 @@
   display: none;
 }
 .c-card .section {
+  position: relative;
+  z-index: 2;
   padding: 0 20px;
+}
+.c-card .section .section-content {
+  margin-top: 100px;
 }
 .c-card .section .heading-container {
   text-align: center;
-  margin: 30px 0;
 }
 .c-card .section .heading-container .heading {
   font-size: 22px;
