@@ -1730,28 +1730,28 @@
   padding: 20px 0;
   margin-bottom: 30px;
 }
-.c-card .progress-icons .progress {
+.c-card .progress-icons .progress-dot {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   background-color: #eee;
   margin-left: 66px;
 }
-.c-card .progress-icons .progress span {
+.c-card .progress-icons .progress-dot span {
   display: none;
 }
-.c-card .progress-icons .progress.progress-active {
+.c-card .progress-icons .progress-dot.progress-active {
   background-color: #f26722 !important;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.c-card .progress-icons .progress.progress-active span {
+.c-card .progress-icons .progress-dot.progress-active span {
   display: block;
   color: #fff;
 }
-.c-card .progress-icons .progress.progress-active:not(:first-of-type)::before {
+.c-card .progress-icons .progress-dot.progress-active:not(:first-of-type)::before {
   content: "";
   width: 68px;
   height: 7px;
@@ -1774,6 +1774,18 @@
   font-weight: 700;
   color: #21215f;
   line-height: 26.4px;
+}
+.c-card .section .standard-size-container {
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  border: 1px solid #000;
+  padding: 0 20px 20px 20px;
+}
+.c-card .section .created-sizes-container .heading-container .heading {
+  margin: 0;
+}
+.c-card .section .created-sizes-container .heading-container hr {
+  margin-top: 0;
 }
 .c-card .section .complete-product-container {
   text-align: center;

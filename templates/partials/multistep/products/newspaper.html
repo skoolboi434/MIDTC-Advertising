@@ -21,10 +21,10 @@
     </div>
     <div class="row mgb-3">
       <div class="col-lg-6 col-md-12">
-        <div class="form-group mb-5">
-          <div class="row">
+        <div class="form-group">
+          <div class="row mb-5">
             <div class="col-md-6">
-              <label for="product-mag">Magazine Product:</label>
+              <label for="product-mag">Newspaper Product:</label>
               <input type="text" name="" id="product-mag" class="form-control" />
             </div>
             <div class="col-md-6">
@@ -41,7 +41,7 @@
               <select name="" id="orientation" class="form-control"></select>
             </div>
             <div class="col-md-6">
-              <label for="orientation">Size:</label>
+              <label for="size">Size:</label>
               <div class="double">
                 <input type="text" name="" id="" class="form-control" />
                 <strong class="px-1 font-weight-bold">X</strong>
@@ -50,8 +50,9 @@
             </div>
           </div>
         </div>
+
         <div class="form-group">
-          <div class="row">
+          <div class="row mb-5">
             <div class="col-md-6">
               <label for="columns">Columns Per Page: (Optional)</label>
               <input type="text" name="" id="columns" class="form-control" />
@@ -62,6 +63,7 @@
             </div>
           </div>
         </div>
+
         <div class="form-group">
           <div class="row mb-5">
             <div class="col-md-6">
@@ -74,6 +76,7 @@
             </div>
           </div>
         </div>
+
         <div class="form-group">
           <div class="row">
             <div class="col-md-6">
@@ -89,7 +92,7 @@
       </div>
       <div class="col-lg-6 col-md-12">
         <div class="measurement-container">
-          <img class="img-fluid" src="{% static 'images/magazine-img.png' %}" alt="magazine-img" />
+          <img class="img-fluid" src="{% static 'images/newspaper-img.png' %}" alt="newspaper-img" />
         </div>
       </div>
     </div>
@@ -99,10 +102,10 @@
   </div>
 
   <div id="section2" class="section multistep-content mgb-3 hide">
-    <div class="heading-container text-center">
+    <div class="heading-container">
       <h3 class="heading">Size Setup</h3>
+      <hr />
     </div>
-
     <div class="row mgb-3">
       <div class="col-lg-4 col-md-12">
         <div class="standard-size-container">
@@ -118,11 +121,11 @@
 
           <div class="form-group px-3 mb-3">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-12 col-lg-6">
                 <label for="column-num">No. of Columns</label>
                 <input type="text" name="" id="column-num" class="form-control" />
               </div>
-              <div class="col-md-6">
+              <div class="col-md-12 col-lg-6">
                 <label for="height">Height</label>
                 <input type="text" name="" id="height" class="form-control" />
               </div>
@@ -191,11 +194,11 @@
     </div>
   </div>
 
-  <div id="section3" class="section multistep-content hide">
-    <div class="heading-container text-center">
+  <div id="section3" class="section multistep-content mgb-3 hide">
+    <div class="heading-container">
       <h3 class="heading">Review</h3>
+      <hr />
     </div>
-
     <div class="row mgb-3">
       <div class="col-lg-4 col-md-12">
         <div class="product-info">
@@ -295,9 +298,10 @@
 
     <div class="btn-container text-center">
       <button class="btn btn-gray" onclick="previous_step(event)">Previous</button>
-      <button class="btn btn-secondary" onclick="create_product(event)">Create Product</button>
+      <button class="btn btn-secondary" onclick="create_product()">Create Product</button>
     </div>
   </div>
+
   <div id="section4" class="section multistep-content hide">
     <div class="complete-product-container text-center">
       <h3 class="heading">Product has been created!</h3>
