@@ -21,15 +21,24 @@
     </div>
     <div class="row mgb-3">
       <div class="col-lg-6 col-md-12">
+        <div class="form-group mb-5">
+          <label for="product-mag">Digital Product Name:</label>
+          <input type="text" name="" id="product-mag" class="form-control" />
+        </div>
+
         <div class="form-group">
-          <div class="row mb-5">
+          <div class="row">
             <div class="col-md-6">
-              <label for="product-mag">Newspaper Product:</label>
-              <input type="text" name="" id="product-mag" class="form-control" />
+              <div class="form-group">
+                <label for="format">Select Format:</label>
+                <select name="" id="format" class="form-control"></select>
+              </div>
             </div>
             <div class="col-md-6">
-              <label for="measurement-type">Measurement Type:</label>
-              <select name="" id="measurement-type" class="form-control"></select>
+              <div class="form-group">
+                <label for="ad-type">Ad Type:</label>
+                <select name="" id="ad-type" class="form-control"></select>
+              </div>
             </div>
           </div>
         </div>
@@ -37,62 +46,19 @@
         <div class="form-group mb-5">
           <div class="row mb-5">
             <div class="col-md-6">
-              <label for="orientation">Fold Orientation:</label>
-              <select name="" id="orientation" class="form-control"></select>
+              <label for="height">Height:</label>
+              <input type="text" name="" id="height" class="form-control" />
             </div>
             <div class="col-md-6">
-              <label for="size">Size:</label>
-              <div class="double">
-                <input type="text" name="" id="" class="form-control" />
-                <strong class="px-1 font-weight-bold">X</strong>
-                <input type="text" name="" id="" class="form-control" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div class="row mb-5">
-            <div class="col-md-6">
-              <label for="columns">Columns Per Page: (Optional)</label>
-              <input type="text" name="" id="columns" class="form-control" />
-            </div>
-            <div class="col-md-6">
-              <label for="column-width">Column Width: (Optional)</label>
-              <input type="text" name="" id="column-width" class="form-control" />
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div class="row mb-5">
-            <div class="col-md-6">
-              <label for="page-width">Page Width: (Optional)</label>
-              <input type="text" name="" id="page-width" class="form-control" />
-            </div>
-            <div class="col-md-6">
-              <label for="page-height">Page Height: (Optional)</label>
-              <input type="text" name="" id="page-height" class="form-control" />
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div class="row">
-            <div class="col-md-6">
-              <label for="page-border">Page Border: (Optional)</label>
-              <input type="text" name="" id="page-border" class="form-control" />
-            </div>
-            <div class="col-md-6">
-              <label for="gutter-size">Gutter Size: (Optional)</label>
-              <input type="text" name="" id="gutter-size" class="form-control" />
+              <label for="width">Width</label>
+              <input type="text" name="" id="width" class="form-control" />
             </div>
           </div>
         </div>
       </div>
       <div class="col-lg-6 col-md-12">
-        <div class="measurement-container">
-          <img class="img-fluid" src="{% static 'images/newspaper-img.png' %}" alt="newspaper-img" />
+        <div class="measurement-container text-center">
+          <img class="img-fluid" src="{% static 'images/mobile-img.png' %}" alt="mobile-img" />
         </div>
       </div>
     </div>
@@ -102,9 +68,8 @@
   </div>
 
   <div id="section2" class="section multistep-content mgb-3 hide">
-    <div class="heading-container">
+    <div class="heading-container text-center">
       <h3 class="heading">Size Setup</h3>
-      <hr />
     </div>
     <div class="row mgb-3">
       <div class="col-lg-4 col-md-12">
@@ -121,11 +86,11 @@
 
           <div class="form-group px-3 mb-3">
             <div class="row">
-              <div class="col-md-12 col-lg-6">
-                <label for="column-num">No. of Columns</label>
-                <input type="text" name="" id="column-num" class="form-control" />
+              <div class="col-md-6">
+                <label for="width">Width</label>
+                <input type="text" name="" id="width" class="form-control" />
               </div>
-              <div class="col-md-12 col-lg-6">
+              <div class="col-md-6">
                 <label for="height">Height</label>
                 <input type="text" name="" id="height" class="form-control" />
               </div>
@@ -195,9 +160,8 @@
   </div>
 
   <div id="section3" class="section multistep-content mgb-3 hide">
-    <div class="heading-container">
+    <div class="heading-container text-center">
       <h3 class="heading">Review</h3>
-      <hr />
     </div>
     <div class="row mgb-3">
       <div class="col-lg-4 col-md-12">
@@ -309,7 +273,7 @@
         <i class="fa fa-solid fa-check"></i>
       </div>
       <div class="btn-container d-flex justify-content-around">
-        <a href="{% url 'adminNewMagazine' %}" class="btn btn-gray">Create Another Product</a>
+        <a href="{% url 'adminNewDigital' %}" class="btn btn-gray">Create Another Product</a>
         <button class="btn btn-secondary">Return to Products</button>
       </div>
     </div>
