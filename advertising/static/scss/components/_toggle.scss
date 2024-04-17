@@ -9,19 +9,37 @@
     pointer-events: none;
     font-family: 'Helvetica', Arial, sans-serif;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 8px;
     text-transform: uppercase;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
     width: 50%;
     text-align: center;
 
-    &.active {
+    &.toggle-option {
+      white-space: nowrap;
+    }
+
+    &.toggle-option-left {
       left: 0;
       padding-left: 2px;
       color: $white;
     }
 
-    &.deactivate {
+    &.toggle-option-right {
+      right: 0;
+      padding-right: 4px;
+      color: $black;
+    }
+
+    &.active,
+    &.repeat {
+      left: 0;
+      padding-left: 2px;
+      color: $white;
+    }
+
+    &.inactive,
+    &.non-repeating {
       right: 0;
       padding-right: 4px;
       color: $black;
@@ -116,6 +134,16 @@
   }
 }
 
+.repeating-calendar,
+.non-repeating-calendar {
+  display: none;
+}
+
+.repeating-calendar.active,
+.non-repeating-calendar.active {
+  display: block;
+}
+
 .custom-toggle {
   position: relative;
   display: inline-block;
@@ -133,13 +161,15 @@
     width: 50%;
     text-align: center;
 
-    &.active {
+    &.active,
+    &.repeat {
       left: 0;
       padding-left: 2px;
       color: $white;
     }
 
-    &.inactive {
+    &.inactive,
+    &.non-repeating {
       right: 0;
       padding-right: 4px;
       color: $black;

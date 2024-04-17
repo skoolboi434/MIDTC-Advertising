@@ -48,6 +48,7 @@
     z-index: 2;
 
     .progress-dot {
+      position: relative;
       width: 30px;
       height: 30px;
       border-radius: 50%;
@@ -58,14 +59,27 @@
         display: none;
       }
 
+      .step-label {
+        position: absolute;
+        top: 30px;
+        width: 100px;
+        text-align: center;
+        font-size: 12px;
+        color: $gray-3;
+      }
+
       &.progress-active {
         background-color: $primary !important;
-        position: relative;
+
         display: flex;
         align-items: center;
         justify-content: center;
         span {
           display: block;
+          color: $white;
+        }
+
+        .step-label {
           color: $white;
         }
 

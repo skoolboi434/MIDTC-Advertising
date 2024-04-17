@@ -23,4 +23,5 @@ urlpatterns = [
   path('admin/financial/new-newspaper', views.adminNewNewspaper, name='adminNewNewspaper'),
   path('admin/financial/new-digital', views.adminNewDigital, name='adminNewDigital'),
   path('admin/pricing/admin-pricing', views.adminPricing, name='adminPricing'),
+  path('admin/publications/new-publication', views.adminPublications, name='adminPublications'),
 ]

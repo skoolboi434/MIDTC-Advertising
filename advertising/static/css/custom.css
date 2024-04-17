@@ -1385,18 +1385,31 @@
   pointer-events: none;
   font-family: "Helvetica", Arial, sans-serif;
   font-weight: bold;
-  font-size: 10px;
+  font-size: 8px;
   text-transform: uppercase;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
   width: 50%;
   text-align: center;
 }
-.switch2 span.active {
+.switch2 span.toggle-option {
+  white-space: nowrap;
+}
+.switch2 span.toggle-option-left {
   left: 0;
   padding-left: 2px;
   color: #fff;
 }
-.switch2 span.deactivate {
+.switch2 span.toggle-option-right {
+  right: 0;
+  padding-right: 4px;
+  color: #000;
+}
+.switch2 span.active, .switch2 span.repeat {
+  left: 0;
+  padding-left: 2px;
+  color: #fff;
+}
+.switch2 span.inactive, .switch2 span.non-repeating {
   right: 0;
   padding-right: 4px;
   color: #000;
@@ -1467,6 +1480,16 @@
   }
 }
 
+.repeating-calendar,
+.non-repeating-calendar {
+  display: none;
+}
+
+.repeating-calendar.active,
+.non-repeating-calendar.active {
+  display: block;
+}
+
 .custom-toggle {
   position: relative;
   display: inline-block;
@@ -1484,12 +1507,12 @@
   width: 50%;
   text-align: center;
 }
-.custom-toggle span.active {
+.custom-toggle span.active, .custom-toggle span.repeat {
   left: 0;
   padding-left: 2px;
   color: #fff;
 }
-.custom-toggle span.inactive {
+.custom-toggle span.inactive, .custom-toggle span.non-repeating {
   right: 0;
   padding-right: 4px;
   color: #000;
@@ -1733,6 +1756,7 @@
   z-index: 2;
 }
 .c-card .progress-icons .progress-dot {
+  position: relative;
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -1742,15 +1766,25 @@
 .c-card .progress-icons .progress-dot span {
   display: none;
 }
+.c-card .progress-icons .progress-dot .step-label {
+  position: absolute;
+  top: 30px;
+  width: 100px;
+  text-align: center;
+  font-size: 12px;
+  color: #666666;
+}
 .c-card .progress-icons .progress-dot.progress-active {
   background-color: #f26722 !important;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .c-card .progress-icons .progress-dot.progress-active span {
   display: block;
+  color: #fff;
+}
+.c-card .progress-icons .progress-dot.progress-active .step-label {
   color: #fff;
 }
 .c-card .progress-icons .progress-dot.progress-active:not(:first-of-type)::before {
@@ -1821,6 +1855,132 @@
   border-radius: 4px;
   border: 1px solid #000;
   padding: 20px;
+}
+
+.calendar {
+  max-width: 50%;
+  margin: 0 auto;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 0px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(33, 33, 95, 0.1);
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 0px;
+  background-color: rgba(33, 33, 95, 0.1);
+  text-align: center;
+}
+
+.day {
+  padding: 5px;
+  font-weight: bold;
+}
+
+.dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 100px 100px 100px 100px 100px 100px;
+}
+
+.date {
+  padding: 5px;
+  cursor: pointer;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc; /* Add this line */
+  border-bottom: 1px solid #ccc; /* Add this line */
+  border-top: 1px solid #ccc;
+  display: flex; /* Add this line */
+  align-items: flex-start; /* Add this line */
+  justify-content: flex-start; /* Add this line */
+  position: relative; /* Add this line */
+}
+
+.date:hover {
+  background-color: #f2f2f2;
+}
+
+.current-month {
+  font-weight: bold;
+}
+
+.event {
+  background-color: #f2f2f2;
+  color: black;
+  padding: 20px 5px 60px 5px;
+  border-radius: 3px;
+  font-size: 22px;
+  cursor: pointer;
+  align-content: center;
+}
+
+.has-event::after {
+  content: "•"; /* Unicode for a bullet point */
+  color: #ff5733; /* Choose a color for the indicator */
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.area {
+  width: 100%;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 0.5rem;
+}
+
+.close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+
+.close-button:hover {
+  background-color: darkgray;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.hide-modal {
+  display: none;
 }
 
 body {

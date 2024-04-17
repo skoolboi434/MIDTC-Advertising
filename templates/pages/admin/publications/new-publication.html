@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %}{% load static %}
+
+<div class="container mt-5">
+  <div class="heading-container text-center">
+    <h3 class="heading">New Publication Setup</h3>
+  </div>
+
+  <div class="breadcrumb"><a href="{% url 'admin' %}">Admin Home</a></div>
+
+  <div class="multistep-container mgb-3">{% include 'partials/multistep/publications/publication-setup.html'%}</div>
+</div>
+
+{% endblock %}
