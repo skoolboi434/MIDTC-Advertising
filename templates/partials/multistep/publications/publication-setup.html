@@ -1,21 +1,41 @@
 {% load static %}
 <div class="c-card">
   <div class="progress-icons">
-    <div id="progress_0" class="progress-dot progress-active">
-      <span><i class="fa fa-solid fa-check"></i></span>
+    <div class="progress-dot-container">
+      <div id="progress_0" class="progress-dot progress-active">
+        <span><i class="fa fa-solid fa-check"></i></span>
+      </div>
       <p class="step-label">General Info</p>
     </div>
-    <div id="progress_1" class="progress-dot">
-      <span><i class="fa fa-solid fa-check"></i></span>
+    <div class="progress-dot-container">
+      <div id="progress_1" class="progress-dot">
+        <span><i class="fa fa-solid fa-check"></i></span>
+      </div>
       <p class="step-label">Scheduling</p>
     </div>
-    <div id="progress_2" class="progress-dot">
-      <span><i class="fa fa-solid fa-check"></i></span>
+    <div class="progress-dot-container">
+      <div id="progress_2" class="progress-dot">
+        <span><i class="fa fa-solid fa-check"></i></span>
+      </div>
       <p class="step-label">Rate Groups</p>
     </div>
-    <div id="progress_3" class="progress-dot">
-      <span><i class="fa fa-solid fa-check"></i></span>
+    <div class="progress-dot-container">
+      <div id="progress_3" class="progress-dot">
+        <span><i class="fa fa-solid fa-check"></i></span>
+      </div>
       <p class="step-label">Ad Type</p>
+    </div>
+    <div class="progress-dot-container">
+      <div id="progress_3" class="progress-dot">
+        <span><i class="fa fa-solid fa-check"></i></span>
+      </div>
+      <p class="step-label">Adjustments</p>
+    </div>
+    <div class="progress-dot-container">
+      <div id="progress_3" class="progress-dot">
+        <span><i class="fa fa-solid fa-check"></i></span>
+      </div>
+      <p class="step-label">Sections</p>
     </div>
   </div>
 
@@ -69,7 +89,7 @@
         </div>
       </div>
     </div>
-    <div class="btn-container text-center">
+    <div class="btn-container content-even">
       <button class="btn btn-secondary" onclick="next_step(event)">Next</button>
     </div>
   </div>
@@ -179,7 +199,169 @@
 
       <div class="non-repeating-calendar">Non Repeating</div>
     </div>
-    <div class="btn-container text-center">
+    <div class="btn-container content-even">
+      <button class="btn btn-gray" onclick="previous_step(event)">Previous</button>
+      <button class="btn btn-secondary" onclick="next_step(event)">Next</button>
+    </div>
+  </div>
+
+  <div id="section3" class="section multistep-content mgb-3 hide">
+    <div class="heading-container text-center">
+      <h3 class="heading">Rate Groups</h3>
+    </div>
+
+    <div class="section-content">
+      <div class="text-center mgb-3">
+        <p>
+          Select which rate groups you'd like to be<br />
+          assign to this publication
+        </p>
+      </div>
+
+      <div class="item-select-container mgb-3">
+        <div class="available-pubs">
+          <b>Available Rate Groups:</b><br />
+          <select multiple="multiple" id="lstBox1" class="form-control">
+            <option value="rate-group-1">Rate Group 1</option>
+            <option value="rate-group-2">Rate Group 2</option>
+          </select>
+        </div>
+        <div class="transferBtns">
+          <input type="button" id="btnRight" value="  >  " />
+          <br /><input type="button" id="btnLeft" value="  <  " />
+        </div>
+        <div class="selected-pubs">
+          <b>Selected Rate Groups: </b><br />
+          <select multiple="multiple" id="lstBox2" class="form-control"></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="link-container text-center mgb-3">
+      <a href="#">Advanced Ad Type Assignment</a>
+    </div>
+
+    <div class="btn-container content-even">
+      <button class="btn btn-gray" onclick="previous_step(event)">Previous</button>
+      <button class="btn btn-secondary" onclick="next_step(event)">Next</button>
+    </div>
+  </div>
+
+  <div id="section4" class="section multistep-content mgb-3 hide">
+    <div class="heading-container text-center">
+      <h3 class="heading">Ad Type</h3>
+    </div>
+
+    <div class="section-content">
+      <div class="text-center mgb-3">
+        <p>
+          Select from the available Ad Types you<br />
+          would like associated with this Publication
+        </p>
+      </div>
+
+      <div class="item-select-container mgb-3">
+        <div class="available-pubs">
+          <b>Available Ad Types:</b><br />
+          <select multiple="multiple" id="lstBox1" class="form-control">
+            <option value="ad-type-1">AdType 1</option>
+            <option value="ad-type-2">AdType 2</option>
+          </select>
+        </div>
+        <div class="transferBtns">
+          <input type="button" id="btnRight" value="  >  " />
+          <br /><input type="button" id="btnLeft" value="  <  " />
+        </div>
+        <div class="selected-pubs">
+          <b>Selected Rate Groups: </b><br />
+          <select multiple="multiple" id="lstBox2" class="form-control"></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="link-container text-center mgb-3">
+      <a href="#">Advanced Ad Type Assignment</a>
+    </div>
+
+    <div class="btn-container content-even">
+      <button class="btn btn-gray" onclick="previous_step(event)">Previous</button>
+      <button class="btn btn-secondary" onclick="next_step(event)">Next</button>
+    </div>
+  </div>
+
+  <div id="section4" class="section multistep-content mgb-3 hide">
+    <div class="heading-container text-center">
+      <h3 class="heading">Adjustments</h3>
+    </div>
+
+    <div class="section-content">
+      <div class="text-center mgb-3">
+        <p>Choose which Adjustments that are<br />assigned to this Publication</p>
+      </div>
+
+      <div class="item-select-container mgb-3">
+        <div class="available-pubs">
+          <b>Available Adjustments:</b><br />
+          <select multiple="multiple" id="lstBox1" class="form-control">
+            <option value="adjustment-1">Adjustment 1</option>
+            <option value="adjustment-2">Adjustment 2</option>
+          </select>
+        </div>
+        <div class="transferBtns">
+          <input type="button" id="btnRight" value="  >  " />
+          <br /><input type="button" id="btnLeft" value="  <  " />
+        </div>
+        <div class="selected-pubs">
+          <b>Selected Rate Groups: </b><br />
+          <select multiple="multiple" id="lstBox2" class="form-control"></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="link-container text-center mgb-3">
+      <a href="#">Advanced Ad Type Assignment</a>
+    </div>
+
+    <div class="btn-container content-even">
+      <button class="btn btn-gray" onclick="previous_step(event)">Previous</button>
+      <button class="btn btn-secondary" onclick="next_step(event)">Next</button>
+    </div>
+  </div>
+
+  <div id="section5" class="section multistep-content mgb-3 hide">
+    <div class="heading-container text-center">
+      <h3 class="heading">Sections</h3>
+    </div>
+
+    <div class="section-content">
+      <div class="text-center mgb-3">
+        <p>Select the sections you would like to be<br />available to use with this Publication</p>
+      </div>
+
+      <div class="item-select-container mgb-3">
+        <div class="available-pubs">
+          <b>Available Adjustments:</b><br />
+          <select multiple="multiple" id="lstBox1" class="form-control">
+            <option value="adjustment-1">Adjustment 1</option>
+            <option value="adjustment-2">Adjustment 2</option>
+          </select>
+        </div>
+        <div class="transferBtns">
+          <input type="button" id="btnRight" value="  >  " />
+          <br /><input type="button" id="btnLeft" value="  <  " />
+        </div>
+        <div class="selected-pubs">
+          <b>Selected Rate Groups: </b><br />
+          <select multiple="multiple" id="lstBox2" class="form-control"></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="link-container text-center mgb-3">
+      <a href="#">Advanced Ad Type Assignment</a>
+    </div>
+
+    <div class="btn-container content-even">
       <button class="btn btn-gray" onclick="previous_step(event)">Previous</button>
       <button class="btn btn-secondary" onclick="next_step(event)">Next</button>
     </div>

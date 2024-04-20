@@ -34,6 +34,11 @@
   justify-content: flex-end;
 }
 
+.content-even {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .content-between {
   display: flex;
   justify-content: space-between;
@@ -1745,49 +1750,45 @@
   border-top-right-radius: 8px;
 }
 .c-card .progress-icons {
-  width: 100%;
+  width: 70%;
   /* border: 1px solid rgb(234, 234, 234); */
   border-bottom: 0 !important;
   display: flex;
-  justify-content: center;
-  padding: 20px 0;
-  margin-bottom: 30px;
+  justify-content: space-evenly;
+  padding: 20px 0 0 0;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
 }
-.c-card .progress-icons .progress-dot {
+.c-card .progress-icons .progress-dot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.c-card .progress-icons .progress-dot-container .progress-dot {
   position: relative;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   background-color: #eee;
-  margin-left: 66px;
 }
-.c-card .progress-icons .progress-dot span {
+.c-card .progress-icons .progress-dot-container .progress-dot span {
   display: none;
 }
-.c-card .progress-icons .progress-dot .step-label {
-  position: absolute;
-  top: 30px;
-  width: 100px;
-  text-align: center;
-  font-size: 12px;
-  color: #666666;
-}
-.c-card .progress-icons .progress-dot.progress-active {
+.c-card .progress-icons .progress-dot-container .progress-dot.progress-active {
   background-color: #f26722 !important;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.c-card .progress-icons .progress-dot.progress-active span {
+.c-card .progress-icons .progress-dot-container .progress-dot.progress-active span {
   display: block;
   color: #fff;
 }
-.c-card .progress-icons .progress-dot.progress-active .step-label {
+.c-card .progress-icons .progress-dot-container .progress-dot.progress-active .step-label {
   color: #fff;
 }
-.c-card .progress-icons .progress-dot.progress-active:not(:first-of-type)::before {
+.c-card .progress-icons .progress-dot-container .progress-dot.progress-active:not(:first-of-type)::before {
   content: "";
   width: 68px;
   height: 7px;
@@ -1795,6 +1796,13 @@
   position: absolute;
   top: 13px;
   left: -67px;
+}
+.c-card .progress-icons .progress-dot-container .step-label {
+  width: 100px;
+  text-align: center;
+  font-size: 12px;
+  color: #666666;
+  margin-top: 10px;
 }
 .c-card #section.hide {
   display: none;

@@ -1,3 +1,29 @@
+$(document).ready(function () {
+  $('#btnRight').click(function (e) {
+    var selectedOpts = $('#lstBox1 option:selected');
+    if (selectedOpts.length == 0) {
+      alert('Nothing to move.');
+      e.preventDefault();
+    }
+
+    $('#lstBox2').append($(selectedOpts).clone());
+    $(selectedOpts).remove();
+    e.preventDefault();
+  });
+
+  $('#btnLeft').click(function (e) {
+    var selectedOpts = $('#lstBox2 option:selected');
+    if (selectedOpts.length == 0) {
+      alert('Nothing to move.');
+      e.preventDefault();
+    }
+
+    $('#lstBox1').append($(selectedOpts).clone());
+    $(selectedOpts).remove();
+    e.preventDefault();
+  });
+});
+
 // Publication Calendar
 const currentDate = new Date();
 let currentMonth = currentDate.getMonth();
@@ -318,32 +344,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-$(document).ready(function () {
-  $('#btnRight').click(function (e) {
-    var selectedOpts = $('#lstBox1 option:selected');
-    if (selectedOpts.length == 0) {
-      alert('Nothing to move.');
-      e.preventDefault();
-    }
-
-    $('#lstBox2').append($(selectedOpts).clone());
-    $(selectedOpts).remove();
-    e.preventDefault();
-  });
-
-  $('#btnLeft').click(function (e) {
-    var selectedOpts = $('#lstBox2 option:selected');
-    if (selectedOpts.length == 0) {
-      alert('Nothing to move.');
-      e.preventDefault();
-    }
-
-    $('#lstBox1').append($(selectedOpts).clone());
-    $(selectedOpts).remove();
-    e.preventDefault();
-  });
-});
-
 function openSection(evt, sectionName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName('tabcontent');
@@ -493,7 +493,7 @@ function next_step() {
   nextSection.classList.remove('hide');
 
   // Get all progress icons
-  var progressIcons = document.querySelectorAll('.progress-icons > div');
+  var progressIcons = document.querySelectorAll('.progress-icons > .progress-dot-container > div');
 
   // Find the index of the current active progress icon
   var currentIndex;
@@ -526,7 +526,7 @@ function previous_step() {
   previousSection.classList.remove('hide');
 
   // Get all progress icons
-  var progressIcons = document.querySelectorAll('.progress-icons > div');
+  var progressIcons = document.querySelectorAll('.progress-icons > .progress-dot-container > div');
 
   // Find the index of the current active progress icon
   var currentIndex;
