@@ -366,4 +366,20 @@
       <button class="btn btn-secondary" onclick="next_step(event)">Next</button>
     </div>
   </div>
+
+  <div id="section6" class="section multistep-content hide">
+    <div class="section-content">
+      <div class="complete-product-container text-center">
+        <h3 class="heading">Publication has been created!</h3>
+        <div class="big-check mx-auto my-5">
+          <i class="fa fa-solid fa-check"></i>
+        </div>
+        <div class="btn-container content-even">
+          <button class="btn btn-secondary-light">Create Another Publication</button>
+          <a href="{% url 'adminNewDigital' %}" class="btn btn-gray">Back to Publications</a>
+          <button class="btn btn-secondary">View Publication</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

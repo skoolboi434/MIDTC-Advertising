@@ -1765,6 +1765,13 @@
   flex-direction: column;
   align-items: center;
 }
+.c-card .progress-icons .progress-dot-container .step-label {
+  width: 100px;
+  text-align: center;
+  font-size: 12px;
+  color: #666666;
+  margin-top: 10px;
+}
 .c-card .progress-icons .progress-dot-container .progress-dot {
   position: relative;
   width: 30px;
@@ -1785,8 +1792,11 @@
   display: block;
   color: #fff;
 }
-.c-card .progress-icons .progress-dot-container .progress-dot.progress-active .step-label {
+.c-card .progress-icons .progress-dot-container .progress-dot.progress-active + .step-label {
+  background-color: #f26722;
   color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 10px;
 }
 .c-card .progress-icons .progress-dot-container .progress-dot.progress-active:not(:first-of-type)::before {
   content: "";
@@ -1796,13 +1806,6 @@
   position: absolute;
   top: 13px;
   left: -67px;
-}
-.c-card .progress-icons .progress-dot-container .step-label {
-  width: 100px;
-  text-align: center;
-  font-size: 12px;
-  color: #666666;
-  margin-top: 10px;
 }
 .c-card #section.hide {
   display: none;

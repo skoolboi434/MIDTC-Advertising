@@ -6,20 +6,6 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
   position: relative;
-  // &:after {
-  //   position: absolute;
-  //   content: '';
-  //   background-image: url('../images/bottom-org-border.png');
-  //   background-repeat: no-repeat;
-  //   width: 100%;
-  //   height: 96px;
-  //   bottom: 0;
-  //   left: 0;
-  //   background-position: center;
-  //   background-size: cover;
-  //   border-bottom-left-radius: 8px;
-  //   border-bottom-right-radius: 8px;
-  // }
 
   &:after {
     position: absolute;
@@ -51,6 +37,15 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      .step-label {
+        width: 100px;
+        text-align: center;
+        font-size: 12px;
+        color: $gray-3;
+        margin-top: 10px;
+      }
+
       .progress-dot {
         position: relative;
         width: 30px;
@@ -65,7 +60,6 @@
 
         &.progress-active {
           background-color: $primary !important;
-
           display: flex;
           align-items: center;
           justify-content: center;
@@ -74,8 +68,11 @@
             color: $white;
           }
 
-          .step-label {
+          + .step-label {
+            background-color: $primary;
             color: $white;
+            box-shadow: $shadow;
+            border-radius: 10px;
           }
 
           &:not(:first-of-type) {
@@ -90,14 +87,6 @@
             }
           }
         }
-      }
-
-      .step-label {
-        width: 100px;
-        text-align: center;
-        font-size: 12px;
-        color: $gray-3;
-        margin-top: 10px;
       }
     }
   }
