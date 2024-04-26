@@ -57,3 +57,6 @@ def adminPricing(request):
 
 def adminPublications(request):
   return render(request, 'pages/admin/publications/new-publication.html')
+
+def adminClassifieds(request):
+  return render(request, 'pages/admin/classifieds/classifieds.html')

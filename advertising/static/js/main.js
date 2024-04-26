@@ -1,3 +1,78 @@
+// Font Selector
+document.addEventListener('DOMContentLoaded', function () {
+  const fonts = [
+    { name: 'Andale Mono', options: 'andale mono,times' },
+    { name: 'Arial', options: 'arial,helvetica,sans-serif' },
+    { name: 'Arial Black', options: 'arial black,avant garde' },
+    { name: 'Book Antiqua', options: 'book antiqua,palatino' },
+    { name: 'Comic Sans MS', options: 'comic sans ms,sans-serif' },
+    { name: 'Courier New', options: 'courier new,courier' },
+    { name: 'Georgia', options: 'georgia,palatino' },
+    { name: 'Helvetica', options: 'helvetica' },
+    { name: 'Impact', options: 'impact,chicago' },
+    { name: 'Oswald', options: 'oswald' },
+    { name: 'Symbol', options: 'symbol' },
+    { name: 'Tahoma', options: 'tahoma,arial,helvetica,sans-serif' },
+    { name: 'Terminal', options: 'terminal,monaco' },
+    { name: 'Times New Roman', options: 'times new roman,times' },
+    { name: 'Trebuchet MS', options: 'trebuchet ms,geneva' },
+    { name: 'Verdana', options: 'verdana,geneva' },
+    { name: 'Webdings', options: 'webdings' },
+    { name: 'Wingdings', options: 'wingdings,zapf dingbats' }
+  ];
+
+  const fontSelect = document.getElementById('fontSelect');
+  const sampleText = document.getElementById('sampleText');
+  const selectedFontsContainer = document.querySelector('.selected-fonts-container');
+
+  // Populate font selector dropdown
+  fonts.forEach(font => {
+    const option = document.createElement('option');
+    option.value = font.options;
+    option.textContent = font.name;
+    fontSelect.appendChild(option);
+  });
+
+  // Function to change font family
+  function changeFont() {
+    const selectedOptions = Array.from(fontSelect.selectedOptions).map(option => option.textContent);
+    sampleText.style.fontFamily = selectedOptions.join(',');
+    updateSelectedFonts(selectedOptions);
+  }
+
+  // Event listener for font change
+  fontSelect.addEventListener('change', changeFont);
+
+  // Function to update selected fonts container
+  function updateSelectedFonts(selectedFonts) {
+    selectedFontsContainer.innerHTML = '';
+    selectedFonts.forEach(font => {
+      const selectedFontElement = document.createElement('span');
+      selectedFontElement.classList.add('selected-font');
+      selectedFontElement.textContent = font;
+      selectedFontElement.addEventListener('click', function () {
+        // Deselect font in the select element
+        const optionToDeselect = Array.from(fontSelect.options).find(option => option.textContent === font);
+        if (optionToDeselect) {
+          optionToDeselect.selected = false;
+          changeFont(); // Update font preview
+        }
+      });
+      selectedFontsContainer.appendChild(selectedFontElement);
+    });
+  }
+});
+
+// TinyMCE for Classified Styles
+
+// const fontsConfig = {
+//   selector: 'div#fonts',
+//   toolbar: 'fontselect',
+//   font_formats: 'Andale Mono=andale mono,times; Arial=arial,helvetica,sans-serif; Arial Black=arial black,avant garde; Book Antiqua=book antiqua,palatino; Comic Sans MS=comic sans ms,sans-serif; Courier New=courier new,courier; Georgia=georgia,palatino; Helvetica=helvetica; Impact=impact,chicago; Oswald=oswald; Symbol=symbol; Tahoma=tahoma,arial,helvetica,sans-serif; Terminal=terminal,monaco; Times New Roman=times new roman,times; Trebuchet MS=trebuchet ms,geneva; Verdana=verdana,geneva; Webdings=webdings; Wingdings=wingdings,zapf dingbats'
+// };
+
+// tinymce.init(fontsConfig);
+
 $(document).ready(function () {
   $('#btnRight').click(function (e) {
     var selectedOpts = $('#lstBox1 option:selected');
@@ -22,118 +97,6 @@ $(document).ready(function () {
     $(selectedOpts).remove();
     e.preventDefault();
   });
-});
-
-// Publication Calendar
-const currentDate = new Date();
-let currentMonth = currentDate.getMonth();
-let currentYear = currentDate.getFullYear();
-
-const monthYearElement = document.getElementById('monthYear');
-const datesElement = document.getElementById('dates');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const eventModal = document.getElementById('eventModal');
-const eventDate = document.getElementById('eventDate');
-const eventDescription = document.getElementById('eventDescription');
-const saveEventBtn = document.getElementById('saveEventBtn');
-let selectedDate = null;
-
-// Generate calendar for the current month
-generateCalendar(currentMonth, currentYear);
-
-// Event listener for previous and next buttons
-prevBtn.addEventListener('click', () => {
-  currentMonth--;
-  if (currentMonth < 0) {
-    currentMonth = 11;
-    currentYear--;
-  }
-  generateCalendar(currentMonth, currentYear);
-});
-
-nextBtn.addEventListener('click', () => {
-  currentMonth++;
-  if (currentMonth > 11) {
-    currentMonth = 0;
-    currentYear++;
-  }
-  generateCalendar(currentMonth, currentYear);
-});
-
-// Function to generate the calendar
-function generateCalendar(month, year) {
-  monthYearElement.textContent = new Date(year, month).toLocaleString('default', { month: 'long' }) + ' ' + year;
-  datesElement.innerHTML = '';
-
-  const firstDayOfMonth = new Date(year, month, 1);
-  const lastDayOfMonth = new Date(year, month + 1, 0);
-  const startDay = firstDayOfMonth.getDay();
-  const endDay = lastDayOfMonth.getDate();
-
-  for (let i = 0; i < startDay; i++) {
-    const dateElement = document.createElement('div');
-    dateElement.classList.add('date');
-    datesElement.appendChild(dateElement);
-  }
-
-  for (let day = 1; day <= endDay; day++) {
-    const dateElement = document.createElement('div');
-    dateElement.textContent = day;
-    dateElement.classList.add('date');
-    if (month === currentDate.getMonth() && year === currentDate.getFullYear() && day === currentDate.getDate()) {
-      dateElement.classList.add('current-month');
-    }
-    dateElement.addEventListener('click', () => openEventModal(year, month, day));
-    datesElement.appendChild(dateElement);
-  }
-}
-
-// Function to open the event modal
-function openEventModal(year, month, day) {
-  selectedDate = new Date(year, month, day);
-  eventDate.textContent = selectedDate.toDateString();
-  eventDescription.value = getEventDescription(selectedDate) || '';
-  eventModal.style.display = 'block';
-}
-
-// Function to close the event modal
-function closeEventModal() {
-  eventModal.style.display = 'none';
-}
-
-// Function to save the event
-function saveEvent() {
-  const description = eventDescription.value;
-  setEventDescription(selectedDate, description);
-
-  closeEventModal();
-}
-
-// Event listener for save button
-saveEventBtn.addEventListener('click', saveEvent);
-
-// Function to get event description from local storage
-function getEventDescription(date) {
-  const key = date.toDateString();
-  return localStorage.getItem(key);
-}
-
-// Function to save event description to local storage
-function setEventDescription(date, description) {
-  const key = date.toDateString();
-  localStorage.setItem(key, description);
-}
-
-// Event listener for modal close button
-const closeBtn = document.getElementsByClassName('close')[0];
-closeBtn.addEventListener('click', closeEventModal);
-
-// Event listener for outside modal click
-window.addEventListener('click', event => {
-  if (event.target === eventModal) {
-    closeEventModal();
-  }
 });
 
 function toggleSearchContainer() {
@@ -358,126 +321,6 @@ function openSection(evt, sectionName) {
   evt.currentTarget.className += ' active';
 }
 
-// GL Code String Builder
-var buttonsInDiv2 = [];
-
-// Function to create input fields
-function createInputField(buttonId) {
-  var colDiv = document.createElement('div');
-  colDiv.className = 'col-2';
-
-  var label = document.createElement('label');
-  label.textContent = buttonId.replace('drag', '');
-  label.setAttribute('for', buttonId);
-
-  var input = document.createElement('input');
-  input.type = 'text';
-  input.className = 'form-control';
-  input.name = buttonId.replace('drag', ''); // Use buttonId to name inputs
-  input.id = buttonId.replace('drag', ''); // Use buttonId as input id
-
-  // Determine initial disabled state based on the location of the button
-  input.disabled = !buttonsInDiv2.includes(buttonId);
-
-  colDiv.appendChild(label);
-  colDiv.appendChild(input);
-
-  return colDiv;
-}
-
-function allowDrop(ev) {
-  ev.preventDefault();
-}
-
-function drag(ev) {
-  ev.dataTransfer.setData('text', ev.target.id);
-}
-
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData('text');
-  var draggedElement = document.getElementById(data);
-  var dropZone = ev.target;
-
-  // Check if the dropped element is a button and if the dropZone is "div2"
-  if (draggedElement.tagName === 'BUTTON' && dropZone.id === 'div2') {
-    // Move the button to the drop zone
-    dropZone.appendChild(draggedElement);
-
-    // Update the buttonsInDiv2 array to reflect the new order of buttons
-    buttonsInDiv2 = Array.from(dropZone.querySelectorAll('button')).map(function (button) {
-      return button.id;
-    });
-
-    // Update input fields based on buttonsInDiv2 array
-    var inputContainer = document.getElementById('inputContainer');
-    inputContainer.innerHTML = ''; // Clear existing input fields
-    buttonsInDiv2.forEach(function (buttonId) {
-      inputContainer.appendChild(createInputField(buttonId));
-    });
-
-    // Enable the corresponding input field
-    var input = document.getElementById(draggedElement.id.replace('drag', ''));
-    if (input) {
-      input.disabled = false;
-    }
-  }
-
-  // Check if the dropZone is "div1"
-  if (dropZone.id === 'div1') {
-    // Move the button back to the drop zone
-    dropZone.appendChild(draggedElement);
-
-    // Disable the corresponding input field
-    var input = document.getElementById(draggedElement.id.replace('drag', ''));
-    if (input) {
-      input.disabled = true;
-    }
-  }
-}
-
-// Observe changes in div2 to detect button removal
-var div2Observer = new MutationObserver(function (mutations) {
-  mutations.forEach(function (mutation) {
-    mutation.removedNodes.forEach(function (node) {
-      if (node.tagName === 'BUTTON') {
-        // Update the buttonsInDiv2 array to reflect the new order of buttons
-        buttonsInDiv2 = Array.from(document.getElementById('div2').querySelectorAll('button')).map(function (button) {
-          return button.id;
-        });
-
-        // Update input fields based on buttonsInDiv2 array
-        var inputContainer = document.getElementById('inputContainer');
-        inputContainer.innerHTML = ''; // Clear existing input fields
-        buttonsInDiv2.forEach(function (buttonId) {
-          inputContainer.appendChild(createInputField(buttonId));
-        });
-      }
-    });
-  });
-});
-
-// Start observing changes in div2
-div2Observer.observe(document.getElementById('div2'), { childList: true });
-
-// Observe changes in div1 to detect button addition
-var div1Observer = new MutationObserver(function (mutations) {
-  mutations.forEach(function (mutation) {
-    mutation.addedNodes.forEach(function (node) {
-      if (node.tagName === 'BUTTON') {
-        // Disable the corresponding input field
-        var input = document.getElementById(node.id.replace('drag', ''));
-        if (input) {
-          input.disabled = true;
-        }
-      }
-    });
-  });
-});
-
-// Start observing changes in div1
-div1Observer.observe(document.getElementById('div1'), { childList: true });
-
 // Multistep
 function next_step() {
   // Get the current active section
@@ -567,54 +410,3 @@ function create_product() {
   // Hide the current section
   currentSection.classList.add('hide');
 }
-
-// Function to adjust toggle width based on the longest option text
-// function adjustToggleWidth() {
-//   var toggleOptionsLeft = document.querySelectorAll('.toggle-option-left');
-//   var toggleOptionsRight = document.querySelectorAll('.toggle-option-right');
-//   var maxWidthLeft = 0;
-//   var maxWidthRight = 0;
-
-//   toggleOptionsLeft.forEach(function (option) {
-//     maxWidthLeft = Math.max(maxWidthLeft, option.offsetWidth);
-//   });
-
-//   toggleOptionsRight.forEach(function (option) {
-//     maxWidthRight = Math.max(maxWidthRight, option.offsetWidth);
-//   });
-
-//   var maxWidth = Math.max(maxWidthLeft, maxWidthRight);
-//   var labelWidth = maxWidth + 20; // Add some padding
-
-//   var labels = document.querySelectorAll('.check-toggle-round-flat + label');
-//   labels.forEach(function (label) {
-//     label.style.width = labelWidth + 'px';
-//   });
-
-//   var toggleAfterElements = document.querySelectorAll('.check-toggle-round-flat + label:after');
-//   toggleAfterElements.forEach(function (element) {
-//     element.style.width = maxWidth + 12 + 'px'; // Adjust the width of ::after element
-//   });
-// }
-
-// // Call the function initially and whenever the window is resized
-// adjustToggleWidth();
-// window.addEventListener('resize', adjustToggleWidth);
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   var repeatingCalendar = document.querySelector('.repeating-calendar');
-//   var nonRepeatingCalendar = document.querySelector('.non-repeating-calendar');
-
-//   document.addEventListener('click', function (event) {
-//     if (event.target.classList.contains('toggle-option-right')) {
-//       repeatingCalendar.classList.remove('active');
-//       nonRepeatingCalendar.classList.add('active');
-//       console.log('Clicked');
-//     }
-//   });
-// });
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   var toggleOptionRightElements = document.querySelectorAll('.toggle-option-right');
-//   console.log(toggleOptionRightElements);
-// });

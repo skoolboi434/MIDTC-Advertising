@@ -19,6 +19,8 @@ body {
 }
 
 .filter-container {
+  display: flex;
+  align-items: center;
   .filters {
     a {
       font-size: 14px;

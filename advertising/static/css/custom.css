@@ -69,6 +69,14 @@
   margin-bottom: 30px;
 }
 
+.mgb-5 {
+  margin-bottom: 50px;
+}
+
+.mgb-100 {
+  margin-bottom: 100px;
+}
+
 .mgt-5 {
   margin-top: 50px;
 }
@@ -1211,7 +1219,7 @@
   text-decoration: none;
   cursor: pointer;
 }
-.my-modal .modal-content {
+.my-modal .custom-modal-content {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
@@ -1219,12 +1227,13 @@
   width: 80%;
   min-height: 800px;
   position: relative;
+  border-radius: 8px;
   /* The Close Button */
 }
-.my-modal .modal-content .heading-container hr {
+.my-modal .custom-modal-content .heading-container hr {
   border: 1px solid #f26722;
 }
-.my-modal .modal-content .close {
+.my-modal .custom-modal-content .close {
   color: #000;
   right: 10px;
   font-size: 28px;
@@ -1233,34 +1242,34 @@
   right: 20px;
   opacity: 1;
 }
-.my-modal .modal-content .close:hover, .my-modal .modal-content .close:focus {
+.my-modal .custom-modal-content .close:hover, .my-modal .custom-modal-content .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
 }
-.my-modal .modal-content.edit-ad, .my-modal .modal-content.edit-campaign-info, .my-modal .modal-content.create-rate-card {
+.my-modal .custom-modal-content.edit-ad, .my-modal .custom-modal-content.edit-campaign-info, .my-modal .custom-modal-content.create-rate-card {
   width: 80%;
   min-height: 800px;
 }
-.my-modal .modal-content.edit-ad .heading-container, .my-modal .modal-content.edit-campaign-info .heading-container, .my-modal .modal-content.create-rate-card .heading-container {
+.my-modal .custom-modal-content.edit-ad .heading-container, .my-modal .custom-modal-content.edit-campaign-info .heading-container, .my-modal .custom-modal-content.create-rate-card .heading-container {
   text-align: center;
 }
-.my-modal .modal-content.edit-ad .edit-fields label, .my-modal .modal-content.edit-campaign-info .edit-fields label, .my-modal .modal-content.create-rate-card .edit-fields label {
+.my-modal .custom-modal-content.edit-ad .edit-fields label, .my-modal .custom-modal-content.edit-campaign-info .edit-fields label, .my-modal .custom-modal-content.create-rate-card .edit-fields label {
   font-size: 12px;
 }
-.my-modal .modal-content.edit-ad .adjustments-container span, .my-modal .modal-content.edit-campaign-info .adjustments-container span, .my-modal .modal-content.create-rate-card .adjustments-container span {
+.my-modal .custom-modal-content.edit-ad .adjustments-container span, .my-modal .custom-modal-content.edit-campaign-info .adjustments-container span, .my-modal .custom-modal-content.create-rate-card .adjustments-container span {
   font-size: 12px;
 }
-.my-modal .modal-content.edit-ad .adjustments-container span a, .my-modal .modal-content.edit-campaign-info .adjustments-container span a, .my-modal .modal-content.create-rate-card .adjustments-container span a {
+.my-modal .custom-modal-content.edit-ad .adjustments-container span a, .my-modal .custom-modal-content.edit-campaign-info .adjustments-container span a, .my-modal .custom-modal-content.create-rate-card .adjustments-container span a {
   margin-left: 10px;
 }
-.my-modal .modal-content.edit-ad .btn-container, .my-modal .modal-content.edit-campaign-info .btn-container, .my-modal .modal-content.create-rate-card .btn-container {
+.my-modal .custom-modal-content.edit-ad .btn-container, .my-modal .custom-modal-content.edit-campaign-info .btn-container, .my-modal .custom-modal-content.create-rate-card .btn-container {
   text-align: center;
 }
-.my-modal .modal-content.edit-ad .btn-container .btn, .my-modal .modal-content.edit-campaign-info .btn-container .btn, .my-modal .modal-content.create-rate-card .btn-container .btn {
+.my-modal .custom-modal-content.edit-ad .btn-container .btn, .my-modal .custom-modal-content.edit-campaign-info .btn-container .btn, .my-modal .custom-modal-content.create-rate-card .btn-container .btn {
   width: 250px;
 }
-.my-modal .modal-content:after {
+.my-modal .custom-modal-content:after {
   position: absolute;
   content: "";
   background-image: url("../images/bottom-org-border.png");
@@ -1727,7 +1736,7 @@
 }
 
 .c-card {
-  width: 1100px;
+  width: 100%;
   margin: auto;
   padding: 20px 20px 100px 20px;
   border: 0 !important;
@@ -1994,6 +2003,32 @@
   display: none;
 }
 
+.selected-fonts-container .selected-font {
+  background-color: #c8c8ec;
+  color: #fff;
+  padding: 2px 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 10px;
+  position: relative;
+}
+.selected-fonts-container .selected-font:not(:last-of-type) {
+  margin-right: 10px;
+}
+.selected-fonts-container .selected-font::after {
+  content: "−";
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 50%;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  right: 0;
+  color: red;
+  text-align: center;
+  font-family: "Font Awesome";
+}
+
 body {
   background-color: #f3f3f3;
 }
@@ -2005,6 +2040,10 @@ body {
   margin: 0 auto;
 }
 
+.filter-container {
+  display: flex;
+  align-items: center;
+}
 .filter-container .filters a {
   font-size: 14px;
   color: #000;
