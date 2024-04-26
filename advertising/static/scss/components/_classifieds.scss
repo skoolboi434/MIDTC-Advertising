@@ -26,3 +26,63 @@
     }
   }
 }
+
+.font-specs-container {
+  border-radius: 10px;
+  display: flex;
+  min-height: 500px;
+  border: 1px solid $black;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+
+  .available-fonts {
+    background-color: $offwhite;
+    width: 20%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+    .fonts-heading {
+      background-color: rgba($secondary, 0.5);
+      border-top-left-radius: 10px;
+      padding: 10px;
+      h3 {
+        font-family: 'lato', sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: $white;
+        line-height: 26.4px;
+        text-align: left;
+        margin: 0;
+      }
+    }
+
+    .fonts-list {
+      overflow: scroll;
+      height: 100%;
+
+      .font-container {
+        padding: 10px 20px;
+
+        &.active {
+          background-color: $secondary-light-alpha;
+        }
+        .font {
+        }
+      }
+    }
+  }
+
+  .specs-container {
+    background-color: $secondary-light-alpha;
+    width: 80%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 20px;
+    .font-preview {
+      min-height: 40px;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid $gray-3;
+      background-color: $white;
+    }
+  }
+}

@@ -98,7 +98,7 @@
               <p>Here you can pick the fonts and colors you'd like<br />associated with your selected Publications.</p>
             </div>
 
-            <div class="row">
+            <div class="row mgb-3">
               <div class="col-md-12 col-lg-6">
                 <div class="text-center">
                   <h3>Fonts</h3>
@@ -124,6 +124,12 @@
                   <h3>Colors</h3>
                   <hr />
                 </div>
+                <div class="form-group">
+                  <div class="label-container">
+                    <label for="fontSelect">Color Option:</label>
+                  </div>
+                  <select id="fontSelect" class="form-control" multiple></select>
+                </div>
               </div>
             </div>
           </div>
@@ -135,38 +141,27 @@
 
         <div id="section3" class="section multistep-content mgb-3 hide">
           <div class="heading-container text-center">
-            <h3 class="heading">Rate Groups</h3>
+            <h3 class="heading">Font Specs</h3>
           </div>
 
           <div class="section-content">
             <div class="text-center mgb-3">
-              <p>
-                Select which rate groups you'd like to be<br />
-                assign to this publication
-              </p>
+              <p>Add any custom specs to your selected fonts.</p>
             </div>
 
-            <div class="item-select-container mgb-3">
-              <div class="available-pubs">
-                <b>Available Rate Groups:</b><br />
-                <select multiple="multiple" id="lstBox1" class="form-control">
-                  <option value="rate-group-1">Rate Group 1</option>
-                  <option value="rate-group-2">Rate Group 2</option>
-                </select>
+            <div class="font-specs-container mgb-3">
+              <div class="available-fonts">
+                <div class="fonts-heading">
+                  <h3>Available Fonts</h3>
+                </div>
+                <div class="fonts-list"></div>
               </div>
-              <div class="transferBtns">
-                <input type="button" id="btnRight" value="  >  " />
-                <br /><input type="button" id="btnLeft" value="  <  " />
-              </div>
-              <div class="selected-pubs">
-                <b>Selected Rate Groups: </b><br />
-                <select multiple="multiple" id="lstBox2" class="form-control"></select>
+              <div class="specs-container">
+                <div class="font-preview">
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio dolor repellendus rem animi odit, eius iste magni, totam perspiciatis eveniet recusandae at aliquid omnis vero consequuntur aspernatur veritatis? Quod, deserunt?</p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="link-container text-center mgb-3">
-            <a href="#">Advanced Ad Type Assignment</a>
           </div>
 
           <div class="btn-container content-even">
@@ -214,100 +209,6 @@
           <div class="btn-container content-even">
             <button class="btn btn-gray" onclick="previous_step(event)">Previous</button>
             <button class="btn btn-secondary" onclick="next_step(event)">Next</button>
-          </div>
-        </div>
-
-        <div id="section4" class="section multistep-content mgb-3 hide">
-          <div class="heading-container text-center">
-            <h3 class="heading">Adjustments</h3>
-          </div>
-
-          <div class="section-content">
-            <div class="text-center mgb-3">
-              <p>Choose which Adjustments that are<br />assigned to this Publication</p>
-            </div>
-
-            <div class="item-select-container mgb-3">
-              <div class="available-pubs">
-                <b>Available Adjustments:</b><br />
-                <select multiple="multiple" id="lstBox1" class="form-control">
-                  <option value="adjustment-1">Adjustment 1</option>
-                  <option value="adjustment-2">Adjustment 2</option>
-                </select>
-              </div>
-              <div class="transferBtns">
-                <input type="button" id="btnRight" value="  >  " />
-                <br /><input type="button" id="btnLeft" value="  <  " />
-              </div>
-              <div class="selected-pubs">
-                <b>Selected Rate Groups: </b><br />
-                <select multiple="multiple" id="lstBox2" class="form-control"></select>
-              </div>
-            </div>
-          </div>
-
-          <div class="link-container text-center mgb-3">
-            <a href="#">Advanced Ad Type Assignment</a>
-          </div>
-
-          <div class="btn-container content-even">
-            <button class="btn btn-gray" onclick="previous_step(event)">Previous</button>
-            <button class="btn btn-secondary" onclick="next_step(event)">Next</button>
-          </div>
-        </div>
-
-        <div id="section5" class="section multistep-content mgb-3 hide">
-          <div class="heading-container text-center">
-            <h3 class="heading">Sections</h3>
-          </div>
-
-          <div class="section-content">
-            <div class="text-center mgb-3">
-              <p>Select the sections you would like to be<br />available to use with this Publication</p>
-            </div>
-
-            <div class="item-select-container mgb-3">
-              <div class="available-pubs">
-                <b>Available Adjustments:</b><br />
-                <select multiple="multiple" id="lstBox1" class="form-control">
-                  <option value="adjustment-1">Adjustment 1</option>
-                  <option value="adjustment-2">Adjustment 2</option>
-                </select>
-              </div>
-              <div class="transferBtns">
-                <input type="button" id="btnRight" value="  >  " />
-                <br /><input type="button" id="btnLeft" value="  <  " />
-              </div>
-              <div class="selected-pubs">
-                <b>Selected Rate Groups: </b><br />
-                <select multiple="multiple" id="lstBox2" class="form-control"></select>
-              </div>
-            </div>
-          </div>
-
-          <div class="link-container text-center mgb-3">
-            <a href="#">Advanced Ad Type Assignment</a>
-          </div>
-
-          <div class="btn-container content-even">
-            <button class="btn btn-gray" onclick="previous_step(event)">Previous</button>
-            <button class="btn btn-secondary" onclick="next_step(event)">Next</button>
-          </div>
-        </div>
-
-        <div id="section6" class="section multistep-content hide">
-          <div class="section-content">
-            <div class="complete-product-container text-center">
-              <h3 class="heading">Publication has been created!</h3>
-              <div class="big-check mx-auto my-5">
-                <i class="fa fa-solid fa-check"></i>
-              </div>
-              <div class="btn-container content-even">
-                <button class="btn btn-secondary-light">Create Another Publication</button>
-                <a href="{% url 'adminNewDigital' %}" class="btn btn-gray">Back to Publications</a>
-                <button class="btn btn-secondary">View Publication</button>
-              </div>
-            </div>
           </div>
         </div>
       </div>

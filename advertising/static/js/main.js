@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const fontSelect = document.getElementById('fontSelect');
   const sampleText = document.getElementById('sampleText');
   const selectedFontsContainer = document.querySelector('.selected-fonts-container');
+  const fontsList = document.querySelector('.fonts-list');
+  const fontPreview = document.querySelector('.font-preview');
 
   // Populate font selector dropdown
   fonts.forEach(font => {
@@ -37,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function changeFont() {
     const selectedOptions = Array.from(fontSelect.selectedOptions).map(option => option.textContent);
     sampleText.style.fontFamily = selectedOptions.join(',');
+    fontPreview.style.fontFamily = selectedOptions.join(',');
     updateSelectedFonts(selectedOptions);
   }
 
@@ -46,19 +49,34 @@ document.addEventListener('DOMContentLoaded', function () {
   // Function to update selected fonts container
   function updateSelectedFonts(selectedFonts) {
     selectedFontsContainer.innerHTML = '';
+    fontsList.innerHTML = ''; // Clear existing fonts list
     selectedFonts.forEach(font => {
       const selectedFontElement = document.createElement('span');
       selectedFontElement.classList.add('selected-font');
       selectedFontElement.textContent = font;
-      selectedFontElement.addEventListener('click', function () {
-        // Deselect font in the select element
-        const optionToDeselect = Array.from(fontSelect.options).find(option => option.textContent === font);
-        if (optionToDeselect) {
-          optionToDeselect.selected = false;
-          changeFont(); // Update font preview
+      selectedFontsContainer.appendChild(selectedFontElement);
+
+      // Add selected font to fonts list
+      const fontContainer = document.createElement('div');
+      fontContainer.classList.add('font-container');
+      const fontName = document.createElement('span');
+      fontName.classList.add('font');
+      fontName.textContent = font;
+      fontContainer.appendChild(fontName);
+      fontsList.appendChild(fontContainer);
+
+      // Attach click event listener to newly added font container
+      fontContainer.addEventListener('click', function () {
+        // Toggle "active" class for font container
+        const isActive = this.classList.contains('active');
+        fontsList.querySelectorAll('.font-container').forEach(container => {
+          container.classList.remove('active');
+        });
+        if (!isActive) {
+          this.classList.add('active');
+          fontPreview.style.fontFamily = font;
         }
       });
-      selectedFontsContainer.appendChild(selectedFontElement);
     });
   }
 });
