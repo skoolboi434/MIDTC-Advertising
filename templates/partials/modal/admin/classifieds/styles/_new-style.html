@@ -28,12 +28,6 @@
             <div id="progress_3" class="progress-dot">
               <span><i class="fa fa-solid fa-check"></i></span>
             </div>
-            <p class="step-label">Advanced</p>
-          </div>
-          <div class="progress-dot-container">
-            <div id="progress_3" class="progress-dot">
-              <span><i class="fa fa-solid fa-check"></i></span>
-            </div>
             <p class="step-label">Review</p>
           </div>
         </div>
@@ -115,7 +109,6 @@
                   <div class="text-center"><p>Selected Fonts:</p></div>
 
                   <div class="selected-fonts-container mgb-3"></div>
-                  <div id="sampleText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem magnam eius ratione facilis voluptates excepturi omnis, suscipit at laboriosam dolorem tenetur libero nam exercitationem, deserunt repellat! Excepturi, fuga nemo!</div>
                 </div>
               </div>
 
@@ -126,9 +119,31 @@
                 </div>
                 <div class="form-group">
                   <div class="label-container">
-                    <label for="fontSelect">Color Option:</label>
+                    <label for="fontColorSelect">Color Option:</label>
                   </div>
-                  <select id="fontSelect" class="form-control" multiple></select>
+                  <select id="fontColorSelect" class="form-control">
+                    <option value="spot-color">Spot Color</option>
+                    <option value="black-white">Black &amp; White</option>
+                    <option value="grayscale">Grayscale</option>
+                  </select>
+                </div>
+
+                <div class="colors-container">
+                  <span>Colors:</span>
+                  <div class="colors">
+                    <div class="color-block yellow">
+                      <span class="check"><i class="fa fa-solid fa-check"></i></span>
+                    </div>
+                    <div class="color-block cyan">
+                      <span class="check"><i class="fa fa-solid fa-check"></i></span>
+                    </div>
+                    <div class="color-block magenta">
+                      <span class="check"><i class="fa fa-solid fa-check"></i></span>
+                    </div>
+                    <div class="color-block black">
+                      <span class="check"><i class="fa fa-solid fa-check"></i></span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -157,8 +172,32 @@
                 <div class="fonts-list"></div>
               </div>
               <div class="specs-container">
-                <div class="font-preview">
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio dolor repellendus rem animi odit, eius iste magni, totam perspiciatis eveniet recusandae at aliquid omnis vero consequuntur aspernatur veritatis? Quod, deserunt?</p>
+                <div id="font-step-slider" class="custom-step-form secondary">
+                  <div class="step-form-progress">
+                    <button class="arrow">
+                      <i class="fa fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="progress-buttons">
+                      <button class="progress-btn active-step">Font</button>
+                      <button class="progress-btn">Spacing &amp; Typography</button>
+                      <button class="progress-btn">Advanced</button>
+                      <button class="progress-btn">Effects</button>
+                    </div>
+                    <button class="arrow">
+                      <i class="fa fa-solid fa-chevron-right"></i>
+                    </button>
+                  </div>
+                  <hr />
+                  <section class="step-form-content active">{% include 'partials/stepform/admin/classifieds/_font.html'%}</section>
+                  <section class="step-form-content hide">{% include 'partials/stepform/admin/classifieds/_spacing-typography.html'%}</section>
+                  <section class="step-form-content hide">{% include 'partials/stepform/admin/classifieds/_advanced.html'%}</section>
+                  <section class="step-form-content hide">{% include 'partials/stepform/admin/classifieds/_effects.html'%}</section>
+                  <div class="preview-container">
+                    <p>Font Preview</p>
+                    <div class="font-preview">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio dolor repellendus rem animi odit, eius iste magni, totam perspiciatis eveniet recusandae at aliquid omnis vero consequuntur aspernatur veritatis? Quod, deserunt?</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

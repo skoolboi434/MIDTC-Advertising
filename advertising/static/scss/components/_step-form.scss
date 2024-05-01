@@ -8,6 +8,7 @@
   min-height: 800px;
   margin: 30px auto;
   //overflow-y: scroll;
+
   &:after {
     position: absolute;
     content: '';
@@ -203,6 +204,37 @@
       }
     }
   }
+
+  &.secondary {
+    background: none;
+    box-shadow: none;
+    margin-top: 0;
+    min-height: 600px;
+    &::after {
+      content: '';
+      display: none;
+    }
+
+    .content {
+      .content__inner {
+        .multisteps-form {
+          .progress-btns-container {
+            top: -40px;
+
+            .multisteps-form__progress .multisteps-form__progress-btn {
+              font-size: 10.5px;
+            }
+          }
+        }
+      }
+    }
+
+    .content .content__inner .multisteps-form .progress-btns-container .multisteps-form__progress .multisteps-form__progress-btn.js-active {
+      background-color: $secondary;
+      color: $white;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+  }
 }
 
 .save-container {
@@ -267,4 +299,75 @@
 .custom-search-container {
   display: flex;
   justify-content: end;
+}
+
+// Secondary Step Slider
+.custom-step-form {
+  .step-form-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .arrow {
+      border: none;
+      background: none;
+    }
+    .progress-buttons {
+      .progress-btn {
+        @include transition-mix($duration: 0.15s);
+        position: relative;
+        font-size: 13px;
+        color: $black;
+        text-indent: -9999px;
+        border: none;
+        background-color: transparent;
+        outline: none !important;
+        margin: 0 2px;
+        border: none;
+        border-radius: 10px;
+        min-width: 100px;
+        cursor: pointer;
+
+        @media (min-width: 500px) {
+          text-indent: 0;
+        }
+
+        //last child - without line decoration
+        &:first-child {
+          &:after {
+            display: none;
+          }
+        }
+
+        //active styles
+        &.active-step {
+          background-color: $primary;
+          color: $white;
+          box-shadow: $shadow;
+          &:before {
+            transform: translateX(-50%) scale(1.2);
+
+            background-color: currentColor;
+          }
+        }
+      }
+    }
+  }
+
+  hr {
+    border-color: $black;
+  }
+
+  &.secondary {
+    //active styles
+    .active-step {
+      background-color: $secondary !important;
+      color: $white !important;
+      box-shadow: $shadow;
+      &:before {
+        transform: translateX(-50%) scale(1.2);
+
+        background-color: currentColor;
+      }
+    }
+  }
 }

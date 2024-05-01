@@ -61,7 +61,7 @@
 
       .font-container {
         padding: 10px 20px;
-
+        cursor: pointer;
         &.active {
           background-color: $secondary-light-alpha;
         }
@@ -83,6 +83,63 @@
       border-radius: 10px;
       border: 1px solid $gray-3;
       background-color: $white;
+    }
+  }
+}
+
+.colors-container {
+  .colors {
+    display: flex;
+    margin-top: 15px;
+    .color-block {
+      width: 20px;
+      height: 20px;
+      border: 1px solid $black;
+      border-radius: 5px;
+      position: relative;
+
+      &.selected {
+        .check {
+          visibility: visible;
+        }
+      }
+      .check {
+        display: none;
+        visibility: hidden;
+        background-color: green;
+        color: $white;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: -8px;
+        top: -8px;
+        text-align: center;
+        font-size: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &:not(:last-of-type) {
+        margin-right: 15px;
+      }
+
+      &.yellow {
+        background-color: yellow;
+      }
+
+      &.cyan {
+        background-color: cyan;
+      }
+
+      &.magenta {
+        background-color: magenta;
+      }
+
+      &.black {
+        background-color: black;
+      }
     }
   }
 }
