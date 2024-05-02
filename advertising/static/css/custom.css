@@ -1190,12 +1190,12 @@
 .custom-step-form .step-form-progress .progress-buttons .progress-btn:first-child:after {
   display: none;
 }
-.custom-step-form .step-form-progress .progress-buttons .progress-btn.js-active {
+.custom-step-form .step-form-progress .progress-buttons .progress-btn.active-step {
   background-color: #f26722;
   color: #fff;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-.custom-step-form .step-form-progress .progress-buttons .progress-btn.js-active:before {
+.custom-step-form .step-form-progress .progress-buttons .progress-btn.active-step:before {
   transform: translateX(-50%) scale(1.2);
   background-color: currentColor;
 }
@@ -2208,6 +2208,95 @@
   background-color: black;
 }
 
+.font-effects-container .text-effects-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.font-effects-container .text-effects-toggle .effect-toggle {
+  border: none;
+  background: none;
+  width: 26px;
+  height: 26px;
+}
+.font-effects-container .text-effects-toggle .effect-toggle hr {
+  margin: 0;
+}
+.font-effects-container .text-effects-toggle .effect-toggle.active {
+  background-color: #21215f;
+  border-radius: 4px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  color: #fff;
+}
+.font-effects-container .text-effects-toggle .effect-toggle.active hr {
+  border-color: #fff;
+}
+.font-effects-container .text-fill-container {
+  margin-bottom: 30px;
+}
+.font-effects-container .outline-container {
+  display: flex;
+  align-items: center;
+}
+.font-effects-container .outline-container .form-group {
+  width: 75%;
+  margin-right: 15px;
+}
+.font-effects-container .outline-container .color-fill {
+  display: none;
+}
+.font-effects-container .transparency-container {
+  display: flex;
+  align-items: center;
+}
+.font-effects-container .transparency-container .range-container {
+  width: 72%;
+  margin-right: 10px;
+}
+.font-effects-container .transparency-container .percentage-container {
+  width: 20%;
+}
+.font-effects-container .transparency-container .percentage-container input {
+  width: 70%;
+}
+.font-effects-container .gradient-container .dropdown .dropdown-toggle {
+  padding: 5px 10px;
+  background: linear-gradient(180deg, #21215f 0%, rgba(68, 68, 197, 0.5) 100%);
+  width: 25px;
+  height: 25px;
+  border: none;
+  cursor: pointer;
+}
+.font-effects-container .gradient-container .dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.font-effects-container .gradient-container .dropdown .dropdown-menu a {
+  display: block;
+  padding: 5px;
+  cursor: pointer;
+}
+.font-effects-container .gradient-container .dropdown .dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+.font-effects-container .gradient-container .dropdown .dropdown-menu .dropdown-item {
+  width: 25px;
+  height: 25px;
+}
+.font-effects-container .gradient-container .gradient-settings {
+  margin-bottom: 30px;
+}
+.font-effects-container .gradient-container .gradient-settings a {
+  font-size: 12px;
+  font-family: "Lato";
+  color: #21215f;
+  line-height: 14.4px;
+}
+
 body {
   background-color: #f3f3f3;
 }
@@ -2247,4 +2336,11 @@ body {
   font-weight: 700;
   color: #666666;
   line-height: 21.6px;
+}
+
+label {
+  font-family: "Lato" sans-serif;
+  font-size: 12px;
+  line-height: 14.4px;
+  color: #666666;
 }/*# sourceMappingURL=custom.css.map */

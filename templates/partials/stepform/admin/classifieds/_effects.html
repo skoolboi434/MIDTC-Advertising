@@ -1,1 +1,85 @@
+<div class="font-effects-container">
+  <div class="text-effects-toggle mgb-5">
+    <button id="text-fill" class="effect-toggle active">
+      <i class="fa fa-solid fa-font"></i>
+      <hr />
+    </button>
+    <button id="text-effects" class="effect-toggle">
+      <i class="fa fa-solid fa-font"></i>
+    </button>
+  </div>
 
+  <div id="text-fill" class="active">
+    <div class="row">
+      <div class="col-md-12 col-lg-6">
+        <div class="form-group text-fill-container">
+          <div class="label-container">
+            <label for="textFill">Text Fill:</label>
+          </div>
+          <select name="" id="textFill" class="form-control">
+            <option value="gradient-fill">Gradient Fill</option>
+            <option value="solid-fill">Solid Fill</option>
+            <option value="no-fill">No Fill</option>
+          </select>
+        </div>
+
+        <div class="gradient-container">
+          <div class="row">
+            <div class="col-md-12 col-lg-6">
+              <div class="label-container">
+                <label for="textFill">Preset Gradients:</label>
+              </div>
+              <div class="dropdown">
+                <button id="gradientSelector" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="gradientSelector">
+                  <!-- Gradient options will be dynamically populated here -->
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-6">
+              <div class="form-group">
+                <div class="label-container">
+                  <label for="textFill">Type:</label>
+                </div>
+                <select name="" id="gradientType" class="form-control">
+                  <option value="linear">Linear</option>
+                  <option value="radial">Radial</option>
+                  <option value="diagonal">Diagonal</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="gradient-settings">
+            <a href="#">Custom Gradient Settings</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-6">
+        <div class="outline-container">
+          <div class="form-group">
+            <div class="label-container">
+              <label for="textOutline">Text Outline:</label>
+            </div>
+            <select name="" id="textOuline" class="form-control">
+              <option value="gradient-fill">Gradient Fill</option>
+              <option id="solidFill" value="solid-fill">Solid Fill</option>
+              <option value="no-fill">No Fill</option>
+            </select>
+          </div>
+          <button class="color-fill"><i class="fa fa-solid fa-fill-drip"></i></button>
+        </div>
+        <div class="transparency-container">
+          <div class="form-group range-container">
+            <label for="transparency">Transparency:</label>
+            <input type="range" name="" id="transparencyRange" min="1" max="100" value="0" />
+          </div>
+          <div class="percentage-container">
+            <input type="text" name="" id="transparencyText" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="text-effects">Text Effects</div>
+</div>
