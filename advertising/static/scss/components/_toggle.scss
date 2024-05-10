@@ -140,6 +140,8 @@
     position: relative;
     display: inline-block;
     .radio-toggle {
+      &:checked + label {
+      }
     }
 
     .radio-switch-label {

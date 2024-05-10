@@ -103,7 +103,7 @@
           <div class="presets-container">
             <div class="form-group">
               <label class="preset-label">Presets:</label>
-              <input type="text" id="preset-input" />
+              <input type="text" id="preset-input" class="form-control" />
             </div>
             <div class="settings-link-container">
               <a href="#">Advanced Settings</a>
@@ -131,7 +131,7 @@
           <div class="presets-container">
             <div class="form-group">
               <label class="preset-label">Presets:</label>
-              <input type="text" id="preset-input" />
+              <input type="text" id="preset-input" class="form-control" />
             </div>
             <div class="settings-link-container">
               <a href="#">Advanced Settings</a>
@@ -141,7 +141,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row mgb-3">
       <div class="col-md-12 col-lg-6">
         <div class="effects-container">
           <div class="refelction-container mgb-1">
@@ -161,11 +161,17 @@
           </div>
           <div class="presets-container">
             <div class="form-group">
-              <label class="preset-label">Presets:</label>
-              <input type="text" id="preset-input" />
+              <label class="form-label preset-label">Presets:</label>
+              <input type="text" id="preset-input" class="form-control" />
             </div>
-            <div class="settings-link-container">
-              <a href="#">Advanced Settings</a>
+            <div class="transparency-container">
+              <div class="form-group range-container">
+                <label for="transparency">Transparency:</label>
+                <input type="range" name="" id="transparencyRange" min="1" max="100" value="0" />
+              </div>
+              <div class="percentage-container">
+                <input type="text" name="" id="transparencyText" />
+              </div>
             </div>
           </div>
         </div>
@@ -191,9 +197,37 @@
           <div class="presets-container">
             <div class="form-group">
               <label class="preset-label">Presets:</label>
-              <input type="text" id="preset-input" />
+              <input type="text" id="preset-input" class="form-control" />
             </div>
             <div class="settings-link-container">
+              <a href="#">Advanced Settings</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-lg-6 col-lg-offset-3">
+        <div class="effects-container">
+          <div class="three-d-container mgb-1">
+            <label class="preset-label">3-D Format</label>
+
+            <div class="custom-switch-container">
+              <div class="custom-switch">
+                <div class="radio-container mgr-1">
+                  <input id="3d-yes-option" class="radio-toggle" type="radio" name="3d-switch-option" checked="checked" value="yes" />
+                  <label class="radio-switch-label">Yes</label>
+                </div>
+                <div class="radio-container">
+                  <input id="3d-no-option" type="radio" name="3d-switch-option" value="no" />
+                  <label>No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="presets-container">
+            <div class="settings-link-container center-block">
               <a href="#">Advanced Settings</a>
             </div>
           </div>
