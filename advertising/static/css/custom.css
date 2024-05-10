@@ -1572,6 +1572,13 @@
   }
 }
 
+.custom-switch {
+  display: inline-flex;
+}
+.custom-switch .radio-container {
+  position: relative;
+  display: inline-block;
+}
 .repeating-calendar,
 .non-repeating-calendar {
   display: none;
@@ -1580,122 +1587,6 @@
 .repeating-calendar.active,
 .non-repeating-calendar.active {
   display: block;
-}
-
-.custom-toggle {
-  position: relative;
-  display: inline-block;
-  margin: 0 5px;
-}
-.custom-toggle span {
-  position: absolute;
-  top: 11px;
-  pointer-events: none;
-  font-family: "Helvetica", Arial, sans-serif;
-  font-weight: bold;
-  font-size: 10px;
-  text-transform: uppercase;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
-  width: 50%;
-  text-align: center;
-}
-.custom-toggle span.active, .custom-toggle span.repeat {
-  left: 0;
-  padding-left: 2px;
-  color: #fff;
-}
-.custom-toggle span.inactive, .custom-toggle span.non-repeating {
-  right: 0;
-  padding-right: 4px;
-  color: #000;
-}
-.custom-toggle input.check-toggle-round-flat:checked ~ .on {
-  color: #fff;
-}
-.custom-toggle .check-toggle {
-  position: absolute;
-  margin-left: -9999px;
-  visibility: hidden;
-}
-.custom-toggle .check-toggle + label {
-  display: block;
-  position: relative;
-  cursor: pointer;
-  outline: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-.custom-toggle input.check-toggle-round-flat + label {
-  padding: 2px;
-  width: 170px;
-  height: 34px;
-  background-color: #d4d7d4;
-  border-radius: 60px;
-}
-.custom-toggle input.check-toggle-round-flat + label:before,
-.custom-toggle input.check-toggle-round-flat + label:after {
-  display: block;
-  position: absolute;
-  content: "";
-}
-.custom-toggle input.check-toggle-round-flat + label:before {
-  top: 2px;
-  left: 2px;
-  bottom: 2px;
-  right: 2px;
-  background-color: #d4d7d4;
-  border-radius: 60px;
-}
-@media (max-width: 1099px) {
-  .custom-toggle .card {
-    width: 45%;
-    margin: 0 2.5% 30px;
-  }
-}
-@media (max-width: 499px) {
-  .custom-toggle .card {
-    width: 95%;
-  }
-}
-.custom-toggle.primary input.check-toggle-round-flat + label:after {
-  top: 4px;
-  left: 4px;
-  bottom: 4px;
-  width: 80px;
-  background-color: #f26722;
-  border-radius: 52px;
-  transition: margin 0.2s;
-}
-.custom-toggle.primary input.check-toggle-round-flat:checked + label:after {
-  margin-left: 80px;
-  background: #f26722;
-}
-.custom-toggle.primary input.check-toggle-round-flat:checked ~ .off {
-  color: #000;
-}
-.custom-toggle.secondary span.active {
-  left: 0;
-  padding-left: 2px;
-  color: #fff;
-}
-.custom-toggle.secondary span.inactive {
-  right: 0;
-  padding-right: 4px;
-  color: #fff;
-}
-.custom-toggle.secondary input.check-toggle-round-flat + label:after {
-  top: 4px;
-  left: 4px;
-  bottom: 4px;
-  width: 80px;
-  background-color: #21215f;
-  border-radius: 52px;
-  transition: margin 0.2s;
-}
-.custom-toggle.secondary input.check-toggle-round-flat:checked + label:after {
-  margin-left: 80px;
-  background: #21215f;
 }
 
 .item-select-container {
@@ -2208,6 +2099,65 @@
   background-color: black;
 }
 
+.color-select {
+  border: 2px solid #ccc;
+  padding: 0 0 0 6px;
+  border-radius: 4px;
+}
+
+.color-select > span {
+  text-transform: uppercase;
+  padding: 8px 0;
+  display: block;
+  cursor: pointer;
+}
+
+.color-select > span span {
+  margin-top: -8px;
+}
+
+.color-select ul {
+  width: 100%;
+  overflow: visible;
+  padding: 0;
+  border-top: 1px solid #ccc;
+  display: none;
+}
+
+.color-select ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.color-select ul li,
+.color-select > span span {
+  list-style: none;
+  width: 30px;
+  height: 30px;
+  display: block;
+  border-radius: 50%;
+  background: #fff;
+  float: left;
+  margin: 0 12px;
+  cursor: pointer;
+  position: relative;
+  top: -7px;
+}
+
+.color-select ul li {
+  margin-top: 25px;
+  transition: all 0.3s ease-in-out;
+}
+
+.color-select ul li span {
+  display: none;
+}
+
+.color-select ul li:hover {
+  transform: scale(1.15);
+}
+
 .font-effects-container .text-effects-toggle {
   display: flex;
   align-items: center;
@@ -2286,6 +2236,7 @@
 .font-effects-container .gradient-container .dropdown .dropdown-menu .dropdown-item {
   width: 25px;
   height: 25px;
+  border-radius: 50%;
 }
 .font-effects-container .gradient-container .gradient-settings {
   margin-bottom: 30px;
@@ -2295,6 +2246,85 @@
   font-family: "Lato";
   color: #21215f;
   line-height: 14.4px;
+}
+
+.spacing-typography-container .spacing .spacing-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.spacing-typography-container .spacing .spacing-select input {
+  width: 20%;
+}
+.spacing-typography-container .spacing .spacing-select span {
+  margin: 0 10px;
+}
+.spacing-typography-container .position .position-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.spacing-typography-container .position .position-select input {
+  width: 20%;
+}
+.spacing-typography-container .position .position-select span {
+  margin: 0 10px;
+}
+.spacing-typography-container .kerning-container,
+.spacing-typography-container .contextual-container {
+  display: flex;
+  align-items: center;
+}
+.spacing-typography-container .kerning-container .form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+.spacing-typography-container .kerning-container .form-group.points {
+  display: flex;
+  align-items: center;
+}
+.spacing-typography-container .kerning-container .form-group label {
+  margin-bottom: 0;
+}
+.spacing-typography-container .kerning-container .form-group input[type=checkbox] {
+  margin-top: 0;
+}
+.spacing-typography-container .kerning-container .form-group input[type=text] {
+  width: 20%;
+  margin-right: 10px;
+}
+
+.shadow-container,
+.glow-container,
+.refelction-container,
+.edges-container,
+.refelction-container {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+}
+
+.effects-container {
+  position: relative;
+}
+.effects-container.disabled input[type=text],
+.effects-container.disabled .presets-container {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.effects-container input[type=text] {
+  width: 50%;
+}
+.effects-container .custom-switch {
+  pointer-events: all;
+  opacity: 1 !important;
+}
+.effects-container .presets-container {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
 }
 
 body {

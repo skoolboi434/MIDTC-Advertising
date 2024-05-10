@@ -418,3 +418,53 @@ function create_product() {
   // Hide the current section
   currentSection.classList.add('hide');
 }
+
+// Toggle Switch Updated Code
+// document.addEventListener('DOMContentLoaded', function () {
+//   const yesOption = document.getElementById('yes-option');
+//   const noOption = document.getElementById('no-option');
+//   const effectsContainer = document.querySelector('.effects-container');
+
+//   noOption.addEventListener('click', function () {
+//     effectsContainer.classList.add('disabled');
+//   });
+
+//   yesOption.addEventListener('click', function () {
+//     effectsContainer.classList.remove('disabled');
+//   });
+// });
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Find all custom-switch containers
+  const switchContainers = document.querySelectorAll('.custom-switch-container');
+
+  // Loop through each custom-switch container
+  switchContainers.forEach(container => {
+    // Find all radio buttons within the container
+    const radioButtons = container.querySelectorAll('input[type="radio"]');
+
+    // Find the effects container for this switch
+    const effectsContainer = container.closest('.effects-container');
+
+    // Add change event listener to each radio button
+    radioButtons.forEach(radioButton => {
+      radioButton.addEventListener('change', function () {
+        // Check if the "no" option is checked
+        const noOptionChecked = container.querySelector('input[type="radio"][value="no"]:checked');
+
+        // Toggle the disabled class based on the "no" option
+        if (effectsContainer) {
+          if (noOptionChecked) {
+            console.log('No option selected. Adding disabled class.');
+            effectsContainer.classList.add('disabled');
+          } else {
+            console.log('Yes option selected. Removing disabled class.');
+            effectsContainer.classList.remove('disabled');
+          }
+        } else {
+          console.error('Effects container not found.');
+        }
+      });
+    });
+  });
+});
