@@ -146,6 +146,9 @@
 
 #selectedColors {
   display: flex;
+  .colors {
+    margin-top: 0 !important;
+  }
   .color-block {
     width: 20px;
     height: 20px;

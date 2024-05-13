@@ -43,8 +43,8 @@
             </div>
 
             <div class="form-group mgb-3 w50 center-block">
-              <label for="">* Publication Name:</label>
-              <input type="text" name="" id="" class="form-control" />
+              <label for="">Style Name:</label>
+              <input type="text" name="" id="" class="styleName form-control" />
             </div>
 
             <div class="item-select-container mgb-3">
@@ -68,13 +68,25 @@
 
           <div class="text-center mgb-3">
             <p><strong>Available in Self-service</strong></p>
-            <div class="switch2">
+            <div class="custom-switch-container">
+              <div class="custom-switch">
+                <div class="radio-container mgr-1">
+                  <input id="self-service-yes-option" class="radio-toggle" type="radio" name="self-service-switch-option" checked="checked" value="yes" />
+                  <label class="radio-switch-label">Yes</label>
+                </div>
+                <div class="radio-container">
+                  <input id="self-service-no-option" type="radio" name="self-service-switch-option" value="no" />
+                  <label>No</label>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="switch2">
               <input id="classified-style-status-toggle" class="check-toggle check-toggle-round-flat" type="checkbox" />
               <label for="classified-style-status-toggle"></label>
 
               <span class="toggle-option toggle-option-left">Yes</span>
               <span class="toggle-option toggle-option-right">No</span>
-            </div>
+            </div> -->
           </div>
 
           <div class="btn-container content-even">
@@ -231,9 +243,13 @@
               <div class="row">
                 <div class="col-md-12 col-lg-6">
                   <span>Style name:</span>
+                  <p class="style-name"></p>
                 </div>
                 <div class="col-md-12 col-lg-6">
-                  <span>Available in Self Service:</span>
+                  <div id="selfService">
+                    <span>Available in Self Service:</span>
+                    <p id="selfServiceValue" class="text-capitalize"></p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -264,8 +280,49 @@
           </div>
 
           <div class="row mgb-3">
-            <div class="col-md-12 col-lg6">
-              <span>Selected Publications:</span>
+            <div class="col-md-12 col-lg-6">
+              <div id="selectedPubs" class="selected-pubs">
+                <span>Selected Publications:</span>
+                <select multiple="multiple" id="selectedPubs" class="form-control"></select>
+              </div>
+            </div>
+          </div>
+
+          <div class="selected-font-styles mgb-3">
+            <div class="center-block">
+              <h3>Fonts</h3>
+              <hr />
+            </div>
+            <div id="review-font-specs-container" class="font-specs-container mgb-3">
+              <div class="available-fonts">
+                <div class="fonts-heading">
+                  <h3>Chosen Fonts</h3>
+                </div>
+                <div class="fonts-list"></div>
+              </div>
+              <div class="specs-container">
+                <div id="review-font-step-slider" class="custom-step-form secondary">
+                  <div class="step-form-progress">
+                    <button class="arrow">
+                      <i class="fa fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="progress-buttons">
+                      <button class="progress-btn active-step">Font</button>
+                      <button class="progress-btn">Spacing &amp; Typography</button>
+                      <button class="progress-btn">Advanced</button>
+                      <button class="progress-btn">Effects</button>
+                    </div>
+                    <button class="arrow">
+                      <i class="fa fa-solid fa-chevron-right"></i>
+                    </button>
+                  </div>
+                  <hr />
+                  <section class="step-form-content active">Review Font</section>
+                  <section class="step-form-content hide">Spacing &amp; Typography</section>
+                  <section class="step-form-content hide">Advanced</section>
+                  <section class="step-form-content hide">Effects</section>
+                </div>
+              </div>
             </div>
           </div>
 

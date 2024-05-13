@@ -214,6 +214,15 @@ $(function () {
  *
  */
 
+// Store Style Name
+$(document).ready(function () {
+  // Add event listener for input field
+  $('.styleName').on('input', function () {
+    var styleName = $(this).val(); // Get the value entered by the user
+    $('.style-name').text(styleName); // Update the content of the target HTML element
+  });
+});
+
 $(document).ready(function () {
   // Add click event listener to color blocks
   $('.color-block').click(function () {
@@ -263,4 +272,53 @@ document.getElementById('fontColorSelect').addEventListener('change', function (
   // Update the content of the selected color options div
   var selectedColorOption = document.getElementById('selectedColorOption');
   selectedColorOption.textContent = selectedOptionDisplayName;
+});
+
+// Add selected Pubs to review page
+
+$(document).ready(function () {
+  // Add click event listener to the "Move to Right" button
+  $('#btnRight').click(function () {
+    // Move selected publications from lstBox1 to lstBox2
+    $('#lstBox1 option:selected').appendTo('#lstBox2');
+    // Update the content of the target HTML element
+    updateSelectedPublications();
+  });
+
+  // Add click event listener to the "Move to Left" button
+  $('#btnLeft').click(function () {
+    // Move selected publications from lstBox2 to lstBox1
+    $('#lstBox2 option:selected').appendTo('#lstBox1');
+    // Update the content of the target HTML element
+    updateSelectedPublications();
+  });
+});
+
+function updateSelectedPublications() {
+  // Get the selected publications container
+  var selectedPubsContainer = $('#selectedPubs select');
+
+  // Clear existing content
+  selectedPubsContainer.empty();
+
+  // Loop through the options in lstBox2 and append them to the container
+  $('#lstBox2 option').each(function () {
+    selectedPubsContainer.append($(this).clone());
+  });
+}
+
+// Show Avaiable in Self Service
+
+$(document).ready(function () {
+  // Set the initial value of selfService div based on the default checked radio button
+  $('#selfServiceValue').text($('input[name="self-service-switch-option"]:checked').val());
+
+  // Add change event listener to the radio buttons
+  $('.radio-toggle').change(function () {
+    // Get the value of the selected radio button
+    var selectedValue = $('input[name="self-service-switch-option"]:checked').val();
+
+    // Update the content of the target HTML element
+    $('#selfServiceValue').text(selectedValue);
+  });
 });
