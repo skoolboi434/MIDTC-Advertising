@@ -2101,7 +2101,6 @@
 
 #selectedColors {
   display: flex;
-  margin-top: 15px;
 }
 #selectedColors .color-block {
   width: 20px;

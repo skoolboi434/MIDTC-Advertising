@@ -1,6 +1,6 @@
-$('.color-block').click(function () {
-  $(this).toggleClass('selected');
-});
+// $('.color-block').click(function () {
+//   $(this).toggleClass('selected');
+// });
 
 // Hide CMYK on Select
 document.getElementById('fontColorSelect').addEventListener('change', function () {
@@ -204,4 +204,63 @@ $(document)
 
 $(function () {
   $('[data-colorselect]').colorSelect();
+});
+
+// Show selected Classified Styles on the Review page
+
+/*******************************************************
+ *
+ * Show selected Classified Styles on the Review page
+ *
+ */
+
+$(document).ready(function () {
+  // Add click event listener to color blocks
+  $('.color-block').click(function () {
+    $(this).toggleClass('selected');
+
+    // Update the selected colors display
+    updateSelectedColors();
+  });
+});
+
+function updateSelectedColors() {
+  // Get the selected colors container
+  var selectedColorsContainer = $('#selectedColors .colors');
+
+  // Clear existing content
+  selectedColorsContainer.empty();
+
+  // Loop through color blocks
+  $('.color-block.selected').each(function () {
+    var colorBlock = $(this).clone();
+    colorBlock.find('.check').remove(); // Remove the span with the check icon
+    selectedColorsContainer.append(colorBlock);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Set the initial state of the selected color option
+  var selectedColorOption = document.getElementById('selectedColorOption');
+  selectedColorOption.textContent = 'Spot Color';
+});
+
+// Map option values to display names
+const optionDisplayNames = {
+  'spot-color': 'Spot Color',
+  'black-white': 'Black & White',
+  grayscale: 'Grayscale'
+};
+
+// Add event listener to the select element
+document.getElementById('fontColorSelect').addEventListener('change', function () {
+  // Get the selected color option value
+  var selectedOptionValue = this.value;
+
+  // Get the corresponding display name from the map
+  var selectedOptionDisplayName = optionDisplayNames[selectedOptionValue];
+
+  // Update the content of the selected color options div
+  var selectedColorOption = document.getElementById('selectedColorOption');
+  selectedColorOption.textContent = selectedOptionDisplayName;
 });

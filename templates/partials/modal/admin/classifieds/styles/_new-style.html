@@ -122,6 +122,7 @@
                     <label for="fontColorSelect">Color Option:</label>
                   </div>
                   <select id="fontColorSelect" class="form-control">
+                    <option value="" selected>Select Color Options</option>
                     <option value="spot-color">Spot Color</option>
                     <option value="black-white">Black &amp; White</option>
                     <option value="grayscale">Grayscale</option>
@@ -216,33 +217,56 @@
 
           <div class="section-content">
             <div class="text-center mgb-3">
-              <p>
-                Select from the available Ad Types you<br />
-                would like associated with this Publication
-              </p>
+              <p>Review your information below<br />then click “Create”</p>
+            </div>
+          </div>
+
+          <div class="row mgb-3">
+            <div class="col-md-12 col-lg-6">
+              <div>
+                <h3>General</h3>
+                <hr />
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-lg-6">
+                  <span>Style name:</span>
+                </div>
+                <div class="col-md-12 col-lg-6">
+                  <span>Available in Self Service:</span>
+                </div>
+              </div>
             </div>
 
-            <div class="item-select-container mgb-3">
-              <div class="available-pubs">
-                <b>Available Ad Types:</b><br />
-                <select multiple="multiple" id="lstBox1" class="form-control">
-                  <option value="ad-type-1">AdType 1</option>
-                  <option value="ad-type-2">AdType 2</option>
-                </select>
+            <div class="col-md-12 col-lg-6">
+              <div>
+                <h3>Colors</h3>
+                <hr />
               </div>
-              <div class="transferBtns">
-                <input type="button" id="btnRight" value="  >  " />
-                <br /><input type="button" id="btnLeft" value="  <  " />
-              </div>
-              <div class="selected-pubs">
-                <b>Selected Rate Groups: </b><br />
-                <select multiple="multiple" id="lstBox2" class="form-control"></select>
+              <div class="row">
+                <div class="col-md-12 col-lg-6">
+                  <div class="selected-color-options">
+                    <span>Color option:</span>
+                    <!-- Show selected color option -->
+                    <p id="selectedColorOption"></p>
+                  </div>
+                </div>
+                <div class="col-md-12 col-lg-6">
+                  <span>Selected Colors:</span>
+                  <div id="selectedColors">
+                    <div class="colors">
+                      <!-- Show selected color-blocks -->
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="link-container text-center mgb-3">
-            <a href="#">Advanced Ad Type Assignment</a>
+          <div class="row mgb-3">
+            <div class="col-md-12 col-lg6">
+              <span>Selected Publications:</span>
+            </div>
           </div>
 
           <div class="btn-container content-even">
