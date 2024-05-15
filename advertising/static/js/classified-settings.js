@@ -322,3 +322,40 @@ $(document).ready(function () {
     $('#selfServiceValue').text(selectedValue);
   });
 });
+
+/**
+ * Upsells
+ */
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Find all custom-switch containers
+  const switchContainers = document.querySelectorAll('.upsell-switch-container');
+
+  // Loop through each custom-switch container
+  switchContainers.forEach(container => {
+    // Find all radio buttons within the container
+    const radioButtons = container.querySelectorAll('input[type="radio"]');
+
+    // Find the effects container for this switch
+    const effectsContainer = container.closest('.upsell-item');
+
+    // Add change event listener to each radio button
+    radioButtons.forEach(radioButton => {
+      radioButton.addEventListener('change', function () {
+        // Check if the "no" option is checked
+        const noOptionChecked = container.querySelector('input[type="radio"][value="inactive"]:checked');
+
+        // Toggle the disabled class based on the "no" option
+        if (effectsContainer) {
+          if (noOptionChecked) {
+            effectsContainer.classList.add('inactive');
+          } else {
+            effectsContainer.classList.remove('inactive');
+          }
+        } else {
+          console.error('Effects container not found.');
+        }
+      });
+    });
+  });
+});

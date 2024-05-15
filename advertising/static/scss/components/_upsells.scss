@@ -1,0 +1,71 @@
+.upsells-container {
+  .upsells-list {
+    min-height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: $shadow;
+    overflow-y: scroll;
+    border: 1px solid $black;
+
+    .upsell-item {
+      padding: 20px;
+      background-color: $secondary-light-alpha;
+
+      &:first-of-type {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid $black;
+      }
+
+      &.inactive {
+        .upsell-info,
+        .upsell-desc,
+        .assigned-gl,
+        .assigned-pubs,
+        .assigned-rate {
+          pointer-events: none;
+          opacity: 0.5;
+        }
+      }
+
+      .upsell-top {
+        .upsell-info {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 10px;
+
+          .upsell-name {
+            .heading {
+              margin: 0;
+              font-weight: 700;
+              font-size: 18px;
+              line-height: 21.6px;
+            }
+          }
+
+          .upsell-id {
+            .id {
+              font-family: Lato;
+              font-size: 12px;
+              font-weight: 400;
+              line-height: 14.4px;
+            }
+          }
+        }
+
+        .upsell-desc {
+          p {
+            font-family: Lato;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14.4px;
+          }
+        }
+      }
+    }
+  }
+}
