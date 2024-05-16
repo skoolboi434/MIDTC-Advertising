@@ -12,17 +12,24 @@
 
   <div class="row">
     <!-- Default Upsells -->
-    <div class="col-md-12 col-lg-6 upsells-container">
-      <div class="filter-container">
-        <div class="heading">
+    <div class="col-md-12 col-lg-8 upsells-container">
+      <div class="filter-container mgb-1">
+        <div class="heading-container">
           <h3>Default Upsells</h3>
         </div>
-        <!-- <div class="filters ps-3 d-flex align-items-center"><a href="" class="active">Active</a>&nbsp;|&nbsp;<a href="">Inactive</a>&nbsp;|&nbsp;<a href="">Archived</a></div> -->
+        <div id="upsell-filter" class="filters">
+          <a href="#" class="active">All</a>
+          <a href="#">Active</a>&nbsp;|&nbsp;<a href="#">Inactive</a>&nbsp;|&nbsp;<a href="#">Archived</a>
+        </div>
+        <div class="form-group has-search">
+          <input type="text" class="form-control" placeholder="Search..." />
+          <span class="fa fa-search form-control-feedback" aria-hidden="true"></span>
+        </div>
       </div>
       <hr />
       <div class="upsells-list">
         <!-- Upsell Item -->
-        <div class="upsell-item">
+        <div class="upsell-item active">
           <div class="row upsell-top mgb-3">
             <div class="col-md-7">
               <div class="upsell-info">
@@ -33,7 +40,7 @@
                   <span class="id">ID# 00001</span>
                 </div>
                 <div class="edit-upsell">
-                  <span onclick="document.getElementById('editUpsell').style.cssText = 'display: block; opacity: 1; visibility: visible;'"><i class="fa fa-solid fa-pencil mgr-1" aria-hidden="true"></i></span>
+                  <span onclick="document.getElementById('0001-manageUpsell').style.cssText = 'display: block; opacity: 1; visibility: visible;'"><i class="fa fa-solid fa-pencil mgr-1" aria-hidden="true"></i></span>
                 </div>
               </div>
 
@@ -82,13 +89,136 @@
         </div>
 
         <!-- Upsell Item -->
+        <div class="upsell-item active">
+          <div class="row upsell-top mgb-3">
+            <div class="col-md-7">
+              <div class="upsell-info">
+                <div class="upsell-name">
+                  <h3 class="heading">Flash Video</h3>
+                </div>
+                <div class="upsell-id">
+                  <span class="id">ID# 00002</span>
+                </div>
+                <div class="edit-upsell">
+                  <span onclick="document.getElementById('0002-manageUpsell').style.cssText = 'display: block; opacity: 1; visibility: visible;'"><i class="fa fa-solid fa-pencil mgr-1" aria-hidden="true"></i></span>
+                </div>
+              </div>
+
+              <div class="upsell-desc">
+                <p>Upsell description goes here to explain its details</p>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="upsell-switch-container">
+                <div class="switch-field">
+                  <input type="radio" id="0002-radio-one" name="0002-switch-one" value="active" checked />
+                  <label for="0002-radio-one">Active</label>
+                  <input type="radio" id="0002-radio-two" name="0002-switch-one" value="inactive" />
+                  <label for="0002-radio-two">Inactive</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row upsell-bottom">
+            <div class="col-md-6">
+              <div class="assigned-rate mgb-1">
+                <span>Assigned Rate: <span>None</span></span>
+              </div>
+              <div class="self-service mgb-1 content-between">
+                <span>Available in Self:</span>
+                <div class="custom-switch-container">
+                  <div class="switch-field">
+                    <input type="radio" id="0002-self-service-radio-one" name="0002-self-service-switch-one" value="yes" checked />
+                    <label for="0002-self-service-radio-one">Yes</label>
+                    <input type="radio" id="0002-self-service-radio-two" name="0002-self-service-switch-one" value="no" />
+                    <label for="0002-self-service-radio-two">No</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="assigned-gl mgb-1">
+                <span>Assigned GL: <span>Default</span></span>
+              </div>
+              <div class="assigned-pubs">
+                <span>Assigned Pubs: <a href="#">See List</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upsell Item -->
+        <div class="upsell-item active">
+          <div class="row upsell-top mgb-3">
+            <div class="col-md-7">
+              <div class="upsell-info">
+                <div class="upsell-name">
+                  <h3 class="heading">Flash Video 2</h3>
+                </div>
+                <div class="upsell-id">
+                  <span class="id">ID# 00003</span>
+                </div>
+                <div class="edit-upsell">
+                  <span onclick="document.getElementById('0003-manageUpsell').style.cssText = 'display: block; opacity: 1; visibility: visible;'"><i class="fa fa-solid fa-pencil mgr-1" aria-hidden="true"></i></span>
+                </div>
+              </div>
+
+              <div class="upsell-desc">
+                <p>Upsell description goes here to explain its details</p>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="upsell-switch-container">
+                <div class="switch-field">
+                  <input type="radio" id="0003-radio-one" name="0003-switch-one" value="active" checked />
+                  <label for="0003-radio-one">Active</label>
+                  <input type="radio" id="0003-radio-two" name="0003-switch-one" value="inactive" />
+                  <label for="0003-radio-two">Inactive</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row upsell-bottom">
+            <div class="col-md-6">
+              <div class="assigned-rate mgb-1">
+                <span>Assigned Rate: <span>None</span></span>
+              </div>
+              <div class="self-service mgb-1 content-between">
+                <span>Available in Self:</span>
+                <div class="custom-switch-container">
+                  <div class="switch-field">
+                    <input type="radio" id="0003-self-service-radio-one" name="0003-self-service-switch-one" value="yes" checked />
+                    <label for="0003-self-service-radio-one">Yes</label>
+                    <input type="radio" id="0003-self-service-radio-two" name="0003-self-service-switch-one" value="no" />
+                    <label for="0003-self-service-radio-two">No</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="assigned-gl mgb-1">
+                <span>Assigned GL: <span>Default</span></span>
+              </div>
+              <div class="assigned-pubs">
+                <span>Assigned Pubs: <a href="#">See List</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="col-md-12 col-lg-6">
-      <div>
-        <h3>Custom Upsells</h3>
-        <hr />
+    <div class="col-md-12 col-lg-4">
+      <div class="heading-container">
+        <h3 class="mgt-0">Custom Upsells</h3>
+      </div>
+      <hr />
+      <div class="request-upsell-container">
+        <p>Don't see an upsell in the Default section you<br />need? Request to add one by filling out the form below!</p>
+
+        <button class="btn btn-secondary">Request and Upsell</button>
       </div>
     </div>
   </div>

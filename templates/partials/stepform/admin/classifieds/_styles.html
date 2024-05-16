@@ -10,7 +10,7 @@
     <div class="">
       <div class="row mb-2">
         <div class="col-md-6">
-          <div class="filter-container d-flex">
+          <div id="table-filter" class="filter-container d-flex">
             <button class="btn btn-secondary mgr-1" onclick="document.getElementById('newStyle').style.cssText = 'display: block; opacity: 1; visibility: visible;'">New Style</button>
             <div class="filters ps-3 d-flex align-items-center"><a href="" class="active">Active</a>&nbsp;|&nbsp;<a href="">Inactive</a>&nbsp;|&nbsp;<a href="">Archived</a></div>
           </div>
@@ -40,7 +40,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr class="inactive">
             <td>0001</td>
             <td>Obit1</td>
             <td>See List</td>
