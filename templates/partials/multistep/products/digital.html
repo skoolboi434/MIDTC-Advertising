@@ -1,17 +1,23 @@
 {% load static %}
 <div class="c-card">
   <div class="progress-icons">
-    <div id="progress_0" class="progress-dot progress-active">
-      <span><i class="fa fa-solid fa-check"></i></span>
+    <div class="progress-dot-container">
+      <div id="progress_0" class="progress-dot progress-active">
+        <span><i class="fa fa-solid fa-check"></i></span>
+      </div>
+      <p class="step-label">Product Info</p>
     </div>
-    <div id="progress_1" class="progress-dot">
-      <span><i class="fa fa-solid fa-check"></i></span>
+    <div class="progress-dot-container">
+      <div id="progress_1" class="progress-dot">
+        <span><i class="fa fa-solid fa-check"></i></span>
+      </div>
+      <p class="step-label">Size Setup</p>
     </div>
-    <div id="progress_2" class="progress-dot">
-      <span><i class="fa fa-solid fa-check"></i></span>
-    </div>
-    <div id="progress_3" class="progress-dot">
-      <span><i class="fa fa-solid fa-check"></i></span>
+    <div class="progress-dot-container">
+      <div id="progress_2" class="progress-dot">
+        <span><i class="fa fa-solid fa-check"></i></span>
+      </div>
+      <p class="step-label">Review</p>
     </div>
   </div>
 
@@ -24,7 +30,7 @@
         <div class="col-lg-6 col-md-12">
           <div class="form-group mb-5">
             <label for="product-mag">Digital Product Name:</label>
-            <input type="text" name="" id="product-mag" class="form-control" />
+            <input type="text" id="product-mag" class="form-control" required />
           </div>
 
           <div class="form-group">
@@ -32,13 +38,13 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="format">Select Format:</label>
-                  <select name="" id="format" class="form-control"></select>
+                  <select id="format" class="form-control" required></select>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="ad-type">Ad Type:</label>
-                  <select name="" id="ad-type" class="form-control"></select>
+                  <select id="ad-type" class="form-control" required></select>
                 </div>
               </div>
             </div>
@@ -48,11 +54,11 @@
             <div class="row mb-5">
               <div class="col-md-6">
                 <label for="height">Height:</label>
-                <input type="text" name="" id="height" class="form-control" />
+                <input type="text" id="height" class="form-control" required />
               </div>
               <div class="col-md-6">
                 <label for="width">Width</label>
-                <input type="text" name="" id="width" class="form-control" />
+                <input type="text" id="width" class="form-control" required />
               </div>
             </div>
           </div>
@@ -65,7 +71,7 @@
       </div>
     </div>
     <div class="btn-container text-center">
-      <button class="btn btn-secondary" onclick="next_step(event)">Next</button>
+      <button class="btn btn-secondary next-step-button" onclick="next_step(event)">Next</button>
     </div>
   </div>
 
@@ -85,24 +91,24 @@
 
             <div class="form-group px-3 mb-3">
               <label for="size-description">Size Description</label>
-              <input type="text" name="" id="size-description" class="form-control" />
+              <input type="text" id="size-description" class="form-control" required />
             </div>
 
             <div class="form-group px-3 mb-3">
               <div class="row">
                 <div class="col-md-6">
                   <label for="width">Width</label>
-                  <input type="text" name="" id="width" class="form-control" />
+                  <input type="text" id="width" class="form-control" required />
                 </div>
                 <div class="col-md-6">
                   <label for="height">Height</label>
-                  <input type="text" name="" id="height" class="form-control" />
+                  <input type="text" id="height" class="form-control" required />
                 </div>
               </div>
             </div>
 
             <div class="link-container text-center w-50 mx-auto">
-              <a href="" class="calculation-link">Click here to see Total Column Inches calculation</a>
+              <a href="#" class="calculation-link">Click here to see Total Column Inches calculation</a>
             </div>
 
             <div class="total-container text-center my-5">

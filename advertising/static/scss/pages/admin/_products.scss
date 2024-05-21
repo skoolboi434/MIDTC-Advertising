@@ -1,0 +1,13 @@
+.heading-container {
+  &.product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px 0;
+    img {
+      position: absolute;
+      max-width: 8%;
+    }
+  }
+}

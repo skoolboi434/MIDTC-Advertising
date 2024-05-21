@@ -1,17 +1,28 @@
 {% load static %}
 <div class="c-card">
   <div class="progress-icons">
-    <div id="progress_0" class="progress-dot progress-active">
-      <span><i class="fa fa-solid fa-check"></i></span>
+    <div class="progress-dot-container">
+      <div id="progress_0" class="progress-dot progress-active">
+        <span><i class="fa fa-solid fa-check"></i></span>
+      </div>
     </div>
-    <div id="progress_1" class="progress-dot">
-      <span><i class="fa fa-solid fa-check"></i></span>
+
+    <div class="progress-dot-container">
+      <div id="progress_1" class="progress-dot">
+        <span><i class="fa fa-solid fa-check"></i></span>
+      </div>
     </div>
-    <div id="progress_2" class="progress-dot">
-      <span><i class="fa fa-solid fa-check"></i></span>
+
+    <div class="progress-dot-container">
+      <div id="progress_2" class="progress-dot">
+        <span><i class="fa fa-solid fa-check"></i></span>
+      </div>
     </div>
-    <div id="progress_3" class="progress-dot">
-      <span><i class="fa fa-solid fa-check"></i></span>
+
+    <div class="progress-dot-container">
+      <div id="progress_3" class="progress-dot">
+        <span><i class="fa fa-solid fa-check"></i></span>
+      </div>
     </div>
   </div>
 
@@ -27,11 +38,11 @@
             <div class="row">
               <div class="col-md-6">
                 <label for="product-mag">Magazine Product:</label>
-                <input type="text" name="" id="product-mag" class="form-control" />
+                <input type="text" id="product-mag" class="form-control" required />
               </div>
               <div class="col-md-6">
                 <label for="measurement-type">Measurement Type:</label>
-                <select name="" id="measurement-type" class="form-control"></select>
+                <select id="measurement-type" class="form-control" required></select>
               </div>
             </div>
           </div>
@@ -40,14 +51,14 @@
             <div class="row mb-5">
               <div class="col-md-6">
                 <label for="orientation">Fold Orientation:</label>
-                <select name="" id="orientation" class="form-control"></select>
+                <select id="orientation" class="form-control" required></select>
               </div>
               <div class="col-md-6">
                 <label for="orientation">Size:</label>
                 <div class="double">
-                  <input type="text" name="" id="" class="form-control" />
+                  <input type="text" id="" class="form-control" required />
                   <strong class="px-1 font-weight-bold">X</strong>
-                  <input type="text" name="" id="" class="form-control" />
+                  <input type="text" id="" class="form-control" required />
                 </div>
               </div>
             </div>
@@ -56,11 +67,11 @@
             <div class="row">
               <div class="col-md-6">
                 <label for="columns">Columns Per Page: (Optional)</label>
-                <input type="text" name="" id="columns" class="form-control" />
+                <input type="text" id="columns" class="form-control" />
               </div>
               <div class="col-md-6">
                 <label for="column-width">Column Width: (Optional)</label>
-                <input type="text" name="" id="column-width" class="form-control" />
+                <input type="text" id="column-width" class="form-control" />
               </div>
             </div>
           </div>
@@ -68,11 +79,11 @@
             <div class="row mb-5">
               <div class="col-md-6">
                 <label for="page-width">Page Width: (Optional)</label>
-                <input type="text" name="" id="page-width" class="form-control" />
+                <input type="text" id="page-width" class="form-control" />
               </div>
               <div class="col-md-6">
                 <label for="page-height">Page Height: (Optional)</label>
-                <input type="text" name="" id="page-height" class="form-control" />
+                <input type="text" id="page-height" class="form-control" />
               </div>
             </div>
           </div>
@@ -80,11 +91,11 @@
             <div class="row">
               <div class="col-md-6">
                 <label for="page-border">Page Border: (Optional)</label>
-                <input type="text" name="" id="page-border" class="form-control" />
+                <input type="text" id="page-border" class="form-control" />
               </div>
               <div class="col-md-6">
                 <label for="gutter-size">Gutter Size: (Optional)</label>
-                <input type="text" name="" id="gutter-size" class="form-control" />
+                <input type="text" id="gutter-size" class="form-control" />
               </div>
             </div>
           </div>
@@ -98,7 +109,7 @@
     </div>
 
     <div class="btn-container text-center">
-      <button class="btn btn-secondary" onclick="next_step(event)">Next</button>
+      <button type="button" class="btn btn-secondary next-step-button" onclick="next_step(event)">Next</button>
     </div>
   </div>
 
@@ -118,24 +129,24 @@
 
             <div class="form-group px-3 mb-3">
               <label for="size-description">Size Description</label>
-              <input type="text" name="" id="size-description" class="form-control" />
+              <input type="text" name="" id="size-description" class="form-control" required />
             </div>
 
             <div class="form-group px-3 mb-3">
               <div class="row">
                 <div class="col-md-6">
                   <label for="column-num">No. of Columns</label>
-                  <input type="text" name="" id="column-num" class="form-control" />
+                  <input type="text" name="" id="column-num" class="form-control" required />
                 </div>
                 <div class="col-md-6">
                   <label for="height">Height</label>
-                  <input type="text" name="" id="height" class="form-control" />
+                  <input type="text" name="" id="height" class="form-control" required />
                 </div>
               </div>
             </div>
 
             <div class="link-container text-center w-50 mx-auto">
-              <a href="" class="calculation-link">Click here to see Total Column Inches calculation</a>
+              <a href="#" class="calculation-link">Click here to see Total Column Inches calculation</a>
             </div>
 
             <div class="total-container text-center my-5">
@@ -193,7 +204,7 @@
 
     <div class="btn-container text-center">
       <button class="btn btn-gray" onclick="previous_step(event)">Previous</button>
-      <button class="btn btn-secondary" onclick="next_step(event)">Next</button>
+      <button class="btn btn-secondary next-step-button" onclick="next_step(event)">Next</button>
     </div>
   </div>
 

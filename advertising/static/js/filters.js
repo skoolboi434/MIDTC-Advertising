@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const filterLinks = document.querySelectorAll('.filters a');
+  const filterLinks = document.querySelectorAll('.upsell-filters span');
   const radioButtons = document.querySelectorAll('input[type="radio"]');
 
   filterLinks.forEach(function (link) {

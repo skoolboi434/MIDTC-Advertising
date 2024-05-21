@@ -1,8 +1,9 @@
 {% extends 'base.html' %} {% block content %}{% load static %}
 
 <div class="container mt-5">
-  <div class="heading-container product-digital text-center">
+  <div class="heading-container product text-center">
     <h3 class="heading">New Digital Product</h3>
+    <img class="img-fluid" src="{% static 'images/digital.png' %}" alt="digital" />
   </div>
 
   <div class="breadcrumb"><a href="{% url 'admin' %}">Admin Home</a></div>

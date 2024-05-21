@@ -1,17 +1,24 @@
 {% load static %}
+
 <div class="c-card">
   <div class="progress-icons">
-    <div id="progress_0" class="progress-dot progress-active">
-      <span><i class="fa fa-solid fa-check"></i></span>
+    <div class="progress-dot-container">
+      <div id="progress_0" class="progress-dot progress-active">
+        <span><i class="fa fa-solid fa-check"></i></span>
+      </div>
+      <p class="step-label">Product Info</p>
     </div>
-    <div id="progress_1" class="progress-dot">
-      <span><i class="fa fa-solid fa-check"></i></span>
+    <div class="progress-dot-container">
+      <div id="progress_1" class="progress-dot">
+        <span><i class="fa fa-solid fa-check"></i></span>
+      </div>
+      <p class="step-label">Size Setup</p>
     </div>
-    <div id="progress_2" class="progress-dot">
-      <span><i class="fa fa-solid fa-check"></i></span>
-    </div>
-    <div id="progress_3" class="progress-dot">
-      <span><i class="fa fa-solid fa-check"></i></span>
+    <div class="progress-dot-container">
+      <div id="progress_2" class="progress-dot">
+        <span><i class="fa fa-solid fa-check"></i></span>
+      </div>
+      <p class="step-label">Review</p>
     </div>
   </div>
 
@@ -107,7 +114,6 @@
   <div id="section2" class="section multistep-content mgb-3 hide">
     <div class="heading-container">
       <h3 class="heading">Size Setup</h3>
-      <hr />
     </div>
 
     <div class="section-content">
@@ -121,24 +127,24 @@
 
             <div class="form-group px-3 mb-3">
               <label for="size-description">Size Description</label>
-              <input type="text" name="" id="size-description" class="form-control" />
+              <input type="text" name="" id="size-description" class="form-control" required />
             </div>
 
             <div class="form-group px-3 mb-3">
               <div class="row">
                 <div class="col-md-12 col-lg-6">
                   <label for="column-num">No. of Columns</label>
-                  <input type="text" name="" id="column-num" class="form-control" />
+                  <input type="text" name="" id="column-num" class="form-control" required />
                 </div>
                 <div class="col-md-12 col-lg-6">
                   <label for="height">Height</label>
-                  <input type="text" name="" id="height" class="form-control" />
+                  <input type="text" name="" id="height" class="form-control" required />
                 </div>
               </div>
             </div>
 
             <div class="link-container text-center w-50 mx-auto">
-              <a href="" class="calculation-link">Click here to see Total Column Inches calculation</a>
+              <a href="#" class="calculation-link">Click here to see Total Column Inches calculation</a>
             </div>
 
             <div class="total-container text-center my-5">
@@ -203,7 +209,6 @@
   <div id="section3" class="section multistep-content mgb-3 hide">
     <div class="heading-container">
       <h3 class="heading">Review</h3>
-      <hr />
     </div>
 
     <div class="section-content">

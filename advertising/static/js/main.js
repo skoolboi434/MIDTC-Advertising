@@ -330,20 +330,106 @@ function openSection(evt, sectionName) {
 }
 
 // Multistep
-function next_step() {
-  // Get the current active section
-  var currentSection = document.querySelector('.multistep-content:not(.hide)');
+
+// function next_step() {
+//   // Get the current active section
+//   var currentSection = document.querySelector('.multistep-content:not(.hide)');
+
+//   // Find all required inputs in the current section
+//   var requiredInputs = currentSection.querySelectorAll('[required]');
+//   var allFilled = true;
+
+//   // Check if all required inputs are filled
+//   requiredInputs.forEach(function (input) {
+//     if (!input.value.trim()) {
+//       allFilled = false;
+//       input.classList.add('input-error'); // Optionally, add an error class for styling
+//     } else {
+//       input.classList.remove('input-error'); // Remove error class if input is filled
+//     }
+//   });
+
+//   // If not all required inputs are filled, exit the function
+//   if (!allFilled) {
+//     alert('Please fill in all required fields.');
+//     return;
+//   }
+
+//   // Find the next section
+//   var nextSection = currentSection.nextElementSibling;
+
+//   // If there is no next section, exit the function
+//   if (!nextSection) return;
+
+//   // Remove the 'hide' class from the next section
+//   nextSection.classList.remove('hide');
+
+//   // Get all progress icons
+//   var progressIcons = document.querySelectorAll('.progress-icons > .progress-dot-container > div');
+
+//   // Find the index of the current active progress icon
+//   var currentIndex;
+//   progressIcons.forEach(function (icon, index) {
+//     if (icon.classList.contains('progress-active')) {
+//       currentIndex = index;
+//     }
+//   });
+
+//   // If the current index is valid and there is a next progress icon, add 'progress-active' class to it
+//   if (currentIndex !== undefined && progressIcons[currentIndex + 1]) {
+//     progressIcons[currentIndex + 1].classList.add('progress-active');
+//   }
+
+//   // Hide the current section
+//   currentSection.classList.add('hide');
+// }
+
+function next_step(event) {
+  // Prevent the default button action if needed
+  event.preventDefault();
+
+  // Get the button that triggered the function
+  var button = event.target;
+
+  // Get the closest form section to the button
+  var currentSection = button.closest('.multistep-content');
+
+  // Ensure a valid current section is found
+  if (!currentSection) {
+    console.error('No active section found.');
+    return;
+  }
+
+  // Find all required inputs in the current section
+  var requiredInputs = currentSection.querySelectorAll('[required]');
+  var allFilled = true;
+
+  // Check if all required inputs are filled
+  requiredInputs.forEach(function (input) {
+    if (!input.value.trim()) {
+      allFilled = false;
+      input.classList.add('input-error'); // Optionally, add an error class for styling
+    } else {
+      input.classList.remove('input-error'); // Remove error class if input is filled
+    }
+  });
+
+  // If not all required inputs are filled, exit the function
+  if (!allFilled) {
+    alert('Please fill in all required fields.');
+    return;
+  }
 
   // Find the next section
   var nextSection = currentSection.nextElementSibling;
 
   // If there is no next section, exit the function
-  if (!nextSection) return;
+  if (!nextSection || !nextSection.classList.contains('multistep-content')) return;
 
   // Remove the 'hide' class from the next section
   nextSection.classList.remove('hide');
 
-  // Get all progress icons
+  // Get all progress icons within the specified form
   var progressIcons = document.querySelectorAll('.progress-icons > .progress-dot-container > div');
 
   // Find the index of the current active progress icon
@@ -362,6 +448,11 @@ function next_step() {
   // Hide the current section
   currentSection.classList.add('hide');
 }
+
+// Event listener setup for buttons
+document.querySelectorAll('.next-step-button').forEach(function (button) {
+  button.addEventListener('click', next_step);
+});
 
 function previous_step() {
   // Get the current active section
