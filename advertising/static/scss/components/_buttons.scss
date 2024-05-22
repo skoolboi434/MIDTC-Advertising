@@ -1,5 +1,10 @@
 .btn {
   min-width: 175px;
+
+  &:focus {
+    color: $white;
+    outline: none !important;
+  }
 }
 
 .btn-custom {
@@ -15,6 +20,11 @@
 
   i {
     margin-right: 10px;
+  }
+
+  &:focus {
+    color: $white;
+    outline: none !important;
   }
 }
 

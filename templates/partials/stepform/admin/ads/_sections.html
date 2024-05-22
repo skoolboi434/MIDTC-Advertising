@@ -108,24 +108,22 @@
               <td>Obits</td>
               <td><a href="">See List</a></td>
               <td>
-                <div class="switch2">
-                  <input id="sections-toggle" class="check-toggle check-toggle-round-flat" type="checkbox" />
-                  <label for="sections-toggle"></label>
-
-                  <span class="active">Active</span>
-                  <span class="deactivate">Deactivate</span>
+                <div class="sections-switch-container">
+                  <div class="switch-field">
+                    <input type="radio" id="0001-section-radio-one" name="0001-section-switch-one" value="active" checked />
+                    <label for="0001-section-radio-one">Active</label>
+                    <input type="radio" id="0001-section-radio-two" name="0001-section-switch-one" value="inactive" />
+                    <label for="0001-section-radio-two">Inactive</label>
+                  </div>
                 </div>
               </td>
               <td>
-                <span class="pe-3 color-secondary" onclick="document.getElementById('editSections').style.display='block'"><i class="fa fa-solid fa-pencil mgr-1"></i></span>
+                <span class="pe-3 color-secondary" onclick="document.getElementById('editSections').style.cssText = 'display: block; opacity: 1; visibility: visible;'"><i class="fa fa-solid fa-pencil mgr-1"></i></span>
                 <span class="color-secondary"><i class="fa fa-solid fa-envelope-open"></i></span>
               </td>
             </tr>
           </tbody>
         </table>
-        <div class="end-of-list-heading-container text-center py-5">
-          <span>You've reached the end!</span>
-        </div>
       </div>
 
       <div class="save-container d-flex justify-content-end mt-5">

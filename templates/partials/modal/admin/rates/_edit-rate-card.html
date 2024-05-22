@@ -1,10 +1,10 @@
-<div id="createRateCardModal" class="modal my-modal">
-  <div class="modal-content create-rate-card">
-    <span class="close" onclick="document.getElementById('createRateCardModal').style.display='none'">&times;</span>
+<div id="editRateCardModal" class="modal my-modal">
+  <div class="custom-modal-content">
+    <span class="close" onclick="document.getElementById('editRateCardModal').style.display='none'">&times;</span>
 
-    <div class="new-rate-card-container">
+    <div class="edit-rate-card-container">
       <div class="heading-container text-center mb-3">
-        <h3 class="heading">New Rate Card</h3>
+        <h3 class="heading">Edit Rate Card</h3>
         <hr class="w-50 m-auto" />
       </div>
 
@@ -96,8 +96,10 @@
 
       <!-- End Row -->
 
-      <div class="btn-container text-center mt-3">
-        <button class="btn btn-secondary">Create Rate Card</button>
+      <div class="btn-container text-center mt-3 d-flex justify-content-around">
+        <button class="btn btn-danger">Archive Rate Card</button>
+        <button class="btn btn-light">Discard Changes</button>
+        <button class="btn btn-secondary">Save Changes</button>
       </div>
     </div>
   </div>
