@@ -331,59 +331,6 @@ function openSection(evt, sectionName) {
 
 // Multistep
 
-// function next_step() {
-//   // Get the current active section
-//   var currentSection = document.querySelector('.multistep-content:not(.hide)');
-
-//   // Find all required inputs in the current section
-//   var requiredInputs = currentSection.querySelectorAll('[required]');
-//   var allFilled = true;
-
-//   // Check if all required inputs are filled
-//   requiredInputs.forEach(function (input) {
-//     if (!input.value.trim()) {
-//       allFilled = false;
-//       input.classList.add('input-error'); // Optionally, add an error class for styling
-//     } else {
-//       input.classList.remove('input-error'); // Remove error class if input is filled
-//     }
-//   });
-
-//   // If not all required inputs are filled, exit the function
-//   if (!allFilled) {
-//     alert('Please fill in all required fields.');
-//     return;
-//   }
-
-//   // Find the next section
-//   var nextSection = currentSection.nextElementSibling;
-
-//   // If there is no next section, exit the function
-//   if (!nextSection) return;
-
-//   // Remove the 'hide' class from the next section
-//   nextSection.classList.remove('hide');
-
-//   // Get all progress icons
-//   var progressIcons = document.querySelectorAll('.progress-icons > .progress-dot-container > div');
-
-//   // Find the index of the current active progress icon
-//   var currentIndex;
-//   progressIcons.forEach(function (icon, index) {
-//     if (icon.classList.contains('progress-active')) {
-//       currentIndex = index;
-//     }
-//   });
-
-//   // If the current index is valid and there is a next progress icon, add 'progress-active' class to it
-//   if (currentIndex !== undefined && progressIcons[currentIndex + 1]) {
-//     progressIcons[currentIndex + 1].classList.add('progress-active');
-//   }
-
-//   // Hide the current section
-//   currentSection.classList.add('hide');
-// }
-
 function next_step(event) {
   // Prevent the default button action if needed
   event.preventDefault();
@@ -449,6 +396,39 @@ function next_step(event) {
   currentSection.classList.add('hide');
 }
 
+// function next_step() {
+//   // Get the current active section
+//   var currentSection = document.querySelector('.multistep-content:not(.hide)');
+
+//   // Find the next section
+//   var nextSection = currentSection.nextElementSibling;
+
+//   // If there is no next section, exit the function
+//   if (!nextSection) return;
+
+//   // Remove the 'hide' class from the next section
+//   nextSection.classList.remove('hide');
+
+//   // Get all progress icons
+//   var progressIcons = document.querySelectorAll('.progress-icons > .progress-dot-container > div');
+
+//   // Find the index of the current active progress icon
+//   var currentIndex;
+//   progressIcons.forEach(function (icon, index) {
+//     if (icon.classList.contains('progress-active')) {
+//       currentIndex = index;
+//     }
+//   });
+
+//   // If the current index is valid and there is a next progress icon, add 'progress-active' class to it
+//   if (currentIndex !== undefined && progressIcons[currentIndex + 1]) {
+//     progressIcons[currentIndex + 1].classList.add('progress-active');
+//   }
+
+//   // Hide the current section
+//   currentSection.classList.add('hide');
+// }
+
 // Event listener setup for buttons
 document.querySelectorAll('.next-step-button').forEach(function (button) {
   button.addEventListener('click', next_step);
@@ -509,21 +489,6 @@ function create_product() {
   // Hide the current section
   currentSection.classList.add('hide');
 }
-
-// Toggle Switch Updated Code
-// document.addEventListener('DOMContentLoaded', function () {
-//   const yesOption = document.getElementById('yes-option');
-//   const noOption = document.getElementById('no-option');
-//   const effectsContainer = document.querySelector('.effects-container');
-
-//   noOption.addEventListener('click', function () {
-//     effectsContainer.classList.add('disabled');
-//   });
-
-//   yesOption.addEventListener('click', function () {
-//     effectsContainer.classList.remove('disabled');
-//   });
-// });
 
 document.addEventListener('DOMContentLoaded', function () {
   // Find all custom-switch containers
