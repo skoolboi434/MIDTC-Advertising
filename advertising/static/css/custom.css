@@ -1050,7 +1050,7 @@
 .step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel .heading-arrows-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 100px;
+  margin-bottom: 130px;
 }
 .step-form-container .content .content__inner .multisteps-form .multisteps-form__form .multisteps-form__panel .heading-arrows-container .multistep-form__arrow {
   background: none;
@@ -1352,7 +1352,7 @@
   /* The Close Button */
 }
 .my-modal .custom-modal-content .heading-container hr {
-  border: 1px solid #f26722;
+  border: 1px solid #000;
 }
 .my-modal .custom-modal-content .close {
   color: #000;
@@ -2634,6 +2634,58 @@
   line-height: 16.8px;
   text-align: center;
   margin-bottom: 50px;
+}
+
+.available-custom-fields-container {
+  border-radius: 10px;
+  display: flex;
+  min-height: 500px;
+  border: 1px solid #000;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.available-custom-fields-container .available-fields {
+  background-color: #f3f3f3;
+  width: 20%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  overflow: hidden;
+}
+.available-custom-fields-container .available-fields .fields-heading {
+  background-color: rgba(33, 33, 95, 0.5);
+  border-top-left-radius: 10px;
+  padding: 10px;
+}
+.available-custom-fields-container .available-fields .fields-heading h3 {
+  font-family: "lato", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 26.4px;
+  text-align: left;
+  margin: 0;
+}
+.available-custom-fields-container .available-fields .fields-list {
+  overflow: scroll;
+  height: 100%;
+}
+.available-custom-fields-container .available-fields .fields-list .font-container {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.available-custom-fields-container .available-fields .fields-list .font-container.active {
+  background-color: rgba(33, 33, 95, 0.1);
+}
+.available-custom-fields-container .edit-field {
+  width: 80%;
+  padding: 0px 20px 20px 20px;
+}
+.available-custom-fields-container .edit-field .edit-field-content {
+  max-width: 80%;
+  width: 100%;
+  margin: 0 auto;
+}
+.available-custom-fields-container .edit-field .edit-field-content .heading-container hr {
+  width: 50%;
 }
 
 body {

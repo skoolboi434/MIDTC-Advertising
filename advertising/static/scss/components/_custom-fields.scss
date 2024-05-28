@@ -1,0 +1,61 @@
+.available-custom-fields-container {
+  border-radius: 10px;
+  display: flex;
+  min-height: 500px;
+  border: 1px solid $black;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+
+  .available-fields {
+    background-color: $offwhite;
+    width: 20%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+
+    .fields-heading {
+      background-color: rgba($secondary, 0.5);
+      border-top-left-radius: 10px;
+      padding: 10px;
+      h3 {
+        font-family: 'lato', sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: $white;
+        line-height: 26.4px;
+        text-align: left;
+        margin: 0;
+      }
+    }
+
+    .fields-list {
+      overflow: scroll;
+      height: 100%;
+
+      .font-container {
+        padding: 10px 20px;
+        cursor: pointer;
+        &.active {
+          background-color: $secondary-light-alpha;
+        }
+        .font {
+        }
+      }
+    }
+  }
+
+  .edit-field {
+    width: 80%;
+    padding: 0px 20px 20px 20px;
+
+    .edit-field-content {
+      max-width: 80%;
+      width: 100%;
+      margin: 0 auto;
+      .heading-container {
+        hr {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
